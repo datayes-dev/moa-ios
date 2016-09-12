@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
+		425184591D86AB3C00D94643 /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184581D86AB3C00D94643 /* PayInfoViewController.m */; };
+		4251845B1D86AB8700D94643 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4251845A1D86AB8700D94643 /* PayInfoViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E22771D868818001629A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22761D868818001629A7 /* RootViewController.m */; };
@@ -18,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		425184571D86AB3C00D94643 /* PayInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInfoViewController.h; sourceTree = "<group>"; };
+		425184581D86AB3C00D94643 /* PayInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInfoViewController.m; sourceTree = "<group>"; };
+		4251845A1D86AB8700D94643 /* PayInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayInfoViewController.xib; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +52,9 @@
 		425184471D868F8A00D94643 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				425184571D86AB3C00D94643 /* PayInfoViewController.h */,
+				425184581D86AB3C00D94643 /* PayInfoViewController.m */,
+				4251845A1D86AB8700D94643 /* PayInfoViewController.xib */,
 				7C8E22751D868818001629A7 /* RootViewController.h */,
 				7C8E22761D868818001629A7 /* RootViewController.m */,
 				7C8E22781D868818001629A7 /* root.storyboard */,
@@ -174,6 +182,7 @@
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				7C8E227A1D868818001629A7 /* root.storyboard in Resources */,
+				4251845B1D86AB8700D94643 /* PayInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +244,7 @@
 				7C8E22771D868818001629A7 /* RootViewController.m in Sources */,
 				7C8E22741D868818001629A7 /* AppDelegate.m in Sources */,
 				7C8E22711D868818001629A7 /* main.m in Sources */,
+				425184591D86AB3C00D94643 /* PayInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
