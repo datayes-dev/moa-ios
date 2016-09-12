@@ -1,0 +1,24 @@
+{
+  "name": "DYAppearance",
+  "version": "0.0.1",
+  "summary": "DYAppearance 管理外观颜色，字体的组件，UI界面上所有的颜色和字体原则上都应该使用这个类获取",
+  "description": "DYAppearance 管理外观颜色，字体的组件，UI界面上所有的颜色和字体原则上都应该使用这个类获取。",
+  "homepage": "http://git.datayes.com/iOS-Library/DYAppearance",
+  "license": "MIT",
+  "authors": {
+    "pengchao.yan": "pengchao.yan@datayes.com"
+  },
+  "source": {
+    "git": "http://git.datayes.com/iOS-Library/DYAppearance.git",
+    "tag": "0.0.1"
+  },
+  "requires_arc": true,
+  "source_files": "DYAppearanceDemo/Class/*.{h,m}",
+  "resources": "DYAppearanceDemo/Class/DYAppearance.bundle",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "DYCommonTools",
+  "version": "0.0.1",
+  "summary": "DYCommonTools 对一些通用定义，算法做一个规整",
+  "description": "DYCommonTools 对一些通用定义，算法做一个规整。",
+  "homepage": "http://git.datayes.com/iOS-Library/DYCommonTools",
+  "license": "MIT",
+  "authors": {
+    "pengchao.yan": "pengchao.yan@datayes.com"
+  },
+  "source": {
+    "git": "http://git.datayes.com/iOS-Library/DYCommonTools.git",
+    "tag": "0.0.1"
+  },
+  "requires_arc": true,
+  "source_files": "DYCommonToolsDemo/Class/*.{h,m}",
+  "dependencies": {
+    "SSKeychain": [
+
+    ]
+  },
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

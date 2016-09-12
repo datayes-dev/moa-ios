@@ -1,0 +1,59 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - DYAppearance (0.0.1)
+  - DYCommonTools (0.0.1):
+    - SSKeychain
+  - Masonry (1.0.1)
+  - SSKeychain (1.4.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.6)
+  - DYAppearance (from `http://git.datayes.com/iOS-Library/DYAppearance.git`)
+  - DYCommonTools (from `http://git.datayes.com/iOS-Library/DYCommonTools.git`)
+  - Masonry (~> 1.0)
+  - SSKeychain
+
+EXTERNAL SOURCES:
+  DYAppearance:
+    :git: http://git.datayes.com/iOS-Library/DYAppearance.git
+  DYCommonTools:
+    :git: http://git.datayes.com/iOS-Library/DYCommonTools.git
+
+CHECKOUT OPTIONS:
+  DYAppearance:
+    :commit: 5aa53644055e26236c8d1bda59f41571b4acc389
+    :git: http://git.datayes.com/iOS-Library/DYAppearance.git
+  DYCommonTools:
+    :commit: b39a4fe3b60c60078cdc5fdc4907d958129bdfec
+    :git: http://git.datayes.com/iOS-Library/DYCommonTools.git
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  DYAppearance: 2f884f40996bf530223be7e0cbd4b792294c0e68
+  DYCommonTools: b2e12e8abefacb353e87134f72d07934605a6e37
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
+
+PODFILE CHECKSUM: 8b5903ed99c408ccf69d08a5a11ee2cfe67f59c6
+
+COCOAPODS: 1.1.0.beta.1

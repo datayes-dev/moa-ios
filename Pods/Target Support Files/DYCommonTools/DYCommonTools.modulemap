@@ -1,0 +1,6 @@
+framework module DYCommonTools {
+  umbrella header "DYCommonTools-umbrella.h"
+
+  export *
+  module * { export * }
+}
