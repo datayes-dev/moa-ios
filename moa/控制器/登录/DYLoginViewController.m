@@ -224,9 +224,9 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     [userDefaults synchronize];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
-    RootViewController *rootVc = [[RootViewController alloc]init];
-//    [self.navigationController pushViewController:rootVc animated:YES];
+    RootViewController *rootVc = [storyboard instantiateInitialViewController];
     [self presentViewController:rootVc animated:YES completion:nil];
+    
     /*
     __weak __typeof(self)weakSelf = self;
     [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {

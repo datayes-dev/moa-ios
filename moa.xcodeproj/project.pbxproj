@@ -443,11 +443,11 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
-				0BC2BE001D87CEB30087F84D /* 登录 */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
 				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
 				425184651D87CCE800D94643 /* 扫码 */,
 				7C8E25E01D87A11B001629A7 /* Pay */,
+				0BC2BE001D87CEB30087F84D /* 登录 */,
 			);
 			name = "控制器";
 			sourceTree = "<group>";

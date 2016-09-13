@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DYLoginViewController.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -18,12 +19,12 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    DYLoginViewController *loginVC = [[DYLoginViewController alloc]init];
-//    self.window.rootViewController = loginVC;
-//    [self.window makeKeyAndVisible];
-
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    DYLoginViewController *loginVC = [[DYLoginViewController alloc]init];
+    self.window.rootViewController = loginVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
