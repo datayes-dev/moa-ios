@@ -12,10 +12,56 @@
 		4251845B1D86AB8700D94643 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4251845A1D86AB8700D94643 /* PayInfoViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
-		7C8E22771D868818001629A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22761D868818001629A7 /* RootViewController.m */; };
-		7C8E227A1D868818001629A7 /* root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E22781D868818001629A7 /* root.storyboard */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
 		7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */; };
+		7C8E24DA1D86AA69001629A7 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8E24D91D86AA69001629A7 /* FMDB.framework */; };
+		7C8E25641D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25351D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m */; };
+		7C8E25651D8794DB001629A7 /* DYInterfaceRequesterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25361D8794DB001629A7 /* DYInterfaceRequesterBase.m */; };
+		7C8E25661D8794DB001629A7 /* DYInterfaceRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25371D8794DB001629A7 /* DYInterfaceRequestHelper.m */; };
+		7C8E25681D8794DB001629A7 /* DYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E253A1D8794DB001629A7 /* DYCacheManager.m */; };
+		7C8E25691D8794DB001629A7 /* DYErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E253B1D8794DB001629A7 /* DYErrorHelper.m */; };
+		7C8E256B1D8794DB001629A7 /* DYAuthTokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25401D8794DB001629A7 /* DYAuthTokenManager.m */; };
+		7C8E256C1D8794DB001629A7 /* DYNotifiesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25441D8794DB001629A7 /* DYNotifiesRequest.m */; };
+		7C8E256D1D8794DB001629A7 /* DYAppModuleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25461D8794DB001629A7 /* DYAppModuleItem.m */; };
+		7C8E256E1D8794DB001629A7 /* DYAppPushDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25481D8794DB001629A7 /* DYAppPushDataSource.m */; };
+		7C8E256F1D8794DB001629A7 /* DYErrorHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E254B1D8794DB001629A7 /* DYErrorHandlerBase.m */; };
+		7C8E25701D8794DB001629A7 /* DYErrorHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E254D1D8794DB001629A7 /* DYErrorHandlerHelper.m */; };
+		7C8E25711D8794DB001629A7 /* DYInterfaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E254F1D8794DB001629A7 /* DYInterfaceInfo.m */; };
+		7C8E25721D8794DB001629A7 /* DYInterfacePropertiesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25511D8794DB001629A7 /* DYInterfacePropertiesManager.m */; };
+		7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25531D8794DB001629A7 /* DYInterfaceReqeustItem.m */; };
+		7C8E25741D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25551D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m */; };
+		7C8E25751D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25571D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m */; };
+		7C8E25761D8794DB001629A7 /* DYMutipartFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25591D8794DB001629A7 /* DYMutipartFormDataRequest.m */; };
+		7C8E25771D8794DB001629A7 /* DYNetStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E255B1D8794DB001629A7 /* DYNetStatusManager.m */; };
+		7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E255E1D8794DB001629A7 /* DYUserAuthorityData.m */; };
+		7C8E25791D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25601D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m */; };
+		7C8E257A1D8794DB001629A7 /* NSObject+Representation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25621D8794DB001629A7 /* NSObject+Representation.m */; };
+		7C8E258F1D8794EA001629A7 /* DYAuthorityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257B1D8794EA001629A7 /* DYAuthorityManager.m */; };
+		7C8E25901D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257C1D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m */; };
+		7C8E25911D8794EA001629A7 /* DYAuthorityLoginDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257D1D8794EA001629A7 /* DYAuthorityLoginDataSource.m */; };
+		7C8E25921D8794EA001629A7 /* DYAuthorityResponseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257E1D8794EA001629A7 /* DYAuthorityResponseHelper.m */; };
+		7C8E25931D8794EA001629A7 /* DYAuthorityDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257F1D8794EA001629A7 /* DYAuthorityDataSource.m */; };
+		7C8E25941D8794EA001629A7 /* DYAuthorityRegisterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25851D8794EA001629A7 /* DYAuthorityRegisterDataSource.m */; };
+		7C8E25951D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25871D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m */; };
+		7C8E25961D8794EA001629A7 /* DYGetUserInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E258A1D8794EA001629A7 /* DYGetUserInfoDataSource.m */; };
+		7C8E25971D8794EA001629A7 /* UIButton+DatayesAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E258C1D8794EA001629A7 /* UIButton+DatayesAuthority.m */; };
+		7C8E25981D8794EA001629A7 /* UIImageView+DatayesAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E258E1D8794EA001629A7 /* UIImageView+DatayesAuthority.m */; };
+		7C8E25B21D8794F4001629A7 /* DYDataSourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25991D8794F4001629A7 /* DYDataSourceBase.m */; };
+		7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E259A1D8794F4001629A7 /* SEDatabase.m */; };
+		7C8E25B51D8794F4001629A7 /* DYAppConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A01D8794F4001629A7 /* DYAppConfigManager.m */; };
+		7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A41D8794F4001629A7 /* DYAutoSaver.m */; };
+		7C8E25B71D8794F4001629A7 /* DYDataSourceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A61D8794F4001629A7 /* DYDataSourceError.m */; };
+		7C8E25B91D8794F4001629A7 /* DYNoticeInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A91D8794F4001629A7 /* DYNoticeInfoManager.m */; };
+		7C8E25BA1D8794F4001629A7 /* DYResultHeaderHandleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25AB1D8794F4001629A7 /* DYResultHeaderHandleHelper.m */; };
+		7C8E25BC1D8794F4001629A7 /* SEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25B01D8794F4001629A7 /* SEUtilities.m */; };
+		7C8E25C71D879977001629A7 /* DYDataSourceErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25C31D879977001629A7 /* DYDataSourceErrorView.m */; };
+		7C8E25C81D879977001629A7 /* PromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25C41D879977001629A7 /* PromptView.m */; };
+		7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25CC1D879A4D001629A7 /* DYProgressHUD.m */; };
+		7C8E25D01D879A4D001629A7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25CE1D879A4D001629A7 /* MBProgressHUD.m */; };
+		7C8E25D71D879B5C001629A7 /* DYCacheBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25D31D879B5C001629A7 /* DYCacheBaseUtil.m */; };
+		7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25D61D879B5C001629A7 /* DYCacheService.m */; };
+		7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25DB1D879C89001629A7 /* NSString+URL.m */; };
+		7C8E25DE1D879D4A001629A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +75,109 @@
 		7C8E22701D868818001629A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C8E22721D868818001629A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C8E22731D868818001629A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7C8E22751D868818001629A7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		7C8E22761D868818001629A7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		7C8E22791D868818001629A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/root.storyboard; sourceTree = "<group>"; };
 		7C8E227B1D868818001629A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C8E227E1D868818001629A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C8E22801D868818001629A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C8E24D81D86A4BC001629A7 /* moa-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "moa-Prefix.pch"; sourceTree = "<group>"; };
+		7C8E24D91D86AA69001629A7 /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FMDB.framework; sourceTree = "<group>"; };
+		7C8E25351D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYHttpRequestWithCacheOperationManager.m; path = "通讯接口/DYHttpRequestWithCacheOperationManager.m"; sourceTree = "<group>"; };
+		7C8E25361D8794DB001629A7 /* DYInterfaceRequesterBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYInterfaceRequesterBase.m; path = "通讯接口/DYInterfaceRequesterBase.m"; sourceTree = "<group>"; };
+		7C8E25371D8794DB001629A7 /* DYInterfaceRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYInterfaceRequestHelper.m; path = "通讯接口/DYInterfaceRequestHelper.m"; sourceTree = "<group>"; };
+		7C8E25391D8794DB001629A7 /* DYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYCacheManager.h; path = "通讯接口/DYCacheManager.h"; sourceTree = "<group>"; };
+		7C8E253A1D8794DB001629A7 /* DYCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYCacheManager.m; path = "通讯接口/DYCacheManager.m"; sourceTree = "<group>"; };
+		7C8E253B1D8794DB001629A7 /* DYErrorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYErrorHelper.m; path = "通讯接口/DYErrorHelper.m"; sourceTree = "<group>"; };
+		7C8E253E1D8794DB001629A7 /* DYInterfaceIdDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYInterfaceIdDef.h; path = "通讯接口/DYInterfaceIdDef.h"; sourceTree = "<group>"; };
+		7C8E253F1D8794DB001629A7 /* DYInterfaceRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYInterfaceRequestHelper.h; path = "通讯接口/DYInterfaceRequestHelper.h"; sourceTree = "<group>"; };
+		7C8E25401D8794DB001629A7 /* DYAuthTokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthTokenManager.m; path = "通讯接口/DYAuthTokenManager.m"; sourceTree = "<group>"; };
+		7C8E25411D8794DB001629A7 /* DYInterfaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYInterfaceInfo.h; path = "通讯接口/DYInterfaceInfo.h"; sourceTree = "<group>"; };
+		7C8E25421D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYHttpRequestWithCacheOperationManager.h; path = "通讯接口/DYHttpRequestWithCacheOperationManager.h"; sourceTree = "<group>"; };
+		7C8E25431D8794DB001629A7 /* DYInterfaceRequesterBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYInterfaceRequesterBase.h; path = "通讯接口/DYInterfaceRequesterBase.h"; sourceTree = "<group>"; };
+		7C8E25441D8794DB001629A7 /* DYNotifiesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYNotifiesRequest.m; path = "通讯接口/DYNotifiesRequest.m"; sourceTree = "<group>"; };
+		7C8E25451D8794DB001629A7 /* DYAppModuleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAppModuleItem.h; path = "通讯接口/DYAppModuleItem.h"; sourceTree = "<group>"; };
+		7C8E25461D8794DB001629A7 /* DYAppModuleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAppModuleItem.m; path = "通讯接口/DYAppModuleItem.m"; sourceTree = "<group>"; };
+		7C8E25471D8794DB001629A7 /* DYAppPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAppPushDataSource.h; path = "通讯接口/DYAppPushDataSource.h"; sourceTree = "<group>"; };
+		7C8E25481D8794DB001629A7 /* DYAppPushDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAppPushDataSource.m; path = "通讯接口/DYAppPushDataSource.m"; sourceTree = "<group>"; };
+		7C8E25491D8794DB001629A7 /* DYAuthTokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthTokenManager.h; path = "通讯接口/DYAuthTokenManager.h"; sourceTree = "<group>"; };
+		7C8E254A1D8794DB001629A7 /* DYErrorHandlerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYErrorHandlerBase.h; path = "通讯接口/DYErrorHandlerBase.h"; sourceTree = "<group>"; };
+		7C8E254B1D8794DB001629A7 /* DYErrorHandlerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYErrorHandlerBase.m; path = "通讯接口/DYErrorHandlerBase.m"; sourceTree = "<group>"; };
+		7C8E254C1D8794DB001629A7 /* DYErrorHandlerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYErrorHandlerHelper.h; path = "通讯接口/DYErrorHandlerHelper.h"; sourceTree = "<group>"; };
+		7C8E254D1D8794DB001629A7 /* DYErrorHandlerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYErrorHandlerHelper.m; path = "通讯接口/DYErrorHandlerHelper.m"; sourceTree = "<group>"; };
+		7C8E254E1D8794DB001629A7 /* DYErrorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYErrorHelper.h; path = "通讯接口/DYErrorHelper.h"; sourceTree = "<group>"; };
+		7C8E254F1D8794DB001629A7 /* DYInterfaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYInterfaceInfo.m; path = "通讯接口/DYInterfaceInfo.m"; sourceTree = "<group>"; };
+		7C8E25501D8794DB001629A7 /* DYInterfacePropertiesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYInterfacePropertiesManager.h; path = "通讯接口/DYInterfacePropertiesManager.h"; sourceTree = "<group>"; };
+		7C8E25511D8794DB001629A7 /* DYInterfacePropertiesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYInterfacePropertiesManager.m; path = "通讯接口/DYInterfacePropertiesManager.m"; sourceTree = "<group>"; };
+		7C8E25521D8794DB001629A7 /* DYInterfaceReqeustItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYInterfaceReqeustItem.h; path = "通讯接口/DYInterfaceReqeustItem.h"; sourceTree = "<group>"; };
+		7C8E25531D8794DB001629A7 /* DYInterfaceReqeustItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYInterfaceReqeustItem.m; path = "通讯接口/DYInterfaceReqeustItem.m"; sourceTree = "<group>"; };
+		7C8E25541D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYJsonRequestWithGBufResponseRequest.h; path = "通讯接口/DYJsonRequestWithGBufResponseRequest.h"; sourceTree = "<group>"; };
+		7C8E25551D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYJsonRequestWithGBufResponseRequest.m; path = "通讯接口/DYJsonRequestWithGBufResponseRequest.m"; sourceTree = "<group>"; };
+		7C8E25561D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYJsonRequestWithJsonResponseRequest.h; path = "通讯接口/DYJsonRequestWithJsonResponseRequest.h"; sourceTree = "<group>"; };
+		7C8E25571D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYJsonRequestWithJsonResponseRequest.m; path = "通讯接口/DYJsonRequestWithJsonResponseRequest.m"; sourceTree = "<group>"; };
+		7C8E25581D8794DB001629A7 /* DYMutipartFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYMutipartFormDataRequest.h; path = "通讯接口/DYMutipartFormDataRequest.h"; sourceTree = "<group>"; };
+		7C8E25591D8794DB001629A7 /* DYMutipartFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYMutipartFormDataRequest.m; path = "通讯接口/DYMutipartFormDataRequest.m"; sourceTree = "<group>"; };
+		7C8E255A1D8794DB001629A7 /* DYNetStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYNetStatusManager.h; path = "通讯接口/DYNetStatusManager.h"; sourceTree = "<group>"; };
+		7C8E255B1D8794DB001629A7 /* DYNetStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYNetStatusManager.m; path = "通讯接口/DYNetStatusManager.m"; sourceTree = "<group>"; };
+		7C8E255C1D8794DB001629A7 /* DYNotifiesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYNotifiesRequest.h; path = "通讯接口/DYNotifiesRequest.h"; sourceTree = "<group>"; };
+		7C8E255D1D8794DB001629A7 /* DYUserAuthorityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYUserAuthorityData.h; path = "通讯接口/DYUserAuthorityData.h"; sourceTree = "<group>"; };
+		7C8E255E1D8794DB001629A7 /* DYUserAuthorityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYUserAuthorityData.m; path = "通讯接口/DYUserAuthorityData.m"; sourceTree = "<group>"; };
+		7C8E255F1D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYXFormRequestWithJsonResponseRequest.h; path = "通讯接口/DYXFormRequestWithJsonResponseRequest.h"; sourceTree = "<group>"; };
+		7C8E25601D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYXFormRequestWithJsonResponseRequest.m; path = "通讯接口/DYXFormRequestWithJsonResponseRequest.m"; sourceTree = "<group>"; };
+		7C8E25611D8794DB001629A7 /* NSObject+Representation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Representation.h"; path = "通讯接口/NSObject+Representation.h"; sourceTree = "<group>"; };
+		7C8E25621D8794DB001629A7 /* NSObject+Representation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Representation.m"; path = "通讯接口/NSObject+Representation.m"; sourceTree = "<group>"; };
+		7C8E257B1D8794EA001629A7 /* DYAuthorityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityManager.m; path = "数据/Authority/DYAuthorityManager.m"; sourceTree = "<group>"; };
+		7C8E257C1D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityChangePasswordDataSource.m; path = "数据/Authority/DYAuthorityChangePasswordDataSource.m"; sourceTree = "<group>"; };
+		7C8E257D1D8794EA001629A7 /* DYAuthorityLoginDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityLoginDataSource.m; path = "数据/Authority/DYAuthorityLoginDataSource.m"; sourceTree = "<group>"; };
+		7C8E257E1D8794EA001629A7 /* DYAuthorityResponseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityResponseHelper.m; path = "数据/Authority/DYAuthorityResponseHelper.m"; sourceTree = "<group>"; };
+		7C8E257F1D8794EA001629A7 /* DYAuthorityDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityDataSource.m; path = "数据/Authority/DYAuthorityDataSource.m"; sourceTree = "<group>"; };
+		7C8E25801D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityChangePasswordDataSource.h; path = "数据/Authority/DYAuthorityChangePasswordDataSource.h"; sourceTree = "<group>"; };
+		7C8E25811D8794EA001629A7 /* DYAuthorityDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityDataSource.h; path = "数据/Authority/DYAuthorityDataSource.h"; sourceTree = "<group>"; };
+		7C8E25821D8794EA001629A7 /* DYAuthorityLoginDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityLoginDataSource.h; path = "数据/Authority/DYAuthorityLoginDataSource.h"; sourceTree = "<group>"; };
+		7C8E25831D8794EA001629A7 /* DYAuthorityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityManager.h; path = "数据/Authority/DYAuthorityManager.h"; sourceTree = "<group>"; };
+		7C8E25841D8794EA001629A7 /* DYAuthorityRegisterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityRegisterDataSource.h; path = "数据/Authority/DYAuthorityRegisterDataSource.h"; sourceTree = "<group>"; };
+		7C8E25851D8794EA001629A7 /* DYAuthorityRegisterDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityRegisterDataSource.m; path = "数据/Authority/DYAuthorityRegisterDataSource.m"; sourceTree = "<group>"; };
+		7C8E25861D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityResetPasswordDataSource.h; path = "数据/Authority/DYAuthorityResetPasswordDataSource.h"; sourceTree = "<group>"; };
+		7C8E25871D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAuthorityResetPasswordDataSource.m; path = "数据/Authority/DYAuthorityResetPasswordDataSource.m"; sourceTree = "<group>"; };
+		7C8E25881D8794EA001629A7 /* DYAuthorityResponseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAuthorityResponseHelper.h; path = "数据/Authority/DYAuthorityResponseHelper.h"; sourceTree = "<group>"; };
+		7C8E25891D8794EA001629A7 /* DYGetUserInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYGetUserInfoDataSource.h; path = "数据/Authority/DYGetUserInfoDataSource.h"; sourceTree = "<group>"; };
+		7C8E258A1D8794EA001629A7 /* DYGetUserInfoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYGetUserInfoDataSource.m; path = "数据/Authority/DYGetUserInfoDataSource.m"; sourceTree = "<group>"; };
+		7C8E258B1D8794EA001629A7 /* UIButton+DatayesAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+DatayesAuthority.h"; path = "数据/Authority/UIButton+DatayesAuthority.h"; sourceTree = "<group>"; };
+		7C8E258C1D8794EA001629A7 /* UIButton+DatayesAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+DatayesAuthority.m"; path = "数据/Authority/UIButton+DatayesAuthority.m"; sourceTree = "<group>"; };
+		7C8E258D1D8794EA001629A7 /* UIImageView+DatayesAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+DatayesAuthority.h"; path = "数据/Authority/UIImageView+DatayesAuthority.h"; sourceTree = "<group>"; };
+		7C8E258E1D8794EA001629A7 /* UIImageView+DatayesAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+DatayesAuthority.m"; path = "数据/Authority/UIImageView+DatayesAuthority.m"; sourceTree = "<group>"; };
+		7C8E25991D8794F4001629A7 /* DYDataSourceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYDataSourceBase.m; path = "数据/DYDataSourceBase.m"; sourceTree = "<group>"; };
+		7C8E259A1D8794F4001629A7 /* SEDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SEDatabase.m; path = "数据/SEDatabase.m"; sourceTree = "<group>"; };
+		7C8E259C1D8794F4001629A7 /* DYDataSourceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYDataSourceBase.h; path = "数据/DYDataSourceBase.h"; sourceTree = "<group>"; };
+		7C8E259D1D8794F4001629A7 /* DYNoticeInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYNoticeInfoManager.h; path = "数据/DYNoticeInfoManager.h"; sourceTree = "<group>"; };
+		7C8E259E1D8794F4001629A7 /* DatabaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseDefine.h; path = "数据/DatabaseDefine.h"; sourceTree = "<group>"; };
+		7C8E259F1D8794F4001629A7 /* DYAppConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAppConfigManager.h; path = "数据/DYAppConfigManager.h"; sourceTree = "<group>"; };
+		7C8E25A01D8794F4001629A7 /* DYAppConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAppConfigManager.m; path = "数据/DYAppConfigManager.m"; sourceTree = "<group>"; };
+		7C8E25A21D8794F4001629A7 /* DYAutoJumpParamsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAutoJumpParamsDefine.h; path = "数据/DYAutoJumpParamsDefine.h"; sourceTree = "<group>"; };
+		7C8E25A31D8794F4001629A7 /* DYAutoSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYAutoSaver.h; path = "数据/DYAutoSaver.h"; sourceTree = "<group>"; };
+		7C8E25A41D8794F4001629A7 /* DYAutoSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYAutoSaver.m; path = "数据/DYAutoSaver.m"; sourceTree = "<group>"; };
+		7C8E25A51D8794F4001629A7 /* DYDataSourceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYDataSourceError.h; path = "数据/DYDataSourceError.h"; sourceTree = "<group>"; };
+		7C8E25A61D8794F4001629A7 /* DYDataSourceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYDataSourceError.m; path = "数据/DYDataSourceError.m"; sourceTree = "<group>"; };
+		7C8E25A91D8794F4001629A7 /* DYNoticeInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYNoticeInfoManager.m; path = "数据/DYNoticeInfoManager.m"; sourceTree = "<group>"; };
+		7C8E25AA1D8794F4001629A7 /* DYResultHeaderHandleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYResultHeaderHandleHelper.h; path = "数据/DYResultHeaderHandleHelper.h"; sourceTree = "<group>"; };
+		7C8E25AB1D8794F4001629A7 /* DYResultHeaderHandleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYResultHeaderHandleHelper.m; path = "数据/DYResultHeaderHandleHelper.m"; sourceTree = "<group>"; };
+		7C8E25AE1D8794F4001629A7 /* SEDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SEDatabase.h; path = "数据/SEDatabase.h"; sourceTree = "<group>"; };
+		7C8E25AF1D8794F4001629A7 /* SEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SEUtilities.h; path = "数据/SEUtilities.h"; sourceTree = "<group>"; };
+		7C8E25B01D8794F4001629A7 /* SEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SEUtilities.m; path = "数据/SEUtilities.m"; sourceTree = "<group>"; };
+		7C8E25C31D879977001629A7 /* DYDataSourceErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYDataSourceErrorView.m; path = "视图/common/DYDataSourceErrorView.m"; sourceTree = "<group>"; };
+		7C8E25C41D879977001629A7 /* PromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PromptView.m; path = "视图/common/PromptView.m"; sourceTree = "<group>"; };
+		7C8E25C51D879977001629A7 /* DYDataSourceErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYDataSourceErrorView.h; path = "视图/common/DYDataSourceErrorView.h"; sourceTree = "<group>"; };
+		7C8E25C61D879977001629A7 /* PromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PromptView.h; path = "视图/common/PromptView.h"; sourceTree = "<group>"; };
+		7C8E25CB1D879A4D001629A7 /* DYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYProgressHUD.h; path = "视图/第三方框架/MBProgressHUD/DYProgressHUD.h"; sourceTree = "<group>"; };
+		7C8E25CC1D879A4D001629A7 /* DYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYProgressHUD.m; path = "视图/第三方框架/MBProgressHUD/DYProgressHUD.m"; sourceTree = "<group>"; };
+		7C8E25CD1D879A4D001629A7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "视图/第三方框架/MBProgressHUD/MBProgressHUD.h"; sourceTree = "<group>"; };
+		7C8E25CE1D879A4D001629A7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "视图/第三方框架/MBProgressHUD/MBProgressHUD.m"; sourceTree = "<group>"; };
+		7C8E25D21D879B5B001629A7 /* DYCacheBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYCacheBaseUtil.h; path = "数据/DYCacheUtil/DYCacheBaseUtil.h"; sourceTree = "<group>"; };
+		7C8E25D31D879B5C001629A7 /* DYCacheBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYCacheBaseUtil.m; path = "数据/DYCacheUtil/DYCacheBaseUtil.m"; sourceTree = "<group>"; };
+		7C8E25D41D879B5C001629A7 /* DYCacheKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYCacheKeys.h; path = "数据/DYCacheUtil/DYCacheKeys.h"; sourceTree = "<group>"; };
+		7C8E25D51D879B5C001629A7 /* DYCacheService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DYCacheService.h; path = "数据/DYCacheUtil/DYCacheService.h"; sourceTree = "<group>"; };
+		7C8E25D61D879B5C001629A7 /* DYCacheService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYCacheService.m; path = "数据/DYCacheUtil/DYCacheService.m"; sourceTree = "<group>"; };
+		7C8E25D91D879BE2001629A7 /* DYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYDefine.h; sourceTree = "<group>"; };
+		7C8E25DA1D879C89001629A7 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URL.h"; path = "通讯接口/NSString+URL.h"; sourceTree = "<group>"; };
+		7C8E25DB1D879C89001629A7 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URL.m"; path = "通讯接口/NSString+URL.m"; sourceTree = "<group>"; };
+		7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +185,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8E25DE1D879D4A001629A7 /* libsqlite3.tbd in Frameworks */,
 				1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */,
+				7C8E24DA1D86AA69001629A7 /* FMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +237,14 @@
 		7C8E226E1D868818001629A7 /* moa */ = {
 			isa = PBXGroup;
 			children = (
-				425184471D868F8A00D94643 /* 控制器 */,
+				7C8E25BE1D879905001629A7 /* 视图 */,
+				7C8E25331D8794BD001629A7 /* 通讯接口 */,
+				7C8E25321D8794B1001629A7 /* 数据 */,
 				7C8E22721D868818001629A7 /* AppDelegate.h */,
 				7C8E22731D868818001629A7 /* AppDelegate.m */,
 				7C8E227B1D868818001629A7 /* Assets.xcassets */,
-				7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */,
 				7C8E22801D868818001629A7 /* Info.plist */,
+				7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */,
 				7C8E226F1D868818001629A7 /* Supporting Files */,
 			);
 			path = moa;
@@ -106,14 +253,175 @@
 		7C8E226F1D868818001629A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7C8E24D81D86A4BC001629A7 /* moa-Prefix.pch */,
 				7C8E22701D868818001629A7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7C8E25321D8794B1001629A7 /* 数据 */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25D11D879B4D001629A7 /* DYCacheUtil */,
+				7C8E25341D8794D1001629A7 /* Authority */,
+				7C8E259E1D8794F4001629A7 /* DatabaseDefine.h */,
+				7C8E259F1D8794F4001629A7 /* DYAppConfigManager.h */,
+				7C8E25A01D8794F4001629A7 /* DYAppConfigManager.m */,
+				7C8E25A21D8794F4001629A7 /* DYAutoJumpParamsDefine.h */,
+				7C8E25A31D8794F4001629A7 /* DYAutoSaver.h */,
+				7C8E25A41D8794F4001629A7 /* DYAutoSaver.m */,
+				7C8E259C1D8794F4001629A7 /* DYDataSourceBase.h */,
+				7C8E25991D8794F4001629A7 /* DYDataSourceBase.m */,
+				7C8E25A51D8794F4001629A7 /* DYDataSourceError.h */,
+				7C8E25A61D8794F4001629A7 /* DYDataSourceError.m */,
+				7C8E259D1D8794F4001629A7 /* DYNoticeInfoManager.h */,
+				7C8E25A91D8794F4001629A7 /* DYNoticeInfoManager.m */,
+				7C8E25AA1D8794F4001629A7 /* DYResultHeaderHandleHelper.h */,
+				7C8E25AB1D8794F4001629A7 /* DYResultHeaderHandleHelper.m */,
+				7C8E25AE1D8794F4001629A7 /* SEDatabase.h */,
+				7C8E259A1D8794F4001629A7 /* SEDatabase.m */,
+				7C8E25AF1D8794F4001629A7 /* SEUtilities.h */,
+				7C8E25B01D8794F4001629A7 /* SEUtilities.m */,
+			);
+			name = "数据";
+			sourceTree = "<group>";
+		};
+		7C8E25331D8794BD001629A7 /* 通讯接口 */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25451D8794DB001629A7 /* DYAppModuleItem.h */,
+				7C8E25461D8794DB001629A7 /* DYAppModuleItem.m */,
+				7C8E25471D8794DB001629A7 /* DYAppPushDataSource.h */,
+				7C8E25481D8794DB001629A7 /* DYAppPushDataSource.m */,
+				7C8E25491D8794DB001629A7 /* DYAuthTokenManager.h */,
+				7C8E25401D8794DB001629A7 /* DYAuthTokenManager.m */,
+				7C8E25391D8794DB001629A7 /* DYCacheManager.h */,
+				7C8E253A1D8794DB001629A7 /* DYCacheManager.m */,
+				7C8E254A1D8794DB001629A7 /* DYErrorHandlerBase.h */,
+				7C8E254B1D8794DB001629A7 /* DYErrorHandlerBase.m */,
+				7C8E254C1D8794DB001629A7 /* DYErrorHandlerHelper.h */,
+				7C8E254D1D8794DB001629A7 /* DYErrorHandlerHelper.m */,
+				7C8E254E1D8794DB001629A7 /* DYErrorHelper.h */,
+				7C8E253B1D8794DB001629A7 /* DYErrorHelper.m */,
+				7C8E25421D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.h */,
+				7C8E25351D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m */,
+				7C8E253E1D8794DB001629A7 /* DYInterfaceIdDef.h */,
+				7C8E25411D8794DB001629A7 /* DYInterfaceInfo.h */,
+				7C8E254F1D8794DB001629A7 /* DYInterfaceInfo.m */,
+				7C8E25501D8794DB001629A7 /* DYInterfacePropertiesManager.h */,
+				7C8E25511D8794DB001629A7 /* DYInterfacePropertiesManager.m */,
+				7C8E25521D8794DB001629A7 /* DYInterfaceReqeustItem.h */,
+				7C8E25531D8794DB001629A7 /* DYInterfaceReqeustItem.m */,
+				7C8E25431D8794DB001629A7 /* DYInterfaceRequesterBase.h */,
+				7C8E25361D8794DB001629A7 /* DYInterfaceRequesterBase.m */,
+				7C8E253F1D8794DB001629A7 /* DYInterfaceRequestHelper.h */,
+				7C8E25371D8794DB001629A7 /* DYInterfaceRequestHelper.m */,
+				7C8E25541D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.h */,
+				7C8E25551D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m */,
+				7C8E25561D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.h */,
+				7C8E25571D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m */,
+				7C8E25581D8794DB001629A7 /* DYMutipartFormDataRequest.h */,
+				7C8E25591D8794DB001629A7 /* DYMutipartFormDataRequest.m */,
+				7C8E255A1D8794DB001629A7 /* DYNetStatusManager.h */,
+				7C8E255B1D8794DB001629A7 /* DYNetStatusManager.m */,
+				7C8E255C1D8794DB001629A7 /* DYNotifiesRequest.h */,
+				7C8E25441D8794DB001629A7 /* DYNotifiesRequest.m */,
+				7C8E255D1D8794DB001629A7 /* DYUserAuthorityData.h */,
+				7C8E255E1D8794DB001629A7 /* DYUserAuthorityData.m */,
+				7C8E255F1D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.h */,
+				7C8E25601D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m */,
+				7C8E25611D8794DB001629A7 /* NSObject+Representation.h */,
+				7C8E25621D8794DB001629A7 /* NSObject+Representation.m */,
+				7C8E25DA1D879C89001629A7 /* NSString+URL.h */,
+				7C8E25DB1D879C89001629A7 /* NSString+URL.m */,
+			);
+			name = "通讯接口";
+			sourceTree = "<group>";
+		};
+		7C8E25341D8794D1001629A7 /* Authority */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25801D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.h */,
+				7C8E257C1D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m */,
+				7C8E25811D8794EA001629A7 /* DYAuthorityDataSource.h */,
+				7C8E257F1D8794EA001629A7 /* DYAuthorityDataSource.m */,
+				7C8E25821D8794EA001629A7 /* DYAuthorityLoginDataSource.h */,
+				7C8E257D1D8794EA001629A7 /* DYAuthorityLoginDataSource.m */,
+				7C8E25831D8794EA001629A7 /* DYAuthorityManager.h */,
+				7C8E257B1D8794EA001629A7 /* DYAuthorityManager.m */,
+				7C8E25841D8794EA001629A7 /* DYAuthorityRegisterDataSource.h */,
+				7C8E25851D8794EA001629A7 /* DYAuthorityRegisterDataSource.m */,
+				7C8E25861D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.h */,
+				7C8E25871D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m */,
+				7C8E25881D8794EA001629A7 /* DYAuthorityResponseHelper.h */,
+				7C8E257E1D8794EA001629A7 /* DYAuthorityResponseHelper.m */,
+				7C8E25891D8794EA001629A7 /* DYGetUserInfoDataSource.h */,
+				7C8E258A1D8794EA001629A7 /* DYGetUserInfoDataSource.m */,
+				7C8E258B1D8794EA001629A7 /* UIButton+DatayesAuthority.h */,
+				7C8E258C1D8794EA001629A7 /* UIButton+DatayesAuthority.m */,
+				7C8E258D1D8794EA001629A7 /* UIImageView+DatayesAuthority.h */,
+				7C8E258E1D8794EA001629A7 /* UIImageView+DatayesAuthority.m */,
+			);
+			name = Authority;
+			sourceTree = "<group>";
+		};
+		7C8E25BE1D879905001629A7 /* 视图 */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25C91D879A1E001629A7 /* 第三方框架 */,
+				7C8E25BF1D87990C001629A7 /* Common */,
+			);
+			name = "视图";
+			sourceTree = "<group>";
+		};
+		7C8E25BF1D87990C001629A7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25D91D879BE2001629A7 /* DYDefine.h */,
+				7C8E25C51D879977001629A7 /* DYDataSourceErrorView.h */,
+				7C8E25C31D879977001629A7 /* DYDataSourceErrorView.m */,
+				7C8E25C61D879977001629A7 /* PromptView.h */,
+				7C8E25C41D879977001629A7 /* PromptView.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		7C8E25C91D879A1E001629A7 /* 第三方框架 */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25CA1D879A31001629A7 /* MBProgressHUD */,
+			);
+			name = "第三方框架";
+			sourceTree = "<group>";
+		};
+		7C8E25CA1D879A31001629A7 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25CB1D879A4D001629A7 /* DYProgressHUD.h */,
+				7C8E25CC1D879A4D001629A7 /* DYProgressHUD.m */,
+				7C8E25CD1D879A4D001629A7 /* MBProgressHUD.h */,
+				7C8E25CE1D879A4D001629A7 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		7C8E25D11D879B4D001629A7 /* DYCacheUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25D21D879B5B001629A7 /* DYCacheBaseUtil.h */,
+				7C8E25D31D879B5C001629A7 /* DYCacheBaseUtil.m */,
+				7C8E25D41D879B5C001629A7 /* DYCacheKeys.h */,
+				7C8E25D51D879B5C001629A7 /* DYCacheService.h */,
+				7C8E25D61D879B5C001629A7 /* DYCacheService.m */,
+			);
+			name = DYCacheUtil;
+			sourceTree = "<group>";
+		};
 		DA6090B5A88B927F2EFF2E42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */,
+				7C8E24D91D86AA69001629A7 /* FMDB.framework */,
 				1519EB01F7CCA22839538B31 /* Pods_moa.framework */,
 			);
 			name = Frameworks;
@@ -241,9 +549,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C8E22771D868818001629A7 /* RootViewController.m in Sources */,
+				7C8E258F1D8794EA001629A7 /* DYAuthorityManager.m in Sources */,
+				7C8E25971D8794EA001629A7 /* UIButton+DatayesAuthority.m in Sources */,
+				7C8E25911D8794EA001629A7 /* DYAuthorityLoginDataSource.m in Sources */,
+				7C8E25771D8794DB001629A7 /* DYNetStatusManager.m in Sources */,
+				7C8E25641D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m in Sources */,
+				7C8E25791D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m in Sources */,
+				7C8E25701D8794DB001629A7 /* DYErrorHandlerHelper.m in Sources */,
+				7C8E25D01D879A4D001629A7 /* MBProgressHUD.m in Sources */,
+				7C8E25951D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m in Sources */,
+				7C8E25B21D8794F4001629A7 /* DYDataSourceBase.m in Sources */,
+				7C8E25741D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m in Sources */,
+				7C8E25751D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m in Sources */,
+				7C8E25691D8794DB001629A7 /* DYErrorHelper.m in Sources */,
+				7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */,
+				7C8E25BC1D8794F4001629A7 /* SEUtilities.m in Sources */,
+				7C8E256D1D8794DB001629A7 /* DYAppModuleItem.m in Sources */,
+				7C8E25C81D879977001629A7 /* PromptView.m in Sources */,
+				7C8E25BA1D8794F4001629A7 /* DYResultHeaderHandleHelper.m in Sources */,
+				7C8E256E1D8794DB001629A7 /* DYAppPushDataSource.m in Sources */,
+				7C8E25711D8794DB001629A7 /* DYInterfaceInfo.m in Sources */,
 				7C8E22741D868818001629A7 /* AppDelegate.m in Sources */,
+				7C8E25961D8794EA001629A7 /* DYGetUserInfoDataSource.m in Sources */,
+				7C8E25661D8794DB001629A7 /* DYInterfaceRequestHelper.m in Sources */,
+				7C8E256C1D8794DB001629A7 /* DYNotifiesRequest.m in Sources */,
+				7C8E25681D8794DB001629A7 /* DYCacheManager.m in Sources */,
+				7C8E25931D8794EA001629A7 /* DYAuthorityDataSource.m in Sources */,
+				7C8E25981D8794EA001629A7 /* UIImageView+DatayesAuthority.m in Sources */,
+				7C8E257A1D8794DB001629A7 /* NSObject+Representation.m in Sources */,
+				7C8E256F1D8794DB001629A7 /* DYErrorHandlerBase.m in Sources */,
+				7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */,
+				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
+				7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */,
+				7C8E25761D8794DB001629A7 /* DYMutipartFormDataRequest.m in Sources */,
+				7C8E256B1D8794DB001629A7 /* DYAuthTokenManager.m in Sources */,
+				7C8E25941D8794EA001629A7 /* DYAuthorityRegisterDataSource.m in Sources */,
+				7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */,
+				7C8E25901D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m in Sources */,
+				7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */,
+				7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */,
+				7C8E25C71D879977001629A7 /* DYDataSourceErrorView.m in Sources */,
+				7C8E25B91D8794F4001629A7 /* DYNoticeInfoManager.m in Sources */,
+				7C8E25651D8794DB001629A7 /* DYInterfaceRequesterBase.m in Sources */,
+				7C8E25B71D8794F4001629A7 /* DYDataSourceError.m in Sources */,
+				7C8E25D71D879B5C001629A7 /* DYCacheBaseUtil.m in Sources */,
 				7C8E22711D868818001629A7 /* main.m in Sources */,
+				7C8E25921D8794EA001629A7 /* DYAuthorityResponseHelper.m in Sources */,
+				7C8E25721D8794DB001629A7 /* DYInterfacePropertiesManager.m in Sources */,
+				7C8E25B51D8794F4001629A7 /* DYAppConfigManager.m in Sources */,
 				425184591D86AB3C00D94643 /* PayInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,14 +604,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7C8E22781D868818001629A7 /* root.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C8E22791D868818001629A7 /* Base */,
-			);
-			name = root.storyboard;
-			sourceTree = "<group>";
-		};
 		7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,6 +702,12 @@
 			baseConfigurationReference = 7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "./moa/moa-Prefix.pch";
 				INFOPLIST_FILE = moa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -370,6 +721,12 @@
 			baseConfigurationReference = 7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "./moa/moa-Prefix.pch";
 				INFOPLIST_FILE = moa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

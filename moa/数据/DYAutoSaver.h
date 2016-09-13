@@ -1,0 +1,58 @@
+/** 
+ * 通联数据机密
+ * --------------------------------------------------------------------
+ * 通联数据股份公司版权所有 © 2013-2016
+ * 
+ * 注意：本文所载所有信息均属于通联数据股份公司资产。本文所包含的知识和技术概念均属于
+ * 通联数据产权，并可能由中国、美国和其他国家专利或申请中的专利所覆盖，并受商业秘密或
+ * 版权法保护。
+ * 除非事先获得通联数据股份公司书面许可，严禁传播文中信息或复制本材料。
+ * 
+ * DataYes CONFIDENTIAL
+ * --------------------------------------------------------------------
+ * Copyright © 2013-2016 DataYes, All Rights Reserved.
+ * 
+ * NOTICE: All information contained herein is the property of DataYes 
+ * Incorporated. The intellectual and technical concepts contained herein are 
+ * proprietary to DataYes Incorporated, and may be covered by China, U.S. and 
+ * Other Countries Patents, patents in process, and are protected by trade 
+ * secret or copyright law. 
+ * Dissemination of this information or reproduction of this material is 
+ * strictly forbidden unless prior written permission is obtained from DataYes.
+ */
+//
+//  DYAutoSaver.h
+//  IntelligenceResearchReport
+//
+//  Created by datayes on 15/8/25.
+//
+
+#import <Foundation/Foundation.h>
+
+@class DYDataSourceBase;
+
+@interface DYAutoSaver : NSObject
+
+/**
+ *	@brief	获取单例对象
+ *
+ *	@return	返回单例对象
+ */
++ (instancetype)shareInstance;
+
+/**
+ *	@brief	加入保存队列
+ *
+ *	@param 	saveMeItem 	需要自动保存的条目
+ */
+- (void)INeedAutoSave:(DYDataSourceBase*)saveMeItem;
+
+/**
+ *	@brief	退出保存队列
+ *
+ *	@param 	notSaveMeIte 	需要退出自动保存队列的条目
+ */
+- (void)IDontNeedAutoSave:(DYDataSourceBase*)notSaveMeItem;
+
+
+@end

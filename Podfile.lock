@@ -20,17 +20,28 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
   - DYAppearance (0.0.1)
   - DYCommonTools (0.0.1):
     - SSKeychain
   - Masonry (1.0.1)
+  - MJRefresh (3.1.12)
   - SSKeychain (1.4.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - CocoaLumberjack
   - DYAppearance (from `http://git.datayes.com/iOS-Library/DYAppearance.git`)
   - DYCommonTools (from `http://git.datayes.com/iOS-Library/DYCommonTools.git`)
   - Masonry (~> 1.0)
+  - MJRefresh
   - SSKeychain
 
 EXTERNAL SOURCES:
@@ -49,11 +60,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   DYAppearance: 2f884f40996bf530223be7e0cbd4b792294c0e68
   DYCommonTools: b2e12e8abefacb353e87134f72d07934605a6e37
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
 
-PODFILE CHECKSUM: 8b5903ed99c408ccf69d08a5a11ee2cfe67f59c6
+PODFILE CHECKSUM: f117d5b765ba35ec614e6bd278f766f5674d58c7
 
 COCOAPODS: 1.1.0.beta.1
