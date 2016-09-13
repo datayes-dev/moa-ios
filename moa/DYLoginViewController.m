@@ -41,6 +41,8 @@
 #import "DYAuthTokenManager.h"
 //#import "DYResetPasswordStep1Controller.h"
 #import "DYProgressHUD.h"
+#import "Masonry.h"
+#import "RootViewController.h"
 
 #define ToastDefaultDuration 2.0
 
@@ -61,8 +63,6 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPasswordButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgRtViewHeightConstant;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *InputRtViewHeightConstant;
 
 @property (nonatomic)BOOL isEyeopen;
 @end
@@ -162,7 +162,7 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     
     UIImageView* imageView = [[UIImageView alloc] initWithFrame:self.imageCheckButton.bounds];
     imageView.tag = 1001;
-//    [imageView setAuthorityImage];
+    [imageView setAuthorityImage];
     [self.imageCheckButton addSubview:imageView];
 }
 
@@ -222,9 +222,12 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:userName forKey:USER_NAME_KEY];
     [userDefaults synchronize];
-
     
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
+    RootViewController *rootVc = [[RootViewController alloc]init];
+//    [self.navigationController pushViewController:rootVc animated:YES];
+    [self presentViewController:rootVc animated:YES completion:nil];
+    /*
     __weak __typeof(self)weakSelf = self;
     [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {
         if (!error && data != nil) {
@@ -232,7 +235,7 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
             [userDefaults setObject:userName forKey:USER_NAME_KEY];
             [userDefaults synchronize];
             NSLog(@"登录中。。。");
-//            [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
+            [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
             [weakSelf.loginButton setEnabled:NO];
             //握手接口调用
 //            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
@@ -268,6 +271,7 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
             }
         }
     }];
+     */
 }
 
 
@@ -288,17 +292,25 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 - (void)hideOrShowImageCheckPart:(BOOL)show
 {
     if (!show) {
-        self.imgRtViewHeightConstant.constant = 0;
-        self.InputRtViewHeightConstant.constant = 92;
+        [self.imageCheckRootView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@0);
+        }];
+        [self.inputRootView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@92);
+        }];
     }
     else
     {
         isImageCheck = YES;
         if (self.imageCheckTextField.text.length!=4)
             self.loginButton.enabled = NO;
-        
-        self.imgRtViewHeightConstant.constant = 46;
-        self.InputRtViewHeightConstant.constant = 138;
+
+        [self.imageCheckRootView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@46);
+        }];
+        [self.inputRootView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@138);
+        }];
     }
 }
 

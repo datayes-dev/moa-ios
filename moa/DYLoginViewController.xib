@@ -7,14 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DYLoginViewController">
             <connections>
-                <outlet property="InputRtViewHeightConstant" destination="U1C-O8-vYi" id="CbL-xi-Yp1"/>
                 <outlet property="activityView" destination="Uxp-qS-CX4" id="3UK-ak-ONH"/>
                 <outlet property="forgetPasswordButton" destination="Anx-8e-ASy" id="2aP-A5-gyR"/>
                 <outlet property="hideOrShowPasswordButton" destination="Mip-dB-Lsy" id="kpX-0u-fng"/>
                 <outlet property="imageCheckButton" destination="v8p-qz-Jo7" id="eBU-QK-4MX"/>
                 <outlet property="imageCheckRootView" destination="G4w-sG-Yu4" id="9Li-LI-zM4"/>
                 <outlet property="imageCheckTextField" destination="UlZ-Zo-n8A" id="2uL-Ht-eKg"/>
-                <outlet property="imgRtViewHeightConstant" destination="U1C-O8-vYi" id="dy3-WC-18X"/>
                 <outlet property="inputRootView" destination="Vzq-aQ-4FO" id="cDe-Xn-6Pa"/>
                 <outlet property="loginButton" destination="wT0-SB-KuD" id="5Xv-B2-Z8k"/>
                 <outlet property="passwordTextField" destination="w5m-IJ-qqW" id="3lx-Re-of1"/>
