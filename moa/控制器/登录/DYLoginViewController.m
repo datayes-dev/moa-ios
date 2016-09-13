@@ -39,7 +39,7 @@
 
 #import "DYAppConfigManager.h"
 #import "DYAuthTokenManager.h"
-//#import "DYResetPasswordStep1Controller.h"
+#import "DYResetPasswordStep1Controller.h"
 #import "DYProgressHUD.h"
 #import "Masonry.h"
 #import "RootViewController.h"
@@ -282,9 +282,9 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
  */
 - (IBAction)forgetPasswordButtonClicked:(id)sender
 {
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"DYResetPasswordViewController" bundle:nil];
-//    DYResetPasswordStep1Controller* resetPwVC = [story instantiateViewControllerWithIdentifier:@"DYResetPasswordStep1Controller"];
-//     [self.navigationController pushViewController:resetPwVC animated:YES];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"DYResetPasswordViewController" bundle:nil];
+    DYResetPasswordStep1Controller* resetPwVC = [story instantiateViewControllerWithIdentifier:@"DYResetPasswordStep1Controller"];
+     [self.navigationController pushViewController:resetPwVC animated:YES];
 }
 
 

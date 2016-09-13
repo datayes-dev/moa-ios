@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0BC2BE041D87CEB30087F84D /* DYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE021D87CEB30087F84D /* DYLoginViewController.m */; };
 		0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */; };
+		0BC2BE0E1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */; };
+		0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0C1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m */; };
+		0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0D1D87D6BA0087F84D /* DYResetPasswordViewController.storyboard */; };
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
 		425184681D87CCE800D94643 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184671D87CCE800D94643 /* ScanViewController.m */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
@@ -73,6 +76,11 @@
 		0BC2BE011D87CEB30087F84D /* DYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoginViewController.h; sourceTree = "<group>"; };
 		0BC2BE021D87CEB30087F84D /* DYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLoginViewController.m; sourceTree = "<group>"; };
 		0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYLoginViewController.xib; sourceTree = "<group>"; };
+		0BC2BE091D87D6BA0087F84D /* DYResetPasswordStep1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYResetPasswordStep1Controller.h; sourceTree = "<group>"; };
+		0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYResetPasswordStep1Controller.m; sourceTree = "<group>"; };
+		0BC2BE0B1D87D6BA0087F84D /* DYResetPasswordStep2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYResetPasswordStep2Controller.h; sourceTree = "<group>"; };
+		0BC2BE0C1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYResetPasswordStep2Controller.m; sourceTree = "<group>"; };
+		0BC2BE0D1D87D6BA0087F84D /* DYResetPasswordViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DYResetPasswordViewController.storyboard; sourceTree = "<group>"; };
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		425184661D87CCE800D94643 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		425184671D87CCE800D94643 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
@@ -213,9 +221,22 @@
 				0BC2BE011D87CEB30087F84D /* DYLoginViewController.h */,
 				0BC2BE021D87CEB30087F84D /* DYLoginViewController.m */,
 				0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */,
+				0BC2BE081D87D6BA0087F84D /* 重置密码 */,
 			);
 			name = "登录";
 			path = "控制器/登录";
+			sourceTree = "<group>";
+		};
+		0BC2BE081D87D6BA0087F84D /* 重置密码 */ = {
+			isa = PBXGroup;
+			children = (
+				0BC2BE091D87D6BA0087F84D /* DYResetPasswordStep1Controller.h */,
+				0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */,
+				0BC2BE0B1D87D6BA0087F84D /* DYResetPasswordStep2Controller.h */,
+				0BC2BE0C1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m */,
+				0BC2BE0D1D87D6BA0087F84D /* DYResetPasswordViewController.storyboard */,
+			);
+			path = "重置密码";
 			sourceTree = "<group>";
 		};
 		425184651D87CCE800D94643 /* 扫码 */ = {
@@ -538,6 +559,7 @@
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
 				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
+				0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,12 +649,14 @@
 				7C8E25931D8794EA001629A7 /* DYAuthorityDataSource.m in Sources */,
 				7C8E25981D8794EA001629A7 /* UIImageView+DatayesAuthority.m in Sources */,
 				7C8E257A1D8794DB001629A7 /* NSObject+Representation.m in Sources */,
+				0BC2BE0E1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m in Sources */,
 				0BC2BE041D87CEB30087F84D /* DYLoginViewController.m in Sources */,
 				7C8E256F1D8794DB001629A7 /* DYErrorHandlerBase.m in Sources */,
 				7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */,
 				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
 				7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */,
 				7C8E25761D8794DB001629A7 /* DYMutipartFormDataRequest.m in Sources */,
+				0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */,
 				7C8E256B1D8794DB001629A7 /* DYAuthTokenManager.m in Sources */,
 				7C8E25941D8794EA001629A7 /* DYAuthorityRegisterDataSource.m in Sources */,
 				7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */,
