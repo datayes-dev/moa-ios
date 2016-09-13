@@ -21,20 +21,14 @@
  * strictly forbidden unless prior written permission is obtained from DataYes.
  */
 //
-//  DYLoginViewController.h
+//  DYResetPasswordStep2Controller.h
 //  IntelligenceResearchReport
 //
-//  Created by datayes on 15/9/18.
+//  Created by datayes on 16/3/26.
 //
 
 #import <UIKit/UIKit.h>
-//#import "DYViewController.h"
 
-#define USER_NAME_KEY       @"userNameKey"
-#define LOGIN_SUCCESS_NOTIFY_KEY   @"loginSuccessNotifyKey"
-
-extern NSString *visitLoginName;
-
-@interface DYLoginViewController : UIViewController<UITextFieldDelegate>
-
+@interface DYResetPasswordStep2Controller : UITableViewController
+@property (copy, nonatomic) NSString *tokenString;//token
 @end

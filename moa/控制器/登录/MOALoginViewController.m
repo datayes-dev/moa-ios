@@ -1,33 +1,12 @@
-/** 
- * 通联数据机密
- * --------------------------------------------------------------------
- * 通联数据股份公司版权所有 © 2013-2016
- * 
- * 注意：本文所载所有信息均属于通联数据股份公司资产。本文所包含的知识和技术概念均属于
- * 通联数据产权，并可能由中国、美国和其他国家专利或申请中的专利所覆盖，并受商业秘密或
- * 版权法保护。
- * 除非事先获得通联数据股份公司书面许可，严禁传播文中信息或复制本材料。
- * 
- * DataYes CONFIDENTIAL
- * --------------------------------------------------------------------
- * Copyright © 2013-2016 DataYes, All Rights Reserved.
- * 
- * NOTICE: All information contained herein is the property of DataYes 
- * Incorporated. The intellectual and technical concepts contained herein are 
- * proprietary to DataYes Incorporated, and may be covered by China, U.S. and 
- * Other Countries Patents, patents in process, and are protected by trade 
- * secret or copyright law. 
- * Dissemination of this information or reproduction of this material is 
- * strictly forbidden unless prior written permission is obtained from DataYes.
- */
 //
-//  DYLoginViewController.m
-//  IntelligenceResearchReport
+//  MOALoginViewController.m
+//  moa
 //
-//  Created by datayes on 15/9/18.
+//  Created by yun.shu on 16/9/13.
+//  Copyright © 2016年 datayes. All rights reserved.
 //
 
-#import "DYLoginViewController.h"
+#import "MOALoginViewController.h"
 #import "DYAuthorityLoginDataSource.h"
 #import "DYAuthorityManager.h"
 #import "UIImageView+DatayesAuthority.h"
@@ -39,7 +18,7 @@
 
 #import "DYAppConfigManager.h"
 #import "DYAuthTokenManager.h"
-//#import "DYResetPasswordStep1Controller.h"
+#import "DYResetPasswordStep1Controller.h"
 #import "DYProgressHUD.h"
 #import "Masonry.h"
 #import "RootViewController.h"
@@ -48,7 +27,8 @@
 
 NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的各个控制器名称
 
-@interface DYLoginViewController (){
+
+@interface MOALoginViewController (){
     bool isImageCheck;
 }
 
@@ -65,9 +45,10 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @property (nonatomic)BOOL isEyeopen;
+
 @end
 
-@implementation DYLoginViewController
+@implementation MOALoginViewController
 
 #pragma mark - View's Life Cycle
 - (void)viewDidLoad
@@ -81,10 +62,18 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 {
     
     [super viewWillAppear:animated];
-
+    
     [self.userNameTextField becomeFirstResponder];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -137,7 +126,7 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     [self.imageCheckTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.loginButton setTitle: @"登录" forState:UIControlStateNormal ];
     [self.forgetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal ];
-
+    
     self.loginButton.enabled = NO;
     
 }
@@ -224,53 +213,53 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     [userDefaults synchronize];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
-    RootViewController *rootVc = [[RootViewController alloc]init];
-//    [self.navigationController pushViewController:rootVc animated:YES];
-    [self presentViewController:rootVc animated:YES completion:nil];
+    RootViewController *rootVc = [storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
+    [self.navigationController pushViewController:rootVc animated:YES];
+    
     /*
-    __weak __typeof(self)weakSelf = self;
-    [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {
-        if (!error && data != nil) {
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            [userDefaults setObject:userName forKey:USER_NAME_KEY];
-            [userDefaults synchronize];
-            NSLog(@"登录中。。。");
-            [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
-            [weakSelf.loginButton setEnabled:NO];
-            //握手接口调用
-//            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
-//                
-//            }];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFY_KEY object:nil];
-            
-//            [weakSelf ifNewRegisterUser];
-        }
-        else
-        {
-            // CodeRequired
-            if (error.code == CodeRequired) {
-                [weakSelf hideOrShowImageCheckPart:YES];
-                if (captcha == nil || captcha.length <= 0) {
-                    // errcode = -130; errmsg = CODE_REQUIRED
-                    [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
-                    
-                }else {
-                    // errcode = -130; errmsg = INVALID_CODE
-                    [DYProgressHUD showToastInView:weakSelf.view message:@"验证码输入有误"durationTime:ToastDefaultDuration];
-                }
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf imageCheckButtnClicked:nil];
-                });
-                
-            }else {
-                [weakSelf hideOrShowImageCheckPart:YES];
-                [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf imageCheckButtnClicked:nil];
-                });
-            }
-        }
-    }];
+     __weak __typeof(self)weakSelf = self;
+     [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {
+     if (!error && data != nil) {
+     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+     [userDefaults setObject:userName forKey:USER_NAME_KEY];
+     [userDefaults synchronize];
+     NSLog(@"登录中。。。");
+     [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
+     [weakSelf.loginButton setEnabled:NO];
+     //握手接口调用
+     //            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
+     //
+     //            }];
+     //            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFY_KEY object:nil];
+     
+     //            [weakSelf ifNewRegisterUser];
+     }
+     else
+     {
+     // CodeRequired
+     if (error.code == CodeRequired) {
+     [weakSelf hideOrShowImageCheckPart:YES];
+     if (captcha == nil || captcha.length <= 0) {
+     // errcode = -130; errmsg = CODE_REQUIRED
+     [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
+     
+     }else {
+     // errcode = -130; errmsg = INVALID_CODE
+     [DYProgressHUD showToastInView:weakSelf.view message:@"验证码输入有误"durationTime:ToastDefaultDuration];
+     }
+     dispatch_async(dispatch_get_main_queue(), ^{
+     [weakSelf imageCheckButtnClicked:nil];
+     });
+     
+     }else {
+     [weakSelf hideOrShowImageCheckPart:YES];
+     [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
+     dispatch_async(dispatch_get_main_queue(), ^{
+     [weakSelf imageCheckButtnClicked:nil];
+     });
+     }
+     }
+     }];
      */
 }
 
@@ -282,9 +271,9 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
  */
 - (IBAction)forgetPasswordButtonClicked:(id)sender
 {
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"DYResetPasswordViewController" bundle:nil];
-//    DYResetPasswordStep1Controller* resetPwVC = [story instantiateViewControllerWithIdentifier:@"DYResetPasswordStep1Controller"];
-//     [self.navigationController pushViewController:resetPwVC animated:YES];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"DYResetPasswordViewController" bundle:nil];
+    DYResetPasswordStep1Controller* resetPwVC = [story instantiateViewControllerWithIdentifier:@"DYResetPasswordStep1Controller"];
+    [self.navigationController pushViewController:resetPwVC animated:YES];
 }
 
 
@@ -304,7 +293,7 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
         isImageCheck = YES;
         if (self.imageCheckTextField.text.length!=4)
             self.loginButton.enabled = NO;
-
+        
         [self.imageCheckRootView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@46);
         }];
@@ -342,49 +331,49 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 }
 
 /*
-- (void)ifNewRegisterUser
-{
-    if ([DYAuthTokenManager shareInstance].isLogined) {
-        WS(weakSelf);
-        [[DYDataSyncHelper shareInstance] checkDataVersionWithType:eSyncDataFavoriteChannels withResultBlock:^(id data, NSError *error) {
-            
-            if (error) {
+ - (void)ifNewRegisterUser
+ {
+ if ([DYAuthTokenManager shareInstance].isLogined) {
+ WS(weakSelf);
+ [[DYDataSyncHelper shareInstance] checkDataVersionWithType:eSyncDataFavoriteChannels withResultBlock:^(id data, NSError *error) {
  
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [weakSelf.navigationController popViewControllerAnimated:YES];
-                });
-                return ;
-            }
-            NSInteger version = [[DYDataSyncHelper shareInstance] getVersionFromArray:(NSArray *)data forSyncType:eSyncDataFavoriteChannels];
-            //本地无数据，且服务器端版本号为0，则是新用户，需要选择兴趣
-            if (version == 0) {
-                    //新用户，判断是否有选择兴趣
-//                    if (![DYAppConfigManager shareInstance].hasChooseIntersting) {
-//                        DYInterstingViewController *vc = [DYInterstingViewController quickInitInstance];
-//                        [self.navigationController pushViewController:vc animated:YES];
-//                    }else{
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [weakSelf.navigationController popViewControllerAnimated:YES];
-                });
-//                    }
-            }
-            else
-            {
-                [DYAppConfigManager shareInstance].hasChooseIntersting = YES;
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [weakSelf.navigationController popViewControllerAnimated:YES];
-                });
-            }
-        }];
-    }else{
-//        if (![DYAppConfigManager shareInstance].hasChooseIntersting) {
-//            DYInterstingViewController *vc = [DYInterstingViewController quickInitInstance];
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-    }
-}
-*/
+ if (error) {
+ 
+ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+ [weakSelf.navigationController popViewControllerAnimated:YES];
+ });
+ return ;
+ }
+ NSInteger version = [[DYDataSyncHelper shareInstance] getVersionFromArray:(NSArray *)data forSyncType:eSyncDataFavoriteChannels];
+ //本地无数据，且服务器端版本号为0，则是新用户，需要选择兴趣
+ if (version == 0) {
+ //新用户，判断是否有选择兴趣
+ //                    if (![DYAppConfigManager shareInstance].hasChooseIntersting) {
+ //                        DYInterstingViewController *vc = [DYInterstingViewController quickInitInstance];
+ //                        [self.navigationController pushViewController:vc animated:YES];
+ //                    }else{
+ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+ [weakSelf.navigationController popViewControllerAnimated:YES];
+ });
+ //                    }
+ }
+ else
+ {
+ [DYAppConfigManager shareInstance].hasChooseIntersting = YES;
+ 
+ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+ [weakSelf.navigationController popViewControllerAnimated:YES];
+ });
+ }
+ }];
+ }else{
+ //        if (![DYAppConfigManager shareInstance].hasChooseIntersting) {
+ //            DYInterstingViewController *vc = [DYInterstingViewController quickInitInstance];
+ //            [self.navigationController pushViewController:vc animated:YES];
+ //        }
+ }
+ }
+ */
 
 
 #pragma mark - UITextFieldDelegate functions
@@ -437,5 +426,6 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     
     return YES;
 }
+
 
 @end
