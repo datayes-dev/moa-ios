@@ -33,7 +33,8 @@
 #import "DYAuthorityRegisterDataSource.h"
 #import "DYAuthorityResponseHelper.h"
 //#import "NSString+Verify.h"
-//#import "DYMessageDefine.h"
+#import "DYTextField.h"
+#import "DYMessageDefine.h"
 #import "AppDelegate.h"
 #import "DYAuthorityResetPasswordDataSource.h"
 #import "DYProgressHUD.h"
@@ -49,9 +50,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *verCodeKeyLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *inputRootView;
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet DYTextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UIButton *checkCodeButton;
-@property (weak, nonatomic) IBOutlet UITextField *checkCodeTextField;
+@property (weak, nonatomic) IBOutlet DYTextField *checkCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextStepButton;
 @property (nonatomic, strong) DYAuthorityResetPasswordDataSource *dataSource;
 @property (nonatomic, strong) UIAlertView *alertView;
@@ -128,13 +129,13 @@
     [self.checkCodeButton setBackgroundImage:[loginbtn2selbg stretchableImageWithLeftCapWidth:4 topCapHeight:4] forState:UIControlStateHighlighted];//按下时背景颜色
     [self.checkCodeButton setBackgroundImage:[loginbtn2disbg stretchableImageWithLeftCapWidth:4 topCapHeight:4] forState:UIControlStateDisabled];
     
-//    self.phoneNumberTextField.maxCharaterNumber = kDYInputMobilePhoneNumMaxCount;
-//    self.checkCodeTextField.maxCharaterNumber  =kDYVerifyCodeMaxCount;
+    self.phoneNumberTextField.maxCharaterNumber = kDYInputMobilePhoneNumMaxCount;
+    self.checkCodeTextField.maxCharaterNumber  =kDYVerifyCodeMaxCount;
     [self.phoneNumberTextField addTarget:self action:@selector(textFieldChange1:) forControlEvents:UIControlEventEditingChanged];
     [self.checkCodeTextField addTarget:self action:@selector(textFieldChange1:) forControlEvents:UIControlEventEditingChanged];
     [self.nextStepButton setTitle:@"下一步" forState:UIControlStateNormal];
-    self.checkCodeTextField.placeholder = @"11位手机号";
-    self.phoneNumberTextField.placeholder = @"6位验证码";
+    self.checkCodeTextField.placeholder = @"6位验证码";
+    self.phoneNumberTextField.placeholder = @"11位手机号";
     self.phoneNumberTextField.keyboardType =UIKeyboardTypeNumberPad;
     self.checkCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
 }

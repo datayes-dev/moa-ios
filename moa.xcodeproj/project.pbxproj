@@ -12,6 +12,9 @@
 		0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0D1D87D6BA0087F84D /* DYResetPasswordViewController.storyboard */; };
 		0BC2BE151D87E0790087F84D /* MOALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE141D87E0790087F84D /* MOALoginViewController.m */; };
 		0BC2BE171D87E0D00087F84D /* MOALoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE161D87E0D00087F84D /* MOALoginViewController.storyboard */; };
+		0BC2BE211D87F3E60087F84D /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE1F1D87F3E60087F84D /* AlertView.m */; };
+		0BC2BE221D87F3E60087F84D /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE201D87F3E60087F84D /* AlertView.xib */; };
+		0BC2BE251D87F4E60087F84D /* DYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE241D87F4E60087F84D /* DYTextField.m */; };
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
 		425184681D87CCE800D94643 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184671D87CCE800D94643 /* ScanViewController.m */; };
 		4251846C1D87D1CB00D94643 /* MOANavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */; };
@@ -86,6 +89,12 @@
 		0BC2BE131D87E0790087F84D /* MOALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOALoginViewController.h; sourceTree = "<group>"; };
 		0BC2BE141D87E0790087F84D /* MOALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOALoginViewController.m; sourceTree = "<group>"; };
 		0BC2BE161D87E0D00087F84D /* MOALoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MOALoginViewController.storyboard; sourceTree = "<group>"; };
+		0BC2BE1D1D87F3A00087F84D /* DYMessageDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMessageDefine.h; sourceTree = "<group>"; };
+		0BC2BE1E1D87F3E60087F84D /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertView.h; path = "视图/Common/AlertView.h"; sourceTree = "<group>"; };
+		0BC2BE1F1D87F3E60087F84D /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertView.m; path = "视图/Common/AlertView.m"; sourceTree = "<group>"; };
+		0BC2BE201D87F3E60087F84D /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlertView.xib; path = "视图/Common/AlertView.xib"; sourceTree = "<group>"; };
+		0BC2BE231D87F4E60087F84D /* DYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTextField.h; sourceTree = "<group>"; };
+		0BC2BE241D87F4E60087F84D /* DYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTextField.m; sourceTree = "<group>"; };
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		425184661D87CCE800D94643 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		425184671D87CCE800D94643 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
@@ -277,6 +286,9 @@
 			children = (
 				4251846E1D87D27B00D94643 /* UIImage+Creation.h */,
 				4251846F1D87D27B00D94643 /* UIImage+Creation.m */,
+				0BC2BE1D1D87F3A00087F84D /* DYMessageDefine.h */,
+				0BC2BE231D87F4E60087F84D /* DYTextField.h */,
+				0BC2BE241D87F4E60087F84D /* DYTextField.m */,
 			);
 			name = "工具";
 			path = "控制器/工具";
@@ -479,6 +491,9 @@
 				7C8E25C31D879977001629A7 /* DYDataSourceErrorView.m */,
 				7C8E25C61D879977001629A7 /* PromptView.h */,
 				7C8E25C41D879977001629A7 /* PromptView.m */,
+				0BC2BE1E1D87F3E60087F84D /* AlertView.h */,
+				0BC2BE1F1D87F3E60087F84D /* AlertView.m */,
+				0BC2BE201D87F3E60087F84D /* AlertView.xib */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -610,6 +625,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC2BE221D87F3E60087F84D /* AlertView.xib in Resources */,
+
+				0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */,
 				425184771D87E93E00D94643 /* interfaceUri.plist in Resources */,
 				425184791D87F33C00D94643 /* appConfig.plist in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
@@ -715,6 +733,7 @@
 				7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */,
 				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
 				7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */,
+				0BC2BE251D87F4E60087F84D /* DYTextField.m in Sources */,
 				7C8E25761D8794DB001629A7 /* DYMutipartFormDataRequest.m in Sources */,
 				0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */,
 				7C8E256B1D8794DB001629A7 /* DYAuthTokenManager.m in Sources */,
@@ -722,6 +741,7 @@
 				7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */,
 				7C8E25901D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m in Sources */,
 				0BC2BE151D87E0790087F84D /* MOALoginViewController.m in Sources */,
+				0BC2BE211D87F3E60087F84D /* AlertView.m in Sources */,
 				7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */,
 				7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */,
 				7C8E25C71D879977001629A7 /* DYDataSourceErrorView.m in Sources */,

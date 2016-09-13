@@ -29,27 +29,28 @@
 
 #import "DYResetPasswordStep2Controller.h"
 #import "DYAuthorityRegisterDataSource.h"
-//#import "AlertView.h"
-//#import "DYMessageDefine.h"
+#import "DYTextField.h"
+#import "AlertView.h"
+#import "DYMessageDefine.h"
 //#import "NSString+Verify.h"
 #import "AppDelegate.h"
 //#import "LewPopupViewAnimationSpring.h"
 #import "DYAuthorityResetPasswordDataSource.h"
 #import "DYAuthTokenManager.h"
-//#import "DYLoginViewController.h"
+#import "MOALoginViewController.h"
 #import "DYAppearance.h"
 #import "DYProgressHUD.h"
 
 #define ToastDefaultDuration 1.0
 
-@interface DYResetPasswordStep2Controller ()<UIAlertViewDelegate>
+@interface DYResetPasswordStep2Controller ()<AlertViewDelegate>
 {
-    UIAlertView * alertView;
+    AlertView * alertView;
     __block int timeout; //倒计时时间
 }
 @property (weak, nonatomic) IBOutlet UIView *inputRootView;
 @property (weak, nonatomic) IBOutlet UILabel *pswKeyLabel;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet DYTextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *hideOrShowButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextStepButton;
 @property (strong, nonatomic) DYAuthorityResetPasswordDataSource *dataSource;
@@ -81,7 +82,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.passwordTextField.passwordText = YES;
+    self.passwordTextField.passwordText = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -135,7 +136,7 @@
                                                     ];
 
 
-//    self.passwordTextField.maxCharaterNumber = kDYLoginPswMaxCount;
+    self.passwordTextField.maxCharaterNumber = kDYLoginPswMaxCount;
     [self.passwordTextField addTarget:self action:@selector(textFieldChange) forControlEvents:UIControlEventEditingChanged];
     
 }
@@ -190,10 +191,10 @@
     [self.passwordTextField resignFirstResponder];
     NSString* password = [self.passwordTextField.text stringByTrimmingCharactersInSet:
                           [NSCharacterSet whitespaceCharacterSet]];
-//    if (password.length <kDYLoginPswMinCount) {
-//        [DYProgressHUD showToastInView:self.view message:@"密码长度过短" durationTime:ToastDefaultDuration];
-//        return;
-//    }
+    if (password.length <kDYLoginPswMinCount) {
+        [DYProgressHUD showToastInView:self.view message:@"密码长度过短" durationTime:ToastDefaultDuration];
+        return;
+    }
 //    else if (![password checkLoginPassword]){
 //        [DYProgressHUD showToastInView:self.view message:@"密码设置有误" durationTime:ToastDefaultDuration];
 //        return;
@@ -250,11 +251,10 @@
     dispatch_source_set_event_handler(_timer, ^{
         if(timeout<=0){ //倒计时结束，关闭
             dispatch_source_cancel(_timer);
-            //            dispatch_release(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
                 [weakSelf dismiss];
-//                [weakSelf popToRootVC];
+                [weakSelf popToRootVC];
             });
         }else{
             int seconds = timeout-1;
@@ -262,8 +262,8 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
-//                alertView.ok.titleLabel.text =strTime;
-//                [alertView.ok setTitle:strTime forState:UIControlStateNormal];
+                alertView.ok.titleLabel.text =strTime;
+                [alertView.ok setTitle:strTime forState:UIControlStateNormal];
                 
             });
             timeout--;
@@ -285,44 +285,41 @@
         
         alertView.delegate = self;
         if (![DYAuthTokenManager shareInstance].isLogined) {
-//            [alertView.tipDescLabel setText:@"您已经完成密码重置"];
+            [alertView.tipDescLabel setText:@"您已经完成密码重置"];
         }
-        //        customAlerView = [[[NSBundle mainBundle] loadNibNamed:@"AlertView" owner:self options:nil] lastObject];
     }
     return alertView;
 }
 - (void)showCleanAlert{
 //    [self lew_presentPopupView: [self customAlerView] animation:[LewPopupViewAnimationSpring new] dismissed:^{
-    
+//    
 //    }];
-    
-    
 }
 
 
-//- (void)popToRootVC
-//{
-//    if ([DYAuthTokenManager shareInstance].isLogined) {
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//    }
-//    else
-//    {
-//        UIViewController* loginVC = nil;
-//        for (UIViewController* vc in self.navigationController.viewControllers) {
-//            if ([vc isKindOfClass:[DYLoginViewController class]]) {
-//                loginVC = vc;
-//                break;
-//            }
-//        }
-//        
-//        if (loginVC != nil) {
-//            [self.navigationController popToViewController:loginVC animated:YES];
-//        }
-//        else {
-//            [self.navigationController popToRootViewControllerAnimated:YES];
-//        }
-//    }
-//}
+- (void)popToRootVC
+{
+    if ([DYAuthTokenManager shareInstance].isLogined) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else
+    {
+        UIViewController* loginVC = nil;
+        for (UIViewController* vc in self.navigationController.viewControllers) {
+            if ([vc isKindOfClass:[MOALoginViewController class]]) {
+                loginVC = vc;
+                break;
+            }
+        }
+        
+        if (loginVC != nil) {
+            [self.navigationController popToViewController:loginVC animated:YES];
+        }
+        else {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    }
+}
 
 - (void)dismiss
 {
