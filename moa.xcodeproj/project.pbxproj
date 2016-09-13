@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC2BDFE1D87A4FC0087F84D /* DYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BDFC1D87A4FC0087F84D /* DYLoginViewController.m */; };
+		0BC2BDFF1D87A4FC0087F84D /* DYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BDFD1D87A4FC0087F84D /* DYLoginViewController.xib */; };
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
@@ -67,6 +69,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BC2BDFB1D87A4FC0087F84D /* DYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoginViewController.h; sourceTree = "<group>"; };
+		0BC2BDFC1D87A4FC0087F84D /* DYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLoginViewController.m; sourceTree = "<group>"; };
+		0BC2BDFD1D87A4FC0087F84D /* DYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYLoginViewController.xib; sourceTree = "<group>"; };
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +204,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BC2BDFA1D87A4DF0087F84D /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				0BC2BDFB1D87A4FC0087F84D /* DYLoginViewController.h */,
+				0BC2BDFC1D87A4FC0087F84D /* DYLoginViewController.m */,
+				0BC2BDFD1D87A4FC0087F84D /* DYLoginViewController.xib */,
+			);
+			name = "登录";
+			sourceTree = "<group>";
+		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +432,7 @@
 				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
 				7C8E25E01D87A11B001629A7 /* Pay */,
+				0BC2BDFA1D87A4DF0087F84D /* 登录 */,
 			);
 			name = "控制器";
 			sourceTree = "<group>";
@@ -501,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC2BDFF1D87A4FC0087F84D /* DYLoginViewController.xib in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
@@ -603,6 +620,7 @@
 				7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */,
 				7C8E25901D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m in Sources */,
 				7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */,
+				0BC2BDFE1D87A4FC0087F84D /* DYLoginViewController.m in Sources */,
 				7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */,
 				7C8E25C71D879977001629A7 /* DYDataSourceErrorView.m in Sources */,
 				7C8E25B91D8794F4001629A7 /* DYNoticeInfoManager.m in Sources */,
