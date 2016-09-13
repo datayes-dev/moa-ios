@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
-		425184591D86AB3C00D94643 /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184581D86AB3C00D94643 /* PayInfoViewController.m */; };
-		4251845B1D86AB8700D94643 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4251845A1D86AB8700D94643 /* PayInfoViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -62,13 +60,14 @@
 		7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25D61D879B5C001629A7 /* DYCacheService.m */; };
 		7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25DB1D879C89001629A7 /* NSString+URL.m */; };
 		7C8E25DE1D879D4A001629A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */; };
+		7C8E25E31D87A12B001629A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25E11D87A12B001629A7 /* RootViewController.m */; };
+		7C8E25E71D87A136001629A7 /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25E51D87A136001629A7 /* PayInfoViewController.m */; };
+		7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */; };
+		7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25EC1D87A232001629A7 /* root.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		425184571D86AB3C00D94643 /* PayInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInfoViewController.h; sourceTree = "<group>"; };
-		425184581D86AB3C00D94643 /* PayInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInfoViewController.m; sourceTree = "<group>"; };
-		4251845A1D86AB8700D94643 /* PayInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayInfoViewController.xib; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +177,12 @@
 		7C8E25DA1D879C89001629A7 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URL.h"; path = "通讯接口/NSString+URL.h"; sourceTree = "<group>"; };
 		7C8E25DB1D879C89001629A7 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URL.m"; path = "通讯接口/NSString+URL.m"; sourceTree = "<group>"; };
 		7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7C8E25E11D87A12B001629A7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = "控制器/RootViewController.m"; sourceTree = "<group>"; };
+		7C8E25E21D87A12B001629A7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = "控制器/RootViewController.h"; sourceTree = "<group>"; };
+		7C8E25E41D87A136001629A7 /* PayInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayInfoViewController.h; path = "控制器/Pay/PayInfoViewController.h"; sourceTree = "<group>"; };
+		7C8E25E51D87A136001629A7 /* PayInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PayInfoViewController.m; path = "控制器/Pay/PayInfoViewController.m"; sourceTree = "<group>"; };
+		7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PayInfoViewController.xib; path = "控制器/Pay/PayInfoViewController.xib"; sourceTree = "<group>"; };
+		7C8E25ED1D87A232001629A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/root.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,19 +199,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		425184471D868F8A00D94643 /* 控制器 */ = {
-			isa = PBXGroup;
-			children = (
-				425184571D86AB3C00D94643 /* PayInfoViewController.h */,
-				425184581D86AB3C00D94643 /* PayInfoViewController.m */,
-				4251845A1D86AB8700D94643 /* PayInfoViewController.xib */,
-				7C8E22751D868818001629A7 /* RootViewController.h */,
-				7C8E22761D868818001629A7 /* RootViewController.m */,
-				7C8E22781D868818001629A7 /* root.storyboard */,
-			);
-			name = "控制器";
-			sourceTree = "<group>";
-		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +229,7 @@
 		7C8E226E1D868818001629A7 /* moa */ = {
 			isa = PBXGroup;
 			children = (
+				7C8E25DF1D87A111001629A7 /* 控制器 */,
 				7C8E25BE1D879905001629A7 /* 视图 */,
 				7C8E25331D8794BD001629A7 /* 通讯接口 */,
 				7C8E25321D8794B1001629A7 /* 数据 */,
@@ -244,6 +237,7 @@
 				7C8E22731D868818001629A7 /* AppDelegate.m */,
 				7C8E227B1D868818001629A7 /* Assets.xcassets */,
 				7C8E22801D868818001629A7 /* Info.plist */,
+				7C8E25EC1D87A232001629A7 /* root.storyboard */,
 				7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */,
 				7C8E226F1D868818001629A7 /* Supporting Files */,
 			);
@@ -417,6 +411,26 @@
 			name = DYCacheUtil;
 			sourceTree = "<group>";
 		};
+		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
+				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
+				7C8E25E01D87A11B001629A7 /* Pay */,
+			);
+			name = "控制器";
+			sourceTree = "<group>";
+		};
+		7C8E25E01D87A11B001629A7 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				7C8E25E41D87A136001629A7 /* PayInfoViewController.h */,
+				7C8E25E51D87A136001629A7 /* PayInfoViewController.m */,
+				7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */,
+			);
+			name = Pay;
+			sourceTree = "<group>";
+		};
 		DA6090B5A88B927F2EFF2E42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,8 +503,8 @@
 			files = (
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
-				7C8E227A1D868818001629A7 /* root.storyboard in Resources */,
-				4251845B1D86AB8700D94643 /* PayInfoViewController.xib in Resources */,
+				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
+				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +577,7 @@
 				7C8E25751D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m in Sources */,
 				7C8E25691D8794DB001629A7 /* DYErrorHelper.m in Sources */,
 				7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */,
+				7C8E25E31D87A12B001629A7 /* RootViewController.m in Sources */,
 				7C8E25BC1D8794F4001629A7 /* SEUtilities.m in Sources */,
 				7C8E256D1D8794DB001629A7 /* DYAppModuleItem.m in Sources */,
 				7C8E25C81D879977001629A7 /* PromptView.m in Sources */,
@@ -571,6 +586,7 @@
 				7C8E25711D8794DB001629A7 /* DYInterfaceInfo.m in Sources */,
 				7C8E22741D868818001629A7 /* AppDelegate.m in Sources */,
 				7C8E25961D8794EA001629A7 /* DYGetUserInfoDataSource.m in Sources */,
+				7C8E25E71D87A136001629A7 /* PayInfoViewController.m in Sources */,
 				7C8E25661D8794DB001629A7 /* DYInterfaceRequestHelper.m in Sources */,
 				7C8E256C1D8794DB001629A7 /* DYNotifiesRequest.m in Sources */,
 				7C8E25681D8794DB001629A7 /* DYCacheManager.m in Sources */,
@@ -597,7 +613,6 @@
 				7C8E25921D8794EA001629A7 /* DYAuthorityResponseHelper.m in Sources */,
 				7C8E25721D8794DB001629A7 /* DYInterfacePropertiesManager.m in Sources */,
 				7C8E25B51D8794F4001629A7 /* DYAppConfigManager.m in Sources */,
-				425184591D86AB3C00D94643 /* PayInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +625,14 @@
 				7C8E227E1D868818001629A7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7C8E25EC1D87A232001629A7 /* root.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C8E25ED1D87A232001629A7 /* Base */,
+			);
+			name = root.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
