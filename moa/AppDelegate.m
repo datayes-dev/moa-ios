@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DYLoginViewController.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -24,6 +23,7 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 //    DYLoginViewController *loginVC = [[DYLoginViewController alloc]init];
 //    self.window.rootViewController = loginVC;
 //    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

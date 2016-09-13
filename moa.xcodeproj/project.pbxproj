@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BC2BDFE1D87A4FC0087F84D /* DYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BDFC1D87A4FC0087F84D /* DYLoginViewController.m */; };
-		0BC2BDFF1D87A4FC0087F84D /* DYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BDFD1D87A4FC0087F84D /* DYLoginViewController.xib */; };
+		0BC2BE041D87CEB30087F84D /* DYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE021D87CEB30087F84D /* DYLoginViewController.m */; };
+		0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */; };
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
+		425184681D87CCE800D94643 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184671D87CCE800D94643 /* ScanViewController.m */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -69,10 +70,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BC2BDFB1D87A4FC0087F84D /* DYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoginViewController.h; sourceTree = "<group>"; };
-		0BC2BDFC1D87A4FC0087F84D /* DYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLoginViewController.m; sourceTree = "<group>"; };
-		0BC2BDFD1D87A4FC0087F84D /* DYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYLoginViewController.xib; sourceTree = "<group>"; };
+		0BC2BE011D87CEB30087F84D /* DYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoginViewController.h; sourceTree = "<group>"; };
+		0BC2BE021D87CEB30087F84D /* DYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLoginViewController.m; sourceTree = "<group>"; };
+		0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYLoginViewController.xib; sourceTree = "<group>"; };
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		425184661D87CCE800D94643 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		425184671D87CCE800D94643 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,14 +207,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BC2BDFA1D87A4DF0087F84D /* 登录 */ = {
+		0BC2BE001D87CEB30087F84D /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
-				0BC2BDFB1D87A4FC0087F84D /* DYLoginViewController.h */,
-				0BC2BDFC1D87A4FC0087F84D /* DYLoginViewController.m */,
-				0BC2BDFD1D87A4FC0087F84D /* DYLoginViewController.xib */,
+				0BC2BE011D87CEB30087F84D /* DYLoginViewController.h */,
+				0BC2BE021D87CEB30087F84D /* DYLoginViewController.m */,
+				0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */,
 			);
 			name = "登录";
+			path = "控制器/登录";
+			sourceTree = "<group>";
+		};
+		425184651D87CCE800D94643 /* 扫码 */ = {
+			isa = PBXGroup;
+			children = (
+				425184661D87CCE800D94643 /* ScanViewController.h */,
+				425184671D87CCE800D94643 /* ScanViewController.m */,
+			);
+			name = "扫码";
+			path = "控制器/扫码";
 			sourceTree = "<group>";
 		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
@@ -429,10 +443,11 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
-				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
+				0BC2BE001D87CEB30087F84D /* 登录 */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
+				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
+				425184651D87CCE800D94643 /* 扫码 */,
 				7C8E25E01D87A11B001629A7 /* Pay */,
-				0BC2BDFA1D87A4DF0087F84D /* 登录 */,
 			);
 			name = "控制器";
 			sourceTree = "<group>";
@@ -491,6 +506,7 @@
 				TargetAttributes = {
 					7C8E226B1D868818001629A7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 54LMN39WV7;
 					};
 				};
 			};
@@ -517,7 +533,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BC2BDFF1D87A4FC0087F84D /* DYLoginViewController.xib in Resources */,
+				0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
@@ -581,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C8E258F1D8794EA001629A7 /* DYAuthorityManager.m in Sources */,
+				425184681D87CCE800D94643 /* ScanViewController.m in Sources */,
 				7C8E25971D8794EA001629A7 /* UIButton+DatayesAuthority.m in Sources */,
 				7C8E25911D8794EA001629A7 /* DYAuthorityLoginDataSource.m in Sources */,
 				7C8E25771D8794DB001629A7 /* DYNetStatusManager.m in Sources */,
@@ -610,6 +627,7 @@
 				7C8E25931D8794EA001629A7 /* DYAuthorityDataSource.m in Sources */,
 				7C8E25981D8794EA001629A7 /* UIImageView+DatayesAuthority.m in Sources */,
 				7C8E257A1D8794DB001629A7 /* NSObject+Representation.m in Sources */,
+				0BC2BE041D87CEB30087F84D /* DYLoginViewController.m in Sources */,
 				7C8E256F1D8794DB001629A7 /* DYErrorHandlerBase.m in Sources */,
 				7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */,
 				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
@@ -620,7 +638,6 @@
 				7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */,
 				7C8E25901D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m in Sources */,
 				7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */,
-				0BC2BDFE1D87A4FC0087F84D /* DYLoginViewController.m in Sources */,
 				7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */,
 				7C8E25C71D879977001629A7 /* DYDataSourceErrorView.m in Sources */,
 				7C8E25B91D8794F4001629A7 /* DYNoticeInfoManager.m in Sources */,
@@ -743,6 +760,8 @@
 			baseConfigurationReference = 7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,6 +774,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -763,6 +783,8 @@
 			baseConfigurationReference = 7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -775,6 +797,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
