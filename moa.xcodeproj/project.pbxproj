@@ -610,7 +610,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */,
 				425184771D87E93E00D94643 /* interfaceUri.plist in Resources */,
 				425184791D87F33C00D94643 /* appConfig.plist in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,

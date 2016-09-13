@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MOANavigationViewController.h"
+#import "RootViewController.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -18,6 +20,14 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
+    RootViewController *rootVC = (RootViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
+    MOANavigationViewController *navigation = [[MOANavigationViewController alloc] initWithRootViewController:rootVC];
+    self.window.rootViewController = navigation;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [navigation moaNavBarStyle];
+
     return YES;
 }
 
