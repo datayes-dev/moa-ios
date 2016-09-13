@@ -1,0 +1,29 @@
+//
+//  IntelligenceResearchReport-Prefix.pch
+//  IntelligenceResearchReport
+//
+//  Created by datayes on 15/8/11.
+//  Copyright (c) 2015年 datayes. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CocoaLumberjack.h"
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+extern const DDLogLevel ddLogLevel;
+//#define BUILD_FOR_DEV
+//#define BUILD_FOR_QA
+//#define BUILD_FOR_STAGE
+#define BUILD_FOR_PRODUCT
+
+#endif

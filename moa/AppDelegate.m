@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+const DDLogLevel ddLogLevel = DDLogLevelAll;
+
 @interface AppDelegate ()
 
 @end
