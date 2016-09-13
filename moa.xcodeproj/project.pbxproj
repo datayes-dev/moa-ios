@@ -11,6 +11,8 @@
 		0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE031D87CEB30087F84D /* DYLoginViewController.xib */; };
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
 		425184681D87CCE800D94643 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184671D87CCE800D94643 /* ScanViewController.m */; };
+		4251846C1D87D1CB00D94643 /* MOANavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */; };
+		425184701D87D27B00D94643 /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846F1D87D27B00D94643 /* UIImage+Creation.m */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -76,6 +78,10 @@
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		425184661D87CCE800D94643 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		425184671D87CCE800D94643 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		4251846A1D87D1CB00D94643 /* MOANavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOANavigationViewController.h; sourceTree = "<group>"; };
+		4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOANavigationViewController.m; sourceTree = "<group>"; };
+		4251846E1D87D27B00D94643 /* UIImage+Creation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Creation.h"; sourceTree = "<group>"; };
+		4251846F1D87D27B00D94643 /* UIImage+Creation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Creation.m"; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +234,26 @@
 			path = "控制器/扫码";
 			sourceTree = "<group>";
 		};
+		425184691D87D1A200D94643 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4251846A1D87D1CB00D94643 /* MOANavigationViewController.h */,
+				4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */,
+			);
+			name = Root;
+			path = "控制器/Root";
+			sourceTree = "<group>";
+		};
+		4251846D1D87D27B00D94643 /* 工具 */ = {
+			isa = PBXGroup;
+			children = (
+				4251846E1D87D27B00D94643 /* UIImage+Creation.h */,
+				4251846F1D87D27B00D94643 /* UIImage+Creation.m */,
+			);
+			name = "工具";
+			path = "控制器/工具";
+			sourceTree = "<group>";
+		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +292,6 @@
 				7C8E22731D868818001629A7 /* AppDelegate.m */,
 				7C8E227B1D868818001629A7 /* Assets.xcassets */,
 				7C8E22801D868818001629A7 /* Info.plist */,
-				7C8E25EC1D87A232001629A7 /* root.storyboard */,
 				7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */,
 				7C8E226F1D868818001629A7 /* Supporting Files */,
 			);
@@ -443,9 +468,12 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
-				0BC2BE001D87CEB30087F84D /* 登录 */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
 				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
+				7C8E25EC1D87A232001629A7 /* root.storyboard */,
+				4251846D1D87D27B00D94643 /* 工具 */,
+				425184691D87D1A200D94643 /* Root */,
+				0BC2BE001D87CEB30087F84D /* 登录 */,
 				425184651D87CCE800D94643 /* 扫码 */,
 				7C8E25E01D87A11B001629A7 /* Pay */,
 			);
@@ -606,6 +634,7 @@
 				7C8E25701D8794DB001629A7 /* DYErrorHandlerHelper.m in Sources */,
 				7C8E25D01D879A4D001629A7 /* MBProgressHUD.m in Sources */,
 				7C8E25951D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m in Sources */,
+				4251846C1D87D1CB00D94643 /* MOANavigationViewController.m in Sources */,
 				7C8E25B21D8794F4001629A7 /* DYDataSourceBase.m in Sources */,
 				7C8E25741D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m in Sources */,
 				7C8E25751D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m in Sources */,
@@ -619,6 +648,7 @@
 				7C8E256E1D8794DB001629A7 /* DYAppPushDataSource.m in Sources */,
 				7C8E25711D8794DB001629A7 /* DYInterfaceInfo.m in Sources */,
 				7C8E22741D868818001629A7 /* AppDelegate.m in Sources */,
+				425184701D87D27B00D94643 /* UIImage+Creation.m in Sources */,
 				7C8E25961D8794EA001629A7 /* DYGetUserInfoDataSource.m in Sources */,
 				7C8E25E71D87A136001629A7 /* PayInfoViewController.m in Sources */,
 				7C8E25661D8794DB001629A7 /* DYInterfaceRequestHelper.m in Sources */,
