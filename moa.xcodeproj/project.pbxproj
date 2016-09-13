@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
+		425184641D87A92B00D94643 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184631D87A92B00D94643 /* ScanViewController.m */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -68,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		1519EB01F7CCA22839538B31 /* Pods_moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		425184621D87A92B00D94643 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		425184631D87A92B00D94643 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +202,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		425184611D87A90D00D94643 /* 扫码 */ = {
+			isa = PBXGroup;
+			children = (
+				425184621D87A92B00D94643 /* ScanViewController.h */,
+				425184631D87A92B00D94643 /* ScanViewController.m */,
+			);
+			name = "扫码";
+			sourceTree = "<group>";
+		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,8 +426,9 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
-				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
+				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
+				425184611D87A90D00D94643 /* 扫码 */,
 				7C8E25E01D87A11B001629A7 /* Pay */,
 			);
 			name = "控制器";
@@ -475,6 +488,7 @@
 				TargetAttributes = {
 					7C8E226B1D868818001629A7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 54LMN39WV7;
 					};
 				};
 			};
@@ -564,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C8E258F1D8794EA001629A7 /* DYAuthorityManager.m in Sources */,
+				425184641D87A92B00D94643 /* ScanViewController.m in Sources */,
 				7C8E25971D8794EA001629A7 /* UIButton+DatayesAuthority.m in Sources */,
 				7C8E25911D8794EA001629A7 /* DYAuthorityLoginDataSource.m in Sources */,
 				7C8E25771D8794DB001629A7 /* DYNetStatusManager.m in Sources */,
@@ -725,6 +740,8 @@
 			baseConfigurationReference = 7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,6 +754,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -745,6 +763,8 @@
 			baseConfigurationReference = 7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -757,6 +777,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
