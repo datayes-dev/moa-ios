@@ -13,6 +13,9 @@
 		425184681D87CCE800D94643 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184671D87CCE800D94643 /* ScanViewController.m */; };
 		4251846C1D87D1CB00D94643 /* MOANavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */; };
 		425184701D87D27B00D94643 /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846F1D87D27B00D94643 /* UIImage+Creation.m */; };
+		425184741D87DCE400D94643 /* MOAPayDataSourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */; };
+		425184771D87E93E00D94643 /* interfaceUri.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184761D87E93E00D94643 /* interfaceUri.plist */; };
+		425184791D87F33C00D94643 /* appConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184781D87F33C00D94643 /* appConfig.plist */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -82,6 +85,10 @@
 		4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOANavigationViewController.m; sourceTree = "<group>"; };
 		4251846E1D87D27B00D94643 /* UIImage+Creation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Creation.h"; sourceTree = "<group>"; };
 		4251846F1D87D27B00D94643 /* UIImage+Creation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Creation.m"; sourceTree = "<group>"; };
+		425184721D87DCE400D94643 /* MOAPayDataSourceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAPayDataSourceBase.h; sourceTree = "<group>"; };
+		425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAPayDataSourceBase.m; sourceTree = "<group>"; };
+		425184761D87E93E00D94643 /* interfaceUri.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = interfaceUri.plist; sourceTree = "<group>"; };
+		425184781D87F33C00D94643 /* appConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appConfig.plist; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +261,25 @@
 			path = "控制器/工具";
 			sourceTree = "<group>";
 		};
+		425184711D87DCC700D94643 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				425184721D87DCE400D94643 /* MOAPayDataSourceBase.h */,
+				425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */,
+			);
+			name = Pay;
+			path = "数据/Pay";
+			sourceTree = "<group>";
+		};
+		425184751D87E93E00D94643 /* 配置文件 */ = {
+			isa = PBXGroup;
+			children = (
+				425184781D87F33C00D94643 /* appConfig.plist */,
+				425184761D87E93E00D94643 /* interfaceUri.plist */,
+			);
+			path = "配置文件";
+			sourceTree = "<group>";
+		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +310,7 @@
 		7C8E226E1D868818001629A7 /* moa */ = {
 			isa = PBXGroup;
 			children = (
+				425184751D87E93E00D94643 /* 配置文件 */,
 				7C8E25DF1D87A111001629A7 /* 控制器 */,
 				7C8E25BE1D879905001629A7 /* 视图 */,
 				7C8E25331D8794BD001629A7 /* 通讯接口 */,
@@ -310,6 +337,7 @@
 		7C8E25321D8794B1001629A7 /* 数据 */ = {
 			isa = PBXGroup;
 			children = (
+				425184711D87DCC700D94643 /* Pay */,
 				7C8E25D11D879B4D001629A7 /* DYCacheUtil */,
 				7C8E25341D8794D1001629A7 /* Authority */,
 				7C8E259E1D8794F4001629A7 /* DatabaseDefine.h */,
@@ -562,6 +590,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC2BE051D87CEB30087F84D /* DYLoginViewController.xib in Resources */,
+				425184771D87E93E00D94643 /* interfaceUri.plist in Resources */,
+				425184791D87F33C00D94643 /* appConfig.plist in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
@@ -639,6 +669,7 @@
 				7C8E25741D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m in Sources */,
 				7C8E25751D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m in Sources */,
 				7C8E25691D8794DB001629A7 /* DYErrorHelper.m in Sources */,
+				425184741D87DCE400D94643 /* MOAPayDataSourceBase.m in Sources */,
 				7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */,
 				7C8E25E31D87A12B001629A7 /* RootViewController.m in Sources */,
 				7C8E25BC1D8794F4001629A7 /* SEUtilities.m in Sources */,
