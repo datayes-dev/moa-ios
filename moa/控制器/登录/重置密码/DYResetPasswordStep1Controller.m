@@ -134,8 +134,8 @@
     [self.phoneNumberTextField addTarget:self action:@selector(textFieldChange1:) forControlEvents:UIControlEventEditingChanged];
     [self.checkCodeTextField addTarget:self action:@selector(textFieldChange1:) forControlEvents:UIControlEventEditingChanged];
     [self.nextStepButton setTitle:@"下一步" forState:UIControlStateNormal];
-    self.checkCodeTextField.placeholder = @"11位手机号";
-    self.phoneNumberTextField.placeholder = @"6位验证码";
+    self.checkCodeTextField.placeholder = @"6位验证码";
+    self.phoneNumberTextField.placeholder = @"11位手机号";
     self.phoneNumberTextField.keyboardType =UIKeyboardTypeNumberPad;
     self.checkCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
 }
