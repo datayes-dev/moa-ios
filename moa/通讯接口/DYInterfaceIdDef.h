@@ -191,6 +191,11 @@ typedef NS_ENUM(NSInteger, EInterfaceId) {
     eDataCreateSlotWithIndic,                       // 创建slot卡片（单个）
     eDataDeleteSlots,                               // 删除slot卡片（单个or批量）
     eDataMoveSlot,                                  // 调整slot卡片顺序
+    
+    eDiningGetAllHotelsInfo = 1200,                 // 获取饭店信息
+    eDiningGetQRCodeWithPK,                         // 获取二维码
+    eDiningTradeRequest,                            // 发起交易
+    eDiningGetTradeList,                            // 获取交易流水
 };
 
 #endif /* DYInterfaceIdDef_h */
