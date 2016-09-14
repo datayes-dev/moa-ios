@@ -7,6 +7,7 @@
 //
 
 #import "MOAViewController.h"
+#import "MOATradeDetailViewController.h"
 
 
 @interface MOAViewController ()
@@ -19,10 +20,18 @@
 {
     [super viewDidLoad];
     [self addLeftButtonWithImage:[UIImage imageNamed:@"back"] hightLightImage:nil caption:nil];
+    [self addRightButtonWithImage:nil caption:@"消费记录" action:@selector(toTradeDetail)];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)toTradeDetail
+{
+    
+    MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

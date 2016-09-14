@@ -22,4 +22,7 @@
                   inHotel:(NSString*)pkId
               andMemoInfo:(NSString*)memoInfo
            andResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+- (void)getTradeListInfoWithResultBlock:(DYInterfaceResultBlock)resultBlock;
+
 @end

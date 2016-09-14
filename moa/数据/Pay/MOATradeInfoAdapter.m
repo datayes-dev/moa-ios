@@ -106,6 +106,35 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
     }];
 }
 
+- (void)getTradeListInfoWithResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    [self.datasource getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+        
+        if (error == nil && data != nil && [data isKindOfClass:[NSData class]]) {
+            
+            NSArray* tradeListInfoArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            for (NSDictionary* dic in tradeListInfoArray) {
+                
+                NSString* hotelId = dic[@"restaurant"];
+                NSDictionary* hotelDicInfo = [self getHotelInfo:hotelId];
+                NSString* hotelName = hotelDicInfo[@"name"];
+                
+                DYCellDataItem* item = [DYCellDataItem new];
+                item.titleText = hotelName;
+                item.detailText = [NSString stringWithFormat:@"于%@成功收到%@", dic[@"time_stamp"], dic[@"price"]];
+                
+                [self.cellDataArray insertObject:item atIndex:0];
+            }
+        }
+
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            resultBlock(self.cellDataArray,error);
+        });
+    }];
+}
 
 #pragma mark - Get Info
 - (NSDictionary *)getHotelInfo:(NSString *)hotelQRCode

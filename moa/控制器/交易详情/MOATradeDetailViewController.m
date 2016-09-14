@@ -7,31 +7,77 @@
 //
 
 #import "MOATradeDetailViewController.h"
+#import "MOATradeInfoAdapter.h"
 
-@interface MOATradeDetailViewController ()
-
+@interface MOATradeDetailViewController ()<UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) MOATradeInfoAdapter *adapter;
+@property (strong, nonatomic) NSArray *infoArray;
 @end
 
 @implementation MOATradeDetailViewController
 
+- (MOATradeInfoAdapter *)adapter
+{
+    
+    if (_adapter == nil) {
+        
+        _adapter = [MOATradeInfoAdapter shareInstance];
+    }
+    return _adapter;
+}
+
+- (NSArray *)infoArray
+{
+    
+    if (_infoArray == nil) {
+        
+        _infoArray = [NSArray array];
+    }
+    return _infoArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    WS(weakSelf);
+    
+    [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+        
+        weakSelf.infoArray = (NSArray *)data;
+        
+        [weakSelf.tableView reloadData];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Tableview Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return [self.infoArray count];
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TradeListInfo"];
+    
+    
+    if (indexPath.row < [self.infoArray count]) {
+        
+        DYCellDataItem *item = self.infoArray[indexPath.row];
+        
+        cell.textLabel.text = item.detailText;
+    }
+    
+    return cell;
+}
 
 @end
