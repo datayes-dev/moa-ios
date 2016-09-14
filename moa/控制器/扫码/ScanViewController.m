@@ -89,6 +89,8 @@
         
         PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:[NSBundle mainBundle]];
         
+        vc.hotelQRCode = object.stringValue;
+        
         [self.navigationController pushViewController:vc animated:YES];
         
     } else {

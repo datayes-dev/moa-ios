@@ -9,8 +9,10 @@
 #import "RootViewController.h"
 #import "ScanViewController.h"
 #import "MOANavigationViewController.h"
+#import "MOATradeInfoAdapter.h"
 
 @interface RootViewController ()
+@property (strong, nonatomic) MOATradeInfoAdapter *adapter;
 
 @end
 
@@ -19,6 +21,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[MOATradeInfoAdapter shareInstance] getAllHotelsInfo:^(id data, NSError *error) {
+        //
+    }];
 }
 
 
