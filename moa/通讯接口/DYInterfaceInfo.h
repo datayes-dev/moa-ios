@@ -58,6 +58,7 @@ typedef NS_ENUM(NSInteger, ENeedAuthInfoType) {
     eCMSNeedAutoInfo,           // cms需要认证的接口
     eAddMutipartData,           // 为笔记增加图片
     eDining,                    // 吃饭付款接口
+    eDining2,                   // 吃饭付款接口
 };
 
 #define MUTIPART_FORM_DATA_MIME_TYPE_KEY        @"mutipart_form_data_mime_type_key"

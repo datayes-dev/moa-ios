@@ -87,6 +87,8 @@ typedef void (^DYInterfacehasMoreDataBlock)(id data,BOOL hasMoreBool, NSError *e
  */
 @property (nonatomic, strong)DYInterfaceRequesterBase* diningRequest;
 
+@property (nonatomic, strong)DYInterfaceRequesterBase* diningRequest2;
+
 /**
  *	@brief	获取单例对象
  *

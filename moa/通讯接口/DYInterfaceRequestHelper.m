@@ -297,6 +297,7 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
     self.cmsNeedAuthInfoRequest = [[DYJsonRequestWithJsonResponseRequest alloc] initWithUrl:cmsUrl];
     self.addMutipartFormDataRequest = [[DYMutipartFormDataRequest alloc] initWithUrl:basicAuthUrl];
     self.diningRequest = [[DYJsonRequestWithTextHtmlResponseRequest alloc] initWithUrl:basicAuthUrl];
+    self.diningRequest2 = [[DYJsonRequestWithJsonResponseRequest alloc] initWithUrl:basicAuthUrl];
 }
 
 - (void)sendRequestWithMsgId:(EInterfaceId)msgId
@@ -363,6 +364,9 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
                 break;
             case eDining:
                 dealRequester = self.diningRequest;
+                break;
+            case eDining2:
+                dealRequester = self.diningRequest2;
                 break;
             default:
                 break;
