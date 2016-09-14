@@ -58,6 +58,9 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
 //        resultBlock(self.hotelsArray, nil);
 //        return;
 //    }
+    WS(weakSelf);
+    
+    self.hotelsArray = nil;
     
     [self.datasource getAllHotelsWithResultBlock:^(id data, NSError *error) {
         
@@ -67,34 +70,30 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
             
             if (hotelInfoArray != nil && [hotelInfoArray isKindOfClass:[NSArray class]]) {
                 
-                for (NSDictionary* dic in hotelInfoArray) {
-                    DYCellDataItem* item = [DYCellDataItem new];
-                    item.titleText = dic[@"name"];
-                    item.detailText = dic[@"address"];
-                    
-                    [self.cellDataArray insertObject:item atIndex:0];
-                }
-                
-                DYCellDataItem* item = [DYCellDataItem new];
-                item.titleText = @"成功获取到以下餐馆";
-                item.detailText = @"--->下一步请扫餐馆的二维码";
-                [self.cellDataArray insertObject:item atIndex:0];
-                
-                self.hotelsArray = hotelInfoArray;
+                weakSelf.hotelsArray = hotelInfoArray;
             }
         } else {
             
-            DYCellDataItem* item = [DYCellDataItem new];
-            item.titleText = @"获取餐馆列表失败，请稍候再试";
-            item.detailText = @"--->左上角按钮退出该页面再进来";
-            [self.cellDataArray insertObject:item atIndex:0];
         }
         
-        resultBlock(self.hotelsArray, error);
+        resultBlock(weakSelf.hotelsArray, error);
     }];
 }
 
-- (void)
+- (void)makeDealWithPrice:(NSString *)price
+                  inHotel:(NSString*)pkId
+              andMemoInfo:(NSString*)memoInfo
+           andResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    [self.datasource diningTradeWithPrice:[price floatValue] inHotel:pkId andMemoInfo:memoInfo andResultBlock:^(id data, NSError *error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            resultBlock(data,error);
+        });
+    }];
+
+}
 
 - (void)getHotelInfoWith:(NSString *)hotelQRCode withBlock:(DYInterfaceResultBlock)resultBlock
 {
