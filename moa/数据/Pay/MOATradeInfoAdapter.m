@@ -53,10 +53,11 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
 #pragma mark - Network
 - (void)getAllHotelsInfo:(DYInterfaceResultBlock)resultBlock
 {
-    if ([self.hotelsArray count] > 0) {
-        
-        resultBlock(self.hotelsArray, nil);
-    }
+//    if ([self.hotelsArray count] > 0) {
+//        
+//        resultBlock(self.hotelsArray, nil);
+//        return;
+//    }
     
     [self.datasource getAllHotelsWithResultBlock:^(id data, NSError *error) {
         
@@ -92,6 +93,8 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
         resultBlock(self.hotelsArray, error);
     }];
 }
+
+- (void)
 
 - (void)getHotelInfoWith:(NSString *)hotelQRCode withBlock:(DYInterfaceResultBlock)resultBlock
 {
