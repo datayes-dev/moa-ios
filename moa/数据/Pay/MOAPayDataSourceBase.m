@@ -9,6 +9,8 @@
 #import "MOAPayDataSourceBase.h"
 #import "DYInterfaceIdDef.h"
 
+#define kExtraAddedSubUrlKey @"extraAddedSubUrl"
+
 static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
 
 @implementation MOAPayDataSourceBase
@@ -36,8 +38,34 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
                    }];
 }
 
+- (void)getHotelsWithID:(NSString *)hotelID andResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    if ([hotelID length] <= 0) {
+        
+        return;
+    }
+    
+    
+    [self sendRequestWithMsgId:eDiningGetAllHotelsInfo
+                    parameters:@{kExtraAddedSubUrlKey:hotelID}
+                 canUsingCache:NO
+                   forceReload:NO
+                   resultBlock:^(id data, NSError *error) {
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           resultBlock(data,error);
+                       });
+                   }];
+}
+
 - (void)getHotelQRCodeWithId:(NSString*)pkId andResultBlock:(DYInterfaceResultBlock)resultBlock
 {
+    
+    if ([pkId length] == 0) {
+        
+        return;
+    }
+    
     [self sendRequestWithMsgId:eDiningGetQRCodeWithPK
                     parameters:@{kExtraAddedSubUrlKey:pkId}
                  canUsingCache:NO

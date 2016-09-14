@@ -24,6 +24,15 @@
  */
 - (void)getAllHotelsWithResultBlock:(DYInterfaceResultBlock)resultBlock;
 
+
+/**
+ *	@brief	 获取饭店详情
+ *
+ *	@param 	hotelID 	饭店ID
+ *	@param 	resultBlock 	结果回调
+ */
+- (void)getHotelsWithID:(NSString *)hotelID andResultBlock:(DYInterfaceResultBlock)resultBlock;
+
 /**
  *	@brief	获取饭店二维码
  *
