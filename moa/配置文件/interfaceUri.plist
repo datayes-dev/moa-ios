@@ -2937,7 +2937,7 @@
 					<key>parseClass</key>
 					<string></string>
 					<key>comment</key>
-					<string>获得所有饭店</string>
+					<string> 获取饭店详情</string>
 					<key>allowMutableRequest</key>
 					<false/>
 					<key>needAuthInfoType</key>
@@ -2981,7 +2981,7 @@
 					<key>parseClass</key>
 					<string></string>
 					<key>comment</key>
-					<string>交易</string>
+					<string>执行交易</string>
 					<key>allowMutableRequest</key>
 					<false/>
 					<key>needAuthInfoType</key>
@@ -2995,7 +2995,7 @@
 					<key>basicUrl</key>
 					<string></string>
 					<key>subUrl</key>
-					<string>meal_ticket/transaction</string>
+					<string>meal_ticket/transaction-user</string>
 					<key>requestType</key>
 					<integer>0</integer>
 					<key>responseBodyTiedType</key>
