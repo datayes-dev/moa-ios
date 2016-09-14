@@ -30,11 +30,8 @@
 #import "DYResetPasswordStep2Controller.h"
 #import "DYAuthorityRegisterDataSource.h"
 #import "DYTextField.h"
-#import "AlertView.h"
 #import "DYMessageDefine.h"
-//#import "NSString+Verify.h"
 #import "AppDelegate.h"
-//#import "LewPopupViewAnimationSpring.h"
 #import "DYAuthorityResetPasswordDataSource.h"
 #import "DYAuthTokenManager.h"
 #import "MOALoginViewController.h"
@@ -43,18 +40,14 @@
 
 #define ToastDefaultDuration 1.0
 
-@interface DYResetPasswordStep2Controller ()<AlertViewDelegate>
-{
-    AlertView * alertView;
-    __block int timeout; //倒计时时间
-}
+@interface DYResetPasswordStep2Controller ()
+
 @property (weak, nonatomic) IBOutlet UIView *inputRootView;
 @property (weak, nonatomic) IBOutlet UILabel *pswKeyLabel;
 @property (weak, nonatomic) IBOutlet DYTextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *hideOrShowButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextStepButton;
 @property (strong, nonatomic) DYAuthorityResetPasswordDataSource *dataSource;
-@property (strong, nonatomic) UIAlertView* alert;
 
 @property (nonatomic)BOOL isEyeopen;
 
@@ -69,13 +62,6 @@
         _dataSource = [[DYAuthorityResetPasswordDataSource alloc] init];
     }
     return _dataSource;
-}
-
-- (UIAlertView *)alert{
-    if (_alert == nil) {
-        _alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"提示", nil) message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    }
-    return _alert;
 }
 
 #pragma mark --Controller
@@ -195,10 +181,6 @@
         [DYProgressHUD showToastInView:self.view message:@"密码长度过短" durationTime:ToastDefaultDuration];
         return;
     }
-//    else if (![password checkLoginPassword]){
-//        [DYProgressHUD showToastInView:self.view message:@"密码设置有误" durationTime:ToastDefaultDuration];
-//        return;
-//    }
     
     // check check code here
     WS(weakSelf);
@@ -208,7 +190,6 @@
             switch (code) {
                 case 0:
                     [weakSelf showCleanAlert];
-                    [weakSelf gettime];
                     [weakSelf.passwordTextField resignFirstResponder];
                     break;
                     
@@ -240,63 +221,17 @@
     }];
 }
 
--(void) gettime{
-    if(timeout<=0)
-        timeout=6;
-    dispatch_queue_t  queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-    WS(weakSelf);
-    dispatch_source_set_event_handler(_timer, ^{
-        if(timeout<=0){ //倒计时结束，关闭
-            dispatch_source_cancel(_timer);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //设置界面的按钮显示 根据自己需求设置
-                [weakSelf dismiss];
-                [weakSelf popToRootVC];
-            });
-        }else{
-            int seconds = timeout-1;
-            NSString *strTime = [NSString stringWithFormat:@"%d秒", seconds];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //设置界面的按钮显示 根据自己需求设置
-                alertView.ok.titleLabel.text =strTime;
-                [alertView.ok setTitle:strTime forState:UIControlStateNormal];
-                
-            });
-            timeout--;
-            
-        }
-    });
-    dispatch_resume(_timer);
-    
-}
-
-- (UIView *)customAlerView{
-    if (alertView == nil) {
-        NSBundle *bundle = [NSBundle mainBundle];
-        // 由于没有用到xib文件中的Owner，所以这里的owner传nil即可
-        NSArray *objs = [bundle loadNibNamed:@"AlertView" owner:nil options:nil];
-        alertView = [objs lastObject];
-        alertView.layer.cornerRadius=5.0f;
-        alertView.layer.masksToBounds=YES;
-        
-        alertView.delegate = self;
-        if (![DYAuthTokenManager shareInstance].isLogined) {
-            [alertView.tipDescLabel setText:@"您已经完成密码重置"];
-        }
-    }
-    return alertView;
-}
 - (void)showCleanAlert{
-    [DYProgressHUD showToastInView:self.view message:@"修改成功"];
-//    [self lew_presentPopupView: [self customAlerView] animation:[LewPopupViewAnimationSpring new] dismissed:^{
-//    
-//    }];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:@"您已经完成密码重置" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self popToRootVC];
+    }
+}
 
 - (void)popToRootVC
 {
@@ -322,11 +257,6 @@
     }
 }
 
-- (void)dismiss
-{
-    
-//    [self lew_dismissPopupView];
-}
 
 #pragma mark - tableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
