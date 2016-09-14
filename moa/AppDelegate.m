@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MOANavigationViewController.h"
 #import "RootViewController.h"
+#import "DYLogFormatter.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -20,7 +21,7 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self setupDDLog];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
     RootViewController *rootVC = (RootViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
     MOANavigationViewController *navigation = [[MOANavigationViewController alloc] initWithRootViewController:rootVC];
@@ -51,6 +52,35 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - local functions
+
+- (void)setupDDLog
+{
+    
+    //log formatter
+    DYLogFormatter *formatter = [[DYLogFormatter alloc] init];
+    
+    //输出到console
+    [DDTTYLogger sharedInstance].logFormatter = formatter;
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    // Initialize File Logger
+    _fileLogger = [[DDFileLogger alloc] init];
+    _fileLogger.logFormatter = formatter;
+    
+    // Configure File Logger
+    [_fileLogger setMaximumFileSize:(1024 * 1024)];
+    [_fileLogger setRollingFrequency:(3600.0 * 24.0)];
+    [[_fileLogger logFileManager] setMaximumNumberOfLogFiles:1];
+    [DDLog addLogger:_fileLogger];
+    
+}
+
+- (NSString *)getFileLoggerPath
+{
+    return [[_fileLogger currentLogFileInfo] filePath];
 }
 
 @end
