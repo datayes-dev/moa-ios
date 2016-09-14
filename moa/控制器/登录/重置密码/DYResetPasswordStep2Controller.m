@@ -158,7 +158,7 @@
         }
     }
     
-    if (self.passwordTextField.text.length >=6) {
+    if (self.passwordTextField.text.length >=8) {
         [self.nextStepButton setEnabled:YES];
     }
     else{
@@ -291,6 +291,7 @@
     return alertView;
 }
 - (void)showCleanAlert{
+    [DYProgressHUD showToastInView:self.view message:@"修改成功"];
 //    [self lew_presentPopupView: [self customAlerView] animation:[LewPopupViewAnimationSpring new] dismissed:^{
 //    
 //    }];
