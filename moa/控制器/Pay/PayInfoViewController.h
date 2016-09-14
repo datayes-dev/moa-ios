@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOAViewController.h"
 
-@interface PayInfoViewController : UIViewController
+@interface PayInfoViewController : MOAViewController
 
 @end

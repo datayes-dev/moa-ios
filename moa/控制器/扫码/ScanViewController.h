@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOAViewController.h"
 
-@interface ScanViewController : UIViewController
+@interface ScanViewController : MOAViewController
 
 @end
