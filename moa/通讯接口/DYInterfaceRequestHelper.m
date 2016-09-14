@@ -1,23 +1,23 @@
-/** 
+/**
  * 通联数据机密
  * --------------------------------------------------------------------
  * 通联数据股份公司版权所有 © 2013-2016
- * 
+ *
  * 注意：本文所载所有信息均属于通联数据股份公司资产。本文所包含的知识和技术概念均属于
  * 通联数据产权，并可能由中国、美国和其他国家专利或申请中的专利所覆盖，并受商业秘密或
  * 版权法保护。
  * 除非事先获得通联数据股份公司书面许可，严禁传播文中信息或复制本材料。
- * 
+ *
  * DataYes CONFIDENTIAL
  * --------------------------------------------------------------------
  * Copyright © 2013-2016 DataYes, All Rights Reserved.
- * 
- * NOTICE: All information contained herein is the property of DataYes 
- * Incorporated. The intellectual and technical concepts contained herein are 
- * proprietary to DataYes Incorporated, and may be covered by China, U.S. and 
- * Other Countries Patents, patents in process, and are protected by trade 
- * secret or copyright law. 
- * Dissemination of this information or reproduction of this material is 
+ *
+ * NOTICE: All information contained herein is the property of DataYes
+ * Incorporated. The intellectual and technical concepts contained herein are
+ * proprietary to DataYes Incorporated, and may be covered by China, U.S. and
+ * Other Countries Patents, patents in process, and are protected by trade
+ * secret or copyright law.
+ * Dissemination of this information or reproduction of this material is
  * strictly forbidden unless prior written permission is obtained from DataYes.
  */
 //
@@ -32,6 +32,7 @@
 #import "DYJsonRequestWithGBufResponseRequest.h"
 #import "DYJsonRequestWithJsonResponseRequest.h"
 #import "DYXFormRequestWithJsonResponseRequest.h"
+#import "DYJsonRequestWithTextHtmlResponseRequest.h"
 #import "DYNotifiesRequest.h"
 #import "DYErrorHandlerHelper.h"
 #import "DYAuthTokenManager.h"
@@ -40,8 +41,8 @@
 #import "DYInterfaceReqeustItem.h"
 #import "DYMutipartFormDataRequest.h"
 #import "DYAppConfigManager.h"
-#import "AFNetworking.h"
 #import "DYProgressHUD.h"
+#import "AFNetworking.h"
 #import "DYCacheService.h"
 #import "PromptView.h"
 
@@ -91,18 +92,18 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
         default:
             break;
     }
-//#ifdef BUILD_FOR_DEV
-//    return [DYInterfacePropertiesManager shareInstance].devBaseUrl;
-//#endif
-//#ifdef BUILD_FOR_QA
-//    return [DYInterfacePropertiesManager shareInstance].qaBaseUrl;
-//#endif
-//#ifdef BUILD_FOR_STAGE
-//    return [DYInterfacePropertiesManager shareInstance].stageBaseUrl;
-//#endif
-//#ifdef BUILD_FOR_PRODUCT
-//    return [DYInterfacePropertiesManager shareInstance].productBaseUrl;
-//#endif
+    //#ifdef BUILD_FOR_DEV
+    //    return [DYInterfacePropertiesManager shareInstance].devBaseUrl;
+    //#endif
+    //#ifdef BUILD_FOR_QA
+    //    return [DYInterfacePropertiesManager shareInstance].qaBaseUrl;
+    //#endif
+    //#ifdef BUILD_FOR_STAGE
+    //    return [DYInterfacePropertiesManager shareInstance].stageBaseUrl;
+    //#endif
+    //#ifdef BUILD_FOR_PRODUCT
+    //    return [DYInterfacePropertiesManager shareInstance].productBaseUrl;
+    //#endif
 }
 
 + (NSString*)authInterfaceBasicUrl
@@ -131,18 +132,18 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
         default:
             break;
     }
-//#ifdef BUILD_FOR_DEV
-//    return [DYInterfacePropertiesManager shareInstance].qaAuthorityUrl;
-//#endif
-//#ifdef BUILD_FOR_QA
-//    return [DYInterfacePropertiesManager shareInstance].qaAuthorityUrl;
-//#endif
-//#ifdef BUILD_FOR_STAGE
-//    return [DYInterfacePropertiesManager shareInstance].stageAuthorityUrl;
-//#endif
-//#ifdef BUILD_FOR_PRODUCT
-//    return [DYInterfacePropertiesManager shareInstance].productAuthorityUrl;
-//#endif
+    //#ifdef BUILD_FOR_DEV
+    //    return [DYInterfacePropertiesManager shareInstance].qaAuthorityUrl;
+    //#endif
+    //#ifdef BUILD_FOR_QA
+    //    return [DYInterfacePropertiesManager shareInstance].qaAuthorityUrl;
+    //#endif
+    //#ifdef BUILD_FOR_STAGE
+    //    return [DYInterfacePropertiesManager shareInstance].stageAuthorityUrl;
+    //#endif
+    //#ifdef BUILD_FOR_PRODUCT
+    //    return [DYInterfacePropertiesManager shareInstance].productAuthorityUrl;
+    //#endif
 }
 
 + (NSString*)notifyUrl
@@ -171,18 +172,18 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
         default:
             break;
     }
-//#ifdef BUILD_FOR_DEV
-//    return [DYInterfacePropertiesManager shareInstance].qaNotifyUrl;
-//#endif
-//#ifdef BUILD_FOR_QA
-//    return [DYInterfacePropertiesManager shareInstance].qaNotifyUrl;
-//#endif
-//#ifdef BUILD_FOR_STAGE
-//    return [DYInterfacePropertiesManager shareInstance].stageNotifyUrl;
-//#endif
-//#ifdef BUILD_FOR_PRODUCT
-//    return [DYInterfacePropertiesManager shareInstance].productNotifyUrl;
-//#endif
+    //#ifdef BUILD_FOR_DEV
+    //    return [DYInterfacePropertiesManager shareInstance].qaNotifyUrl;
+    //#endif
+    //#ifdef BUILD_FOR_QA
+    //    return [DYInterfacePropertiesManager shareInstance].qaNotifyUrl;
+    //#endif
+    //#ifdef BUILD_FOR_STAGE
+    //    return [DYInterfacePropertiesManager shareInstance].stageNotifyUrl;
+    //#endif
+    //#ifdef BUILD_FOR_PRODUCT
+    //    return [DYInterfacePropertiesManager shareInstance].productNotifyUrl;
+    //#endif
 }
 
 
@@ -212,19 +213,19 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
         default:
             break;
     }
-//#ifdef BUILD_FOR_DEV
-//    return [DYInterfacePropertiesManager shareInstance].devAppPushUrl;
-//#endif
-//#ifdef BUILD_FOR_QA
-//    return [DYInterfacePropertiesManager shareInstance].qaAppPushUrl;
-//#endif
-//#ifdef BUILD_FOR_STAGE
-//    return [DYInterfacePropertiesManager shareInstance].stageAppPushUrl;
-//#endif
-//#ifdef BUILD_FOR_PRODUCT
-//    return [DYInterfacePropertiesManager shareInstance].productAppPushUrl;
-//#endif
-
+    //#ifdef BUILD_FOR_DEV
+    //    return [DYInterfacePropertiesManager shareInstance].devAppPushUrl;
+    //#endif
+    //#ifdef BUILD_FOR_QA
+    //    return [DYInterfacePropertiesManager shareInstance].qaAppPushUrl;
+    //#endif
+    //#ifdef BUILD_FOR_STAGE
+    //    return [DYInterfacePropertiesManager shareInstance].stageAppPushUrl;
+    //#endif
+    //#ifdef BUILD_FOR_PRODUCT
+    //    return [DYInterfacePropertiesManager shareInstance].productAppPushUrl;
+    //#endif
+    
 }
 
 + (NSString*)cmsUrl
@@ -254,20 +255,19 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
             break;
     }
     
-//#ifdef BUILD_FOR_DEV
-//    return [DYInterfacePropertiesManager shareInstance].devCMSUrl;
-//#endif
-//#ifdef BUILD_FOR_QA
-//    return [DYInterfacePropertiesManager shareInstance].qaCMSUrl;
-//#endif
-//#ifdef BUILD_FOR_STAGE
-//    return [DYInterfacePropertiesManager shareInstance].stageCMSUrl;
-//#endif
-//#ifdef BUILD_FOR_PRODUCT
-//    return [DYInterfacePropertiesManager shareInstance].productCMSUrl;
-//#endif
+    //#ifdef BUILD_FOR_DEV
+    //    return [DYInterfacePropertiesManager shareInstance].devCMSUrl;
+    //#endif
+    //#ifdef BUILD_FOR_QA
+    //    return [DYInterfacePropertiesManager shareInstance].qaCMSUrl;
+    //#endif
+    //#ifdef BUILD_FOR_STAGE
+    //    return [DYInterfacePropertiesManager shareInstance].stageCMSUrl;
+    //#endif
+    //#ifdef BUILD_FOR_PRODUCT
+    //    return [DYInterfacePropertiesManager shareInstance].productCMSUrl;
+    //#endif
 }
-
 
 - (instancetype)init
 {
@@ -286,7 +286,7 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
     NSString* notifyUrl = [DYInterfaceRequestHelper notifyUrl];
     NSString* appPushBaseUrl = [DYInterfaceRequestHelper appPushUrl];
     NSString* cmsUrl = [DYInterfaceRequestHelper cmsUrl];
-
+    
     self.dataInfoRequest = [[DYJsonRequestWithGBufResponseRequest alloc] initWithUrl:basicUrl];
     self.dataInfoWithAuthParamsRequest = [[DYJsonRequestWithGBufResponseRequest alloc] initWithUrl:basicUrl];
     self.authInfoRequest = [[DYXFormRequestWithJsonResponseRequest alloc] initWithUrl:basicAuthUrl];
@@ -296,6 +296,7 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
     self.cmsRequest = [[DYJsonRequestWithJsonResponseRequest alloc] initWithUrl:cmsUrl];
     self.cmsNeedAuthInfoRequest = [[DYJsonRequestWithJsonResponseRequest alloc] initWithUrl:cmsUrl];
     self.addMutipartFormDataRequest = [[DYMutipartFormDataRequest alloc] initWithUrl:basicAuthUrl];
+    self.diningRequest = [[DYJsonRequestWithTextHtmlResponseRequest alloc] initWithUrl:basicAuthUrl];
 }
 
 - (void)sendRequestWithMsgId:(EInterfaceId)msgId
@@ -314,7 +315,7 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
             [PromptView showWithPrompt:@"网络暂时无法访问"];
             saveToCacheWithType(CK_ShowNoNetWorkFlag, @YES, JMDataTypeEnumObject);
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 3.0f* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            saveToCacheWithType(CK_ShowNoNetWorkFlag, @NO, JMDataTypeEnumObject);
+                saveToCacheWithType(CK_ShowNoNetWorkFlag, @NO, JMDataTypeEnumObject);
             });
         }
         resultBlock(nil, [NSError errorWithDomain:kNetWorkingErrorDomain code:NetAccessError userInfo:nil]);
@@ -330,13 +331,13 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
                 break;
             case eNeedAuthInfoIfLogin:
             {
-//                if ([DYAuthTokenManager shareInstance].isLogined) {
-                    dealRequester = self.dataInfoWithAuthParamsRequest;
-//                }
-//                else
-//                {
-//                    dealRequester = self.dataInfoRequest;
-//                }
+                //                if ([DYAuthTokenManager shareInstance].isLogined) {
+                dealRequester = self.dataInfoWithAuthParamsRequest;
+                //                }
+                //                else
+                //                {
+                //                    dealRequester = self.dataInfoRequest;
+                //                }
             }
                 break;
             case eNeedAuthInfo:
@@ -360,24 +361,12 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
             case eAddMutipartData:
                 dealRequester = self.addMutipartFormDataRequest;
                 break;
-             default:
+            case eDining:
+                dealRequester = self.diningRequest;
+                break;
+            default:
                 break;
         }
-        
-#if DEBUG
-        NSInteger count = 0;
-        count += [[self.dataInfoRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.dataInfoWithAuthParamsRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.authInfoRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.accessRefreshRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.notifyRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.appPushRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.cmsRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.cmsNeedAuthInfoRequest.requestOperationManager.operationQueue operations] count];
-        count += [[self.addMutipartFormDataRequest.requestOperationManager.operationQueue operations] count];
-        
-        DDLogDebug(@"pcyan-tag 当前一共有%ld个活着的请求", count);
-#endif
         
         if (dealRequester != nil) {
             [dealRequester sendRequestWithMsgId:msgId parameters:params canUsingCache:usingCacheFlag forceReload:reloadFlag resultBlock:^(AFHTTPRequestOperation *operation, id data, NSError *error) {

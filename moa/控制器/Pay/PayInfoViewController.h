@@ -11,4 +11,6 @@
 
 @interface PayInfoViewController : MOAViewController
 
+@property (nonatomic, strong) NSString *hotelQRCode;
+
 @end

@@ -52,8 +52,11 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
+                       
+                       NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
                        dispatch_async(dispatch_get_main_queue(), ^{
-                           resultBlock(data,error);
+                           resultBlock(json,error);
                        });
                    }];
 }
