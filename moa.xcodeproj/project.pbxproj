@@ -21,6 +21,10 @@
 		425184741D87DCE400D94643 /* MOAPayDataSourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */; };
 		425184771D87E93E00D94643 /* interfaceUri.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184761D87E93E00D94643 /* interfaceUri.plist */; };
 		425184791D87F33C00D94643 /* appConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184781D87F33C00D94643 /* appConfig.plist */; };
+		4251847C1D88F07B00D94643 /* MOAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251847B1D88F07B00D94643 /* MOAViewController.m */; };
+		4251847F1D88F91200D94643 /* MOABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251847E1D88F91200D94643 /* MOABaseViewController.m */; };
+		425184841D88FADA00D94643 /* MOATradeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184821D88FADA00D94643 /* MOATradeDetailViewController.m */; };
+		425184851D88FADA00D94643 /* MOATradeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425184831D88FADA00D94643 /* MOATradeDetailViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -104,6 +108,13 @@
 		425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAPayDataSourceBase.m; sourceTree = "<group>"; };
 		425184761D87E93E00D94643 /* interfaceUri.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = interfaceUri.plist; sourceTree = "<group>"; };
 		425184781D87F33C00D94643 /* appConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appConfig.plist; sourceTree = "<group>"; };
+		4251847A1D88F07B00D94643 /* MOAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAViewController.h; sourceTree = "<group>"; };
+		4251847B1D88F07B00D94643 /* MOAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAViewController.m; sourceTree = "<group>"; };
+		4251847D1D88F91200D94643 /* MOABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOABaseViewController.h; sourceTree = "<group>"; };
+		4251847E1D88F91200D94643 /* MOABaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOABaseViewController.m; sourceTree = "<group>"; };
+		425184811D88FADA00D94643 /* MOATradeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOATradeDetailViewController.h; sourceTree = "<group>"; };
+		425184821D88FADA00D94643 /* MOATradeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOATradeDetailViewController.m; sourceTree = "<group>"; };
+		425184831D88FADA00D94643 /* MOATradeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOATradeDetailViewController.xib; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +285,10 @@
 			children = (
 				4251846A1D87D1CB00D94643 /* MOANavigationViewController.h */,
 				4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */,
+				4251847A1D88F07B00D94643 /* MOAViewController.h */,
+				4251847B1D88F07B00D94643 /* MOAViewController.m */,
+				4251847D1D88F91200D94643 /* MOABaseViewController.h */,
+				4251847E1D88F91200D94643 /* MOABaseViewController.m */,
 			);
 			name = Root;
 			path = "控制器/Root";
@@ -309,6 +324,17 @@
 				425184761D87E93E00D94643 /* interfaceUri.plist */,
 			);
 			path = "配置文件";
+			sourceTree = "<group>";
+		};
+		425184801D88FAB200D94643 /* 交易详情 */ = {
+			isa = PBXGroup;
+			children = (
+				425184811D88FADA00D94643 /* MOATradeDetailViewController.h */,
+				425184821D88FADA00D94643 /* MOATradeDetailViewController.m */,
+				425184831D88FADA00D94643 /* MOATradeDetailViewController.xib */,
+			);
+			name = "交易详情";
+			path = "控制器/交易详情";
 			sourceTree = "<group>";
 		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
@@ -529,6 +555,7 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				425184801D88FAB200D94643 /* 交易详情 */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
 				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
 				7C8E25EC1D87A232001629A7 /* root.storyboard */,
@@ -622,11 +649,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC2BE221D87F3E60087F84D /* AlertView.xib in Resources */,
 				425184771D87E93E00D94643 /* interfaceUri.plist in Resources */,
 				425184791D87F33C00D94643 /* appConfig.plist in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				0BC2BE171D87E0D00087F84D /* MOALoginViewController.storyboard in Resources */,
+				425184851D88FADA00D94643 /* MOATradeDetailViewController.xib in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
 				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
 				0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */,
@@ -718,6 +747,7 @@
 				7C8E25E71D87A136001629A7 /* PayInfoViewController.m in Sources */,
 				7C8E25661D8794DB001629A7 /* DYInterfaceRequestHelper.m in Sources */,
 				7C8E256C1D8794DB001629A7 /* DYNotifiesRequest.m in Sources */,
+				4251847C1D88F07B00D94643 /* MOAViewController.m in Sources */,
 				7C8E25681D8794DB001629A7 /* DYCacheManager.m in Sources */,
 				7C8E25931D8794EA001629A7 /* DYAuthorityDataSource.m in Sources */,
 				7C8E25981D8794EA001629A7 /* UIImageView+DatayesAuthority.m in Sources */,
@@ -728,12 +758,14 @@
 				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
 				7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */,
 				0BC2BE251D87F4E60087F84D /* DYTextField.m in Sources */,
+				4251847F1D88F91200D94643 /* MOABaseViewController.m in Sources */,
 				7C8E25761D8794DB001629A7 /* DYMutipartFormDataRequest.m in Sources */,
 				0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */,
 				7C8E256B1D8794DB001629A7 /* DYAuthTokenManager.m in Sources */,
 				7C8E25941D8794EA001629A7 /* DYAuthorityRegisterDataSource.m in Sources */,
 				7C8E25B61D8794F4001629A7 /* DYAutoSaver.m in Sources */,
 				7C8E25901D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m in Sources */,
+				425184841D88FADA00D94643 /* MOATradeDetailViewController.m in Sources */,
 				0BC2BE151D87E0790087F84D /* MOALoginViewController.m in Sources */,
 				7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */,
 				7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */,

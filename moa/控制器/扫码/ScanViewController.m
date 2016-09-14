@@ -9,6 +9,7 @@
 #import "ScanViewController.h"
 #import "PayInfoViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "DYAppearance.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 /**
@@ -94,6 +95,4 @@
         NSLog(@"没有扫描到数据");
     }
 }
-
-
 @end
