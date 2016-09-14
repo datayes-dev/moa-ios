@@ -10,6 +10,7 @@
 #import "MOANavigationViewController.h"
 #import "RootViewController.h"
 #import "DYLogFormatter.h"
+#import "MOALoginViewController.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -22,8 +23,8 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupDDLog];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
-    RootViewController *rootVC = (RootViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
+    MOALoginViewController *rootVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
     MOANavigationViewController *navigation = [[MOANavigationViewController alloc] initWithRootViewController:rootVC];
     self.window.rootViewController = navigation;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
