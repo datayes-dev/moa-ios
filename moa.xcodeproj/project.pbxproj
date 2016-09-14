@@ -28,6 +28,8 @@
 		425184881D89219F00D94643 /* DYJsonRequestWithTextHtmlResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184871D89219F00D94643 /* DYJsonRequestWithTextHtmlResponseRequest.m */; };
 		4251848B1D8927DE00D94643 /* MOATradeInfoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848A1D8927DE00D94643 /* MOATradeInfoAdapter.m */; };
 		4251848E1D89365E00D94643 /* DYCellDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848D1D89365E00D94643 /* DYCellDataItem.m */; };
+		42590C621D894A3D008B5B78 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42590C601D894A3D008B5B78 /* PaySuccessViewController.m */; };
+		42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
 		7C8E22741D868818001629A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
 		7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
@@ -125,6 +127,9 @@
 		4251848A1D8927DE00D94643 /* MOATradeInfoAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOATradeInfoAdapter.m; sourceTree = "<group>"; };
 		4251848C1D89365E00D94643 /* DYCellDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYCellDataItem.h; sourceTree = "<group>"; };
 		4251848D1D89365E00D94643 /* DYCellDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYCellDataItem.m; sourceTree = "<group>"; };
+		42590C5F1D894A3D008B5B78 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
+		42590C601D894A3D008B5B78 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
+		42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
 		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -594,6 +599,9 @@
 				7C8E25E41D87A136001629A7 /* PayInfoViewController.h */,
 				7C8E25E51D87A136001629A7 /* PayInfoViewController.m */,
 				7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */,
+				42590C5F1D894A3D008B5B78 /* PaySuccessViewController.h */,
+				42590C601D894A3D008B5B78 /* PaySuccessViewController.m */,
+				42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */,
 			);
 			name = Pay;
 			sourceTree = "<group>";
@@ -678,6 +686,7 @@
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
 				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
 				0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */,
+				42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +810,7 @@
 				7C8E25921D8794EA001629A7 /* DYAuthorityResponseHelper.m in Sources */,
 				0BC014391D89165000FED226 /* DYAppNotification.m in Sources */,
 				7C8E25721D8794DB001629A7 /* DYInterfacePropertiesManager.m in Sources */,
+				42590C621D894A3D008B5B78 /* PaySuccessViewController.m in Sources */,
 				7C8E25B51D8794F4001629A7 /* DYAppConfigManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
