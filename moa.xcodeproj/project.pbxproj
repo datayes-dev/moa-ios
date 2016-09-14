@@ -28,6 +28,8 @@
 		425184881D89219F00D94643 /* DYJsonRequestWithTextHtmlResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184871D89219F00D94643 /* DYJsonRequestWithTextHtmlResponseRequest.m */; };
 		4251848B1D8927DE00D94643 /* MOATradeInfoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848A1D8927DE00D94643 /* MOATradeInfoAdapter.m */; };
 		4251848E1D89365E00D94643 /* DYCellDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848D1D89365E00D94643 /* DYCellDataItem.m */; };
+		425184931D896A4300D94643 /* MOATradeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184911D896A4300D94643 /* MOATradeDetailTableViewCell.m */; };
+		425184941D896A4300D94643 /* MOATradeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425184921D896A4300D94643 /* MOATradeDetailTableViewCell.xib */; };
 		42590C621D894A3D008B5B78 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42590C601D894A3D008B5B78 /* PaySuccessViewController.m */; };
 		42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
@@ -127,6 +129,9 @@
 		4251848A1D8927DE00D94643 /* MOATradeInfoAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOATradeInfoAdapter.m; sourceTree = "<group>"; };
 		4251848C1D89365E00D94643 /* DYCellDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYCellDataItem.h; sourceTree = "<group>"; };
 		4251848D1D89365E00D94643 /* DYCellDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYCellDataItem.m; sourceTree = "<group>"; };
+		425184901D896A4300D94643 /* MOATradeDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOATradeDetailTableViewCell.h; sourceTree = "<group>"; };
+		425184911D896A4300D94643 /* MOATradeDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOATradeDetailTableViewCell.m; sourceTree = "<group>"; };
+		425184921D896A4300D94643 /* MOATradeDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOATradeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		42590C5F1D894A3D008B5B78 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		42590C601D894A3D008B5B78 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
@@ -358,6 +363,17 @@
 			path = "控制器/交易详情";
 			sourceTree = "<group>";
 		};
+		4251848F1D896A2000D94643 /* 交易详情 */ = {
+			isa = PBXGroup;
+			children = (
+				425184901D896A4300D94643 /* MOATradeDetailTableViewCell.h */,
+				425184911D896A4300D94643 /* MOATradeDetailTableViewCell.m */,
+				425184921D896A4300D94643 /* MOATradeDetailTableViewCell.xib */,
+			);
+			name = "交易详情";
+			path = "视图/交易详情";
+			sourceTree = "<group>";
+		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,6 +544,7 @@
 		7C8E25BE1D879905001629A7 /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
+				4251848F1D896A2000D94643 /* 交易详情 */,
 				7C8E25C91D879A1E001629A7 /* 第三方框架 */,
 				7C8E25BF1D87990C001629A7 /* Common */,
 			);
@@ -580,9 +597,9 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
-				425184801D88FAB200D94643 /* 交易详情 */,
 				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
 				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
+				425184801D88FAB200D94643 /* 交易详情 */,
 				7C8E25EC1D87A232001629A7 /* root.storyboard */,
 				4251846D1D87D27B00D94643 /* 工具 */,
 				425184691D87D1A200D94643 /* Root */,
@@ -682,6 +699,7 @@
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				0BC2BE171D87E0D00087F84D /* MOALoginViewController.storyboard in Resources */,
+				425184941D896A4300D94643 /* MOATradeDetailTableViewCell.xib in Resources */,
 				425184851D88FADA00D94643 /* MOATradeDetailViewController.xib in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
 				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
@@ -752,6 +770,7 @@
 				7C8E25771D8794DB001629A7 /* DYNetStatusManager.m in Sources */,
 				7C8E25641D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m in Sources */,
 				7C8E25791D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m in Sources */,
+				425184931D896A4300D94643 /* MOATradeDetailTableViewCell.m in Sources */,
 				7C8E25701D8794DB001629A7 /* DYErrorHandlerHelper.m in Sources */,
 				7C8E25D01D879A4D001629A7 /* MBProgressHUD.m in Sources */,
 				7C8E25951D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m in Sources */,

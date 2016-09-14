@@ -8,7 +8,7 @@
 
 #import "MOAViewController.h"
 #import "MOATradeDetailViewController.h"
-
+#import "RootViewController.h"
 
 @interface MOAViewController ()
 
@@ -33,5 +33,19 @@
     
     MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)leftButtonClick:(UIButton *)button
+{
+    
+    NSArray *array = [self.navigationController viewControllers];
+    
+    for (UIViewController *vc in array) {
+        
+        if ([vc isKindOfClass:[RootViewController class]]) {
+            
+            [self.navigationController popToViewController:vc animated:YES];
+        }
+    }
 }
 @end

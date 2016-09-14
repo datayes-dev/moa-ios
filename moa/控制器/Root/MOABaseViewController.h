@@ -19,4 +19,6 @@
 
 - (void)removeRightButton;
 
+- (void)leftButtonClick:(UIButton *)button;
+
 @end
