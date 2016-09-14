@@ -52,6 +52,16 @@
             [mRequest addValue:accessTokenWithHeader forHTTPHeaderField:@"Authorization"];
         }
     }
+    else {
+        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+        for (NSHTTPCookie *cookie in cookies) {
+            // Here I see the correct rails session cookie
+            DDLogInfo(@"cookie: %@", cookie);
+            if ([cookie.name isEqualToString:@"cloud-anonymous-token"]) {
+
+            }
+        }
+    }
     
     [self setImageWithURLRequest:mRequest placeholderImage:nil success:NULL failure:NULL];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:imageURL
