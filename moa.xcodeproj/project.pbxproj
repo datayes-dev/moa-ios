@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC014391D89165000FED226 /* DYAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC014381D89165000FED226 /* DYAppNotification.m */; };
 		0BC2BE0E1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */; };
 		0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0C1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m */; };
 		0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0D1D87D6BA0087F84D /* DYResetPasswordViewController.storyboard */; };
@@ -87,6 +88,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BC014371D89165000FED226 /* DYAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYAppNotification.h; sourceTree = "<group>"; };
+		0BC014381D89165000FED226 /* DYAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYAppNotification.m; sourceTree = "<group>"; };
 		0BC2BE091D87D6BA0087F84D /* DYResetPasswordStep1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYResetPasswordStep1Controller.h; sourceTree = "<group>"; };
 		0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYResetPasswordStep1Controller.m; sourceTree = "<group>"; };
 		0BC2BE0B1D87D6BA0087F84D /* DYResetPasswordStep2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYResetPasswordStep2Controller.h; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				7C8E257C1D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m */,
 				7C8E25811D8794EA001629A7 /* DYAuthorityDataSource.h */,
 				7C8E257F1D8794EA001629A7 /* DYAuthorityDataSource.m */,
+				0BC014371D89165000FED226 /* DYAppNotification.h */,
+				0BC014381D89165000FED226 /* DYAppNotification.m */,
 				7C8E25821D8794EA001629A7 /* DYAuthorityLoginDataSource.h */,
 				7C8E257D1D8794EA001629A7 /* DYAuthorityLoginDataSource.m */,
 				7C8E25831D8794EA001629A7 /* DYAuthorityManager.h */,
@@ -794,6 +799,7 @@
 				425184881D89219F00D94643 /* DYJsonRequestWithTextHtmlResponseRequest.m in Sources */,
 				7C8E22711D868818001629A7 /* main.m in Sources */,
 				7C8E25921D8794EA001629A7 /* DYAuthorityResponseHelper.m in Sources */,
+				0BC014391D89165000FED226 /* DYAppNotification.m in Sources */,
 				7C8E25721D8794DB001629A7 /* DYInterfacePropertiesManager.m in Sources */,
 				7C8E25B51D8794F4001629A7 /* DYAppConfigManager.m in Sources */,
 			);
