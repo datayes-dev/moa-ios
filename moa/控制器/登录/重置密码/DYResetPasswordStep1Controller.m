@@ -38,6 +38,7 @@
 #import "AppDelegate.h"
 #import "DYAuthorityResetPasswordDataSource.h"
 #import "DYProgressHUD.h"
+#import "DYAppearance.h"
 
 #define kResetStep2Identify @"SetPSStep2Identify"
 #define ToastDefaultDuration 1.0
@@ -82,7 +83,7 @@
     delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     [self setupSubViews];
-//    [self startTime];
+    [self startTime];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -141,7 +142,7 @@
 }
 
 #pragma mark - Timer Method
-/*
+
 -(void) startTime
 {
     if (delegate.timeout>0){
@@ -175,8 +176,8 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
                 [weakSelf.checkCodeButton setEnabled:YES];
-                [weakSelf.checkCodeButton setTitle:DYInterStr(@"ResetPswVC_06", @"获取验证码") forState:UIControlStateDisabled];
-                weakSelf.checkCodeButton.titleLabel.text = DYInterStr(@"ResetPswVC_06", @"获取验证码");
+                [weakSelf.checkCodeButton setTitle:@"获取验证码" forState:UIControlStateDisabled];
+                weakSelf.checkCodeButton.titleLabel.text = @"获取验证码";
                 
             });
         }else{
@@ -194,15 +195,14 @@
     });
     dispatch_resume(delegate._timer);
 }
-*/
+
 
 
 #pragma mark - UITextField actions
 - (void)textFieldChange1 :(UITextField*) textfield
 {
     if (textfield==self.phoneNumberTextField) {
-        if (self.phoneNumberTextField.text.length >=11//&&delegate.timeout<=0
-            ){
+        if (self.phoneNumberTextField.text.length >=11&&delegate.timeout<=0){
             self.checkCodeButton.enabled = YES;
         }
         else{
@@ -248,7 +248,7 @@
                         NSDictionary *result = (NSDictionary *)data;
                         long code = [[result objectForKey:@"code"] longValue];
                         if (code == 0) {
-//                            [weakSelf gettime];
+                            [weakSelf gettime];
                             [DYProgressHUD showToastInView:weakSelf.view message:@"验证码已发送" durationTime:ToastDefaultDuration];
                         }
                     }];
@@ -256,18 +256,18 @@
                 }
                     
                 case 11:
-//                    delegate.timeout  = 0;
-//                    delegate.queue=nil;
-//                    delegate. _timer=nil;
+                    delegate.timeout  = 0;
+                    delegate.queue=nil;
+                    delegate. _timer=nil;
                     [weakSelf.checkCodeButton setEnabled:YES];
                     [weakSelf.checkCodeButton setTitle:@"获取验证码" forState:UIControlStateDisabled];
                     [DYProgressHUD showToastInView:weakSelf.view message:@"您输入的手机号码或用户名不存在，请重新输入" durationTime:ToastDefaultDuration];
                     break;
                     
                 default:
-//                    delegate.timeout  = 0;
-//                    delegate.queue=nil;
-//                    delegate. _timer=nil;
+                    delegate.timeout  = 0;
+                    delegate.queue=nil;
+                    delegate. _timer=nil;
                     [weakSelf.checkCodeButton setEnabled:YES];
                     [weakSelf.checkCodeButton setTitle:@"获取验证码" forState:UIControlStateDisabled];
                     [DYProgressHUD showToastInView:weakSelf.view message:@"您输入的手机号码错误，请重新输入" durationTime:ToastDefaultDuration];
@@ -275,9 +275,9 @@
             }
             
         }else if (error != nil){
-//            delegate.timeout  = 0;
-//            delegate.queue=nil;
-//            delegate. _timer=nil;
+            delegate.timeout  = 0;
+            delegate.queue=nil;
+            delegate. _timer=nil;
             [weakSelf.checkCodeButton setEnabled:YES];
             [weakSelf.checkCodeButton setTitle:@"获取验证码" forState:UIControlStateDisabled];
         }

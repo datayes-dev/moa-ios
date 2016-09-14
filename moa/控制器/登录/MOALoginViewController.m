@@ -212,55 +212,55 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     [userDefaults setObject:userName forKey:USER_NAME_KEY];
     [userDefaults synchronize];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
-    RootViewController *rootVc = [storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
-    [self.navigationController pushViewController:rootVc animated:YES];
+
     
-    /*
-     __weak __typeof(self)weakSelf = self;
-     [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {
-     if (!error && data != nil) {
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-     [userDefaults setObject:userName forKey:USER_NAME_KEY];
-     [userDefaults synchronize];
-     NSLog(@"登录中。。。");
-     [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
-     [weakSelf.loginButton setEnabled:NO];
-     //握手接口调用
-     //            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
-     //
-     //            }];
-     //            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFY_KEY object:nil];
-     
-     //            [weakSelf ifNewRegisterUser];
-     }
-     else
-     {
-     // CodeRequired
-     if (error.code == CodeRequired) {
-     [weakSelf hideOrShowImageCheckPart:YES];
-     if (captcha == nil || captcha.length <= 0) {
-     // errcode = -130; errmsg = CODE_REQUIRED
-     [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
-     
-     }else {
-     // errcode = -130; errmsg = INVALID_CODE
-     [DYProgressHUD showToastInView:weakSelf.view message:@"验证码输入有误"durationTime:ToastDefaultDuration];
-     }
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [weakSelf imageCheckButtnClicked:nil];
-     });
-     
-     }else {
-     [weakSelf hideOrShowImageCheckPart:YES];
-     [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [weakSelf imageCheckButtnClicked:nil];
-     });
-     }
-     }
-     }];
-     */
+    
+    __weak __typeof(self)weakSelf = self;
+    [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {
+        if (!error && data != nil) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:userName forKey:USER_NAME_KEY];
+            [userDefaults synchronize];
+            NSLog(@"登录中。。。");
+            [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
+            [weakSelf.loginButton setEnabled:NO];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
+            RootViewController *rootVc = [storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
+            [self.navigationController pushViewController:rootVc animated:YES];
+            //握手接口调用
+            //            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
+            //
+            //            }];
+            //            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFY_KEY object:nil];
+            
+            //            [weakSelf ifNewRegisterUser];
+        }
+        else
+        {
+            // CodeRequired
+            if (error.code == CodeRequired) {
+                [weakSelf hideOrShowImageCheckPart:YES];
+                if (captcha == nil || captcha.length <= 0) {
+                    // errcode = -130; errmsg = CODE_REQUIRED
+                    [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
+                    
+                }else {
+                    // errcode = -130; errmsg = INVALID_CODE
+                    [DYProgressHUD showToastInView:weakSelf.view message:@"验证码输入有误"durationTime:ToastDefaultDuration];
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf imageCheckButtnClicked:nil];
+                });
+                
+            }else {
+                [weakSelf hideOrShowImageCheckPart:YES];
+                [DYProgressHUD showToastInView:weakSelf.view message:error.userInfo[@"message"] durationTime:ToastDefaultDuration];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf imageCheckButtnClicked:nil];
+                });
+            }
+        }
+    }];
 }
 
 

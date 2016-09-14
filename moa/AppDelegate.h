@@ -14,6 +14,8 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong)DDFileLogger *fileLogger;
 
-
+@property  dispatch_queue_t queue ;
+@property  dispatch_source_t _timer;
+@property   __block int timeout; //倒计时时间
 @end
 
