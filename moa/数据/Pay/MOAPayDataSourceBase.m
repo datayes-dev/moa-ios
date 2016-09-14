@@ -8,6 +8,7 @@
 
 #import "MOAPayDataSourceBase.h"
 #import "DYInterfaceIdDef.h"
+#import "DYDefine.h"
 
 #define kExtraAddedSubUrlKey @"extraAddedSubUrl"
 
@@ -82,11 +83,9 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
 
 - (void)diningTradeWithPrice:(float)price inHotel:(NSString*)pkId andMemoInfo:(NSString*)memoInfo andResultBlock:(DYInterfaceResultBlock)resultBlock
 {
-    if (memoInfo == nil) {
-        memoInfo = @"";
-    }
+    
     [self sendRequestWithMsgId:eDiningTradeRequest
-                    parameters:@{@"restaurant":pkId, @"price":@(price), @"memo":memoInfo}
+                    parameters:@{@"restaurant":NilToEmptyString(pkId), @"price":@(price), @"memo":NilToEmptyString(memoInfo)}
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {

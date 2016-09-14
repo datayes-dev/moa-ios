@@ -27,6 +27,8 @@
  */
 @property (nonatomic, strong)NSArray* hotelsArray;
 
+@property (nonatomic, strong) NSDictionary *currentHotel;
+
 @end
 
 @implementation PayInfoViewController
@@ -56,18 +58,7 @@
     
     [super viewWillAppear:animated];
     
-    WS(weakSelf);
-    [self.adapter getHotelInfoWith:self.hotelQRCode withBlock:^(id data, NSError *error) {
-        
-        NSDictionary *hotelInfo = (NSDictionary *)data;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSString* hotelName = hotelInfo[@"name"];
-            
-            weakSelf.restName.text = hotelName;
-        });
-    }];
+    [self getCurrentHotelInfo];
 }
 
 #pragma mark - init
@@ -83,10 +74,48 @@
 
 
 #pragma mark - Method
+- (void)getCurrentHotelInfo
+{
+    
+    WS(weakSelf);
+    
+    self.currentHotel = nil;
+    
+    [self.adapter getHotelInfoWith:self.hotelQRCode withBlock:^(id data, NSError *error) {
+        
+        weakSelf.currentHotel = (NSDictionary *)data;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSString* hotelName = weakSelf.currentHotel[@"name"];
+            
+            if ([hotelName length] > 0) {
+                
+                weakSelf.restName.text = hotelName;
+                
+            } else {
+                
+                weakSelf.restName.text = @"未知商家";
+            }
+            
+        });
+    }];
+}
+
 - (IBAction)payBtnClicked:(UIButton *)sender
 {
     
+    NSString *price = self.sumTextField.text;
+    NSString *hotelId = (NSString *)self.currentHotel[@"id"];
     
+    [self.adapter makeDealWithPrice:price inHotel:hotelId andMemoInfo:nil andResultBlock:^(id data, NSError *error) {
+        
+        if (error) {
+            
+        }
+        
+        
+    }];
 }
 
 @end

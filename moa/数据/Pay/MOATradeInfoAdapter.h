@@ -18,4 +18,8 @@
 
 - (void)getHotelInfoWith:(NSString *)hotelQRCode withBlock:(DYInterfaceResultBlock)resultBlock;
 
+- (void)makeDealWithPrice:(NSString *)price
+                  inHotel:(NSString*)pkId
+              andMemoInfo:(NSString*)memoInfo
+           andResultBlock:(DYInterfaceResultBlock)resultBlock;
 @end
