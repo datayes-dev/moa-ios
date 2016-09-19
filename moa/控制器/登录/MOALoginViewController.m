@@ -224,21 +224,18 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 
             [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
             [weakSelf.loginButton setEnabled:NO];
-//            
-//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
-//            RootViewController *rootVc = [storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
-//            [self.navigationController pushViewController:rootVc animated:YES];
+
             MyCenterRootViewController *centerVC = [[MyCenterRootViewController alloc]init];
             [self.navigationController pushViewController:centerVC animated:YES];
 
+            
             //握手接口调用
 //            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
 //                
 //            }];
 
             //            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFY_KEY object:nil];
-            
-            //            [weakSelf ifNewRegisterUser];
+
         }
         else
         {
@@ -334,51 +331,6 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
-
-/*
- - (void)ifNewRegisterUser
- {
- if ([DYAuthTokenManager shareInstance].isLogined) {
- WS(weakSelf);
- [[DYDataSyncHelper shareInstance] checkDataVersionWithType:eSyncDataFavoriteChannels withResultBlock:^(id data, NSError *error) {
- 
- if (error) {
- 
- dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
- [weakSelf.navigationController popViewControllerAnimated:YES];
- });
- return ;
- }
- NSInteger version = [[DYDataSyncHelper shareInstance] getVersionFromArray:(NSArray *)data forSyncType:eSyncDataFavoriteChannels];
- //本地无数据，且服务器端版本号为0，则是新用户，需要选择兴趣
- if (version == 0) {
- //新用户，判断是否有选择兴趣
- //                    if (![DYAppConfigManager shareInstance].hasChooseIntersting) {
- //                        DYInterstingViewController *vc = [DYInterstingViewController quickInitInstance];
- //                        [self.navigationController pushViewController:vc animated:YES];
- //                    }else{
- dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
- [weakSelf.navigationController popViewControllerAnimated:YES];
- });
- //                    }
- }
- else
- {
- [DYAppConfigManager shareInstance].hasChooseIntersting = YES;
- 
- dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
- [weakSelf.navigationController popViewControllerAnimated:YES];
- });
- }
- }];
- }else{
- //        if (![DYAppConfigManager shareInstance].hasChooseIntersting) {
- //            DYInterstingViewController *vc = [DYInterstingViewController quickInitInstance];
- //            [self.navigationController pushViewController:vc animated:YES];
- //        }
- }
- }
- */
 
 
 #pragma mark - UITextFieldDelegate functions
