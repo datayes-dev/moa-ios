@@ -39,6 +39,7 @@
 #import "DYAppearance.h"
 #import "DYDefine.h"
 #import "DYProgressHUD.h"
+#import "DYAppConfigManager.h"
 
 #define kRowHeight 44
 
@@ -47,6 +48,7 @@
 @property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
 @property (nonatomic, strong) NSArray *mineFunctionsArray;
 @property (nonatomic, strong) NSArray *settingArray;
+@property (nonatomic, strong) NSArray *imageArray;
 
 @property (nonatomic, assign) BOOL isLogin;
 
@@ -85,6 +87,8 @@
 {
     _mineFunctionsArray = @[@"用餐刷卡"];
     _settingArray = @[@"退出登录"];
+    
+    _imageArray = @[@"qrcode_2"];
 }
 
 - (void)fetchUserInfo
@@ -174,10 +178,12 @@
             
         case 2:{
             cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
+            cell.imageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
             break;
         }
         case 3:{
             cell.textLabel.text = self.settingArray[indexPath.row];
+            cell.imageView.image = [UIImage imageNamed:@"logout2"];
             break;
         }
             
@@ -204,6 +210,8 @@
         }
             
         case 3:{
+            [[DYAuthTokenManager shareInstance] logout];
+            [[DYAppConfigManager shareInstance] saveIntoFile];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
             MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
             [self.navigationController pushViewController:loginVC animated:YES];
@@ -235,64 +243,49 @@
             userInfoView = self.userInfoView;
         }
         
-        if ([DYAuthTokenManager shareInstance].isLogined) {
-            NSString* avatar = [DYLoginUserInfo shareInstance].avatar;
-            if ([avatar isKindOfClass:[NSString class]] && [avatar length] > 0) {
-                NSURL *avaterURL = [[DYLoginUserInfo shareInstance] avatarURL];
-                [UIButton setSharedImageCache:[UIButton sharedImageCache]];
-                
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:avaterURL];
-                [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
-                WS(weakSelf);
-                [self.userInfoView.userPortraitButton setImageForState:UIControlStateNormal
-                                                        withURLRequest:request
-                                                      placeholderImage:nil
-                                                               success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
-                                                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                                                       [weakSelf.userInfoView.userPortraitButton setImage:image forState:UIControlStateNormal];
-                                                                       [weakSelf.userInfoView.loadingIndicatorView stopAnimating];
-                                                                   });
-                                                               } failure:^(NSError * _Nonnull error) {
+        NSString* avatar = [DYLoginUserInfo shareInstance].avatar;
+        if ([avatar isKindOfClass:[NSString class]] && [avatar length] > 0) {
+            NSURL *avaterURL = [[DYLoginUserInfo shareInstance] avatarURL];
+            [UIButton setSharedImageCache:[UIButton sharedImageCache]];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:avaterURL];
+            [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+            WS(weakSelf);
+            [self.userInfoView.userPortraitButton setImageForState:UIControlStateNormal
+                                                    withURLRequest:request
+                                                  placeholderImage:nil
+                                                           success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [weakSelf.userInfoView.userPortraitButton setImage:image forState:UIControlStateNormal];
                                                                    [weakSelf.userInfoView.loadingIndicatorView stopAnimating];
-                                                               }];
-            }
-            else {
-                [userInfoView.userPortraitButton setImage:[UIImage imageNamed:@"header"] forState:UIControlStateNormal];
-                
-                // 如果没有用户昵称，代表这个数据还没有下发下来，如果昵称已经有了，代表数据已经有了，就不用转菊花了
-                if ([[DYLoginUserInfo shareInstance].userName length] <= 0) {
-                    [self.userInfoView.loadingIndicatorView startAnimating];
-                }
-                else
-                {
-                    [self.userInfoView.loadingIndicatorView stopAnimating];
-                }
-            }
+                                                               });
+                                                           } failure:^(NSError * _Nonnull error) {
+                                                               [weakSelf.userInfoView.loadingIndicatorView stopAnimating];
+                                                           }];
         }
-        else
-        {
+        else {
             [userInfoView.userPortraitButton setImage:[UIImage imageNamed:@"header"] forState:UIControlStateNormal];
-            [self.userInfoView.loadingIndicatorView stopAnimating];
-        }
-        
-        if ([DYAuthTokenManager shareInstance].isLogined) {
-            if ([[DYLoginUserInfo shareInstance].userName length] > 0) {
-                [userInfoView.userNameLabel setText:[DYLoginUserInfo shareInstance].userName];
+            
+            // 如果没有用户昵称，代表这个数据还没有下发下来，如果昵称已经有了，代表数据已经有了，就不用转菊花了
+            if ([[DYLoginUserInfo shareInstance].userName length] <= 0) {
+                [self.userInfoView.loadingIndicatorView startAnimating];
             }
-            else {
-                [userInfoView.userNameLabel setText:@"正在登录..."];
+            else
+            {
+                [self.userInfoView.loadingIndicatorView stopAnimating];
             }
-            [userInfoView hasLogined:YES];
         }
-        else
-        {
-            [userInfoView hasLogined:NO];
+        if ([[DYLoginUserInfo shareInstance].userName length] > 0) {
+            [userInfoView.userNameLabel setText:[DYLoginUserInfo shareInstance].userName];
         }
+        else {
+            [userInfoView.userNameLabel setText:@"正在登录..."];
+        }
+        [userInfoView hasLogined:YES];
         return userInfoView;
     } else {
         return [[UIView alloc]init];
     }
-    
 }
 
 @end
