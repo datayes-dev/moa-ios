@@ -12,7 +12,7 @@
 #import "UIImageView+DatayesAuthority.h"
 #import "DYAuthorityDataSource.h"
 #import "DYAuthorityResponseHelper.h"
-//#import "DYAppNotification.h"
+#import "DYAppNotification.h"
 //#import "DYFavoriteInfoManager.h"
 //#import "DYDataSyncHelper.h"
 
@@ -22,6 +22,7 @@
 #import "DYProgressHUD.h"
 #import "Masonry.h"
 #import "RootViewController.h"
+#import "MyCenterRootViewController.h"
 
 #define ToastDefaultDuration 2.0
 
@@ -32,7 +33,6 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     bool isImageCheck;
 }
 
-@property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
 @property (weak, nonatomic) IBOutlet UIView *inputRootView;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UIView *imageCheckRootView;
@@ -60,19 +60,16 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
     [super viewWillAppear:animated];
-    
+    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
     [self.userNameTextField becomeFirstResponder];
-    [self.navigationController setNavigationBarHidden:YES];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -206,14 +203,15 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
         userName = [userName substringToIndex:range.location];      // 用户名
     }
     //check input
+//    if (tenant == nil) {
+//        [DYProgressHUD showToastInView:self.view message:@"用户名不正确"];
+//        return;
+//    }
     
     // 将用户名保存起来
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:userName forKey:USER_NAME_KEY];
     [userDefaults synchronize];
-    
-
-    
     
     __weak __typeof(self)weakSelf = self;
     [[DYAuthorityManager sharedInstance] requestAccessTokenWithUserName:userName password:password captcha:captcha tenant:tenant resultBlock:^(id data, NSError *error) {
@@ -221,16 +219,21 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:userName forKey:USER_NAME_KEY];
             [userDefaults synchronize];
-            NSLog(@"登录中。。。");
+
             [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
             [weakSelf.loginButton setEnabled:NO];
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
-            RootViewController *rootVc = [storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
-            [self.navigationController pushViewController:rootVc animated:YES];
+//            
+//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"root" bundle:[NSBundle mainBundle]];
+//            RootViewController *rootVc = [storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
+//            [self.navigationController pushViewController:rootVc animated:YES];
+            MyCenterRootViewController *centerVC = [[MyCenterRootViewController alloc]init];
+            [self.navigationController pushViewController:centerVC animated:YES];
+
             //握手接口调用
-            //            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
-            //
-            //            }];
+//            [[DYAppNotification shareInstance]fetchAppLogin:YES NotificationWithResultBlock:^(id data, NSError *error) {
+//                
+//            }];
+
             //            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFY_KEY object:nil];
             
             //            [weakSelf ifNewRegisterUser];

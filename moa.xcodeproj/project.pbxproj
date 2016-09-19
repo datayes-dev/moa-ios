@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B34A8FA1D8FB2F400F30B89 /* MyCenterRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B34A8F81D8FB2F400F30B89 /* MyCenterRootViewController.m */; };
+		0B34A8FB1D8FB2F400F30B89 /* MyCenterRootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B34A8F91D8FB2F400F30B89 /* MyCenterRootViewController.storyboard */; };
 		0BC014391D89165000FED226 /* DYAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC014381D89165000FED226 /* DYAppNotification.m */; };
 		0BC2BE0E1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */; };
 		0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0C1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m */; };
@@ -92,6 +94,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B34A8F71D8FB2F400F30B89 /* MyCenterRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCenterRootViewController.h; sourceTree = "<group>"; };
+		0B34A8F81D8FB2F400F30B89 /* MyCenterRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCenterRootViewController.m; sourceTree = "<group>"; };
+		0B34A8F91D8FB2F400F30B89 /* MyCenterRootViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyCenterRootViewController.storyboard; sourceTree = "<group>"; };
 		0BC014371D89165000FED226 /* DYAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYAppNotification.h; sourceTree = "<group>"; };
 		0BC014381D89165000FED226 /* DYAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYAppNotification.m; sourceTree = "<group>"; };
 		0BC2BE091D87D6BA0087F84D /* DYResetPasswordStep1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYResetPasswordStep1Controller.h; sourceTree = "<group>"; };
@@ -268,6 +273,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B34A8F61D8FB25E00F30B89 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				0B34A8F71D8FB2F400F30B89 /* MyCenterRootViewController.h */,
+				0B34A8F81D8FB2F400F30B89 /* MyCenterRootViewController.m */,
+				0B34A8F91D8FB2F400F30B89 /* MyCenterRootViewController.storyboard */,
+			);
+			name = "我的";
+			path = "控制器/我的";
+			sourceTree = "<group>";
+		};
 		0BC2BE001D87CEB30087F84D /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +621,7 @@
 				425184691D87D1A200D94643 /* Root */,
 				425184651D87CCE800D94643 /* 扫码 */,
 				7C8E25E01D87A11B001629A7 /* Pay */,
+				0B34A8F61D8FB25E00F30B89 /* 我的 */,
 				0BC2BE001D87CEB30087F84D /* 登录 */,
 			);
 			name = "控制器";
@@ -704,6 +721,7 @@
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
 				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
 				0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */,
+				0B34A8FB1D8FB2F400F30B89 /* MyCenterRootViewController.storyboard in Resources */,
 				42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -802,6 +820,7 @@
 				7C8E25981D8794EA001629A7 /* UIImageView+DatayesAuthority.m in Sources */,
 				7C8E257A1D8794DB001629A7 /* NSObject+Representation.m in Sources */,
 				0BC2BE0E1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m in Sources */,
+				0B34A8FA1D8FB2F400F30B89 /* MyCenterRootViewController.m in Sources */,
 				7C8E256F1D8794DB001629A7 /* DYErrorHandlerBase.m in Sources */,
 				7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */,
 				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
