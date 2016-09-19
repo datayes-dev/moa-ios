@@ -47,6 +47,8 @@
 #import "DYAppearance.h"
 #import "DYDefine.h"
 #import "DYProgressHUD.h"
+#import "ScanViewController.h"
+#import "MOATradeDetailViewController.h"
 
 #pragma mark - 退出账号相关
 //#import "DYDataSyncHelper.h"
@@ -231,15 +233,16 @@
 {
     switch (section) {
         case 0:
-        case 1:
             return 0;
             break;
-            
-        case 2:
+        case 1:
             return self.mineFunctionsArray.count;
             break;
             
+        case 2:
         case 3:
+            return 1;
+            
         default:
             return 1;
             break;
@@ -278,12 +281,14 @@
     switch (indexPath.section) {
         case 0:
         case 1:
+            cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
             break;
             
         case 2:{
-            cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
+            cell.textLabel.text = @"消费记录";
             break;
         }
+            
         case 3:{
             cell.textLabel.text = @"退出登录";
             break;
@@ -301,17 +306,18 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
         case 0:
-        case 1:
+        case 1:{
+            ScanViewController *vc = [[ScanViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
-            
+        }
         case 2:{
-            RootViewController *rootVc = [[RootViewController alloc]init];
-            [self.navigationController pushViewController:rootVc animated:YES];
+            MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
             
         case 3:{
-//            MOALoginViewController *loginVC = [[MOALoginViewController alloc]init];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
             MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
             [self.navigationController pushViewController:loginVC animated:YES];

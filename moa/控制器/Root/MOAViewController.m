@@ -8,7 +8,7 @@
 
 #import "MOAViewController.h"
 #import "MOATradeDetailViewController.h"
-#import "RootViewController.h"
+#import "MyCenterRootViewController.h"
 
 @interface MOAViewController ()
 
@@ -42,7 +42,7 @@
     
     for (UIViewController *vc in array) {
         
-        if ([vc isKindOfClass:[RootViewController class]]) {
+        if ([vc isKindOfClass:[MyCenterRootViewController class]]) {
             
             [self.navigationController popToViewController:vc animated:YES];
         }
