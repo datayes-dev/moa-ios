@@ -73,7 +73,7 @@
     self.userName.text = [DYAuthTokenManager shareInstance].userName;
     self.sumTextField.layer.borderColor = [DYAppearance colorWithRGB:0xF8721B].CGColor;
     self.sumTextField.delegate = self;
-    [self.sumTextField setKeyboardType:UIKeyboardTypeDecimalPad];
+    [self.sumTextField setKeyboardType:UIKeyboardTypeNumberPad];
 }
 
 
