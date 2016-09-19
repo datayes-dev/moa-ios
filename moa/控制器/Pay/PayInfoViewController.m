@@ -12,6 +12,7 @@
 #import "PaySuccessViewController.h"
 #import "DYAuthTokenManager.h"
 #import "DYLoadingViewManager.h"
+#import "Toast+UIView.h"
 
 @interface PayInfoViewController()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
@@ -130,7 +131,24 @@
         
         if (error) {
             
-            [self leftButtonClick:nil];
+            sender.enabled = NO;
+            
+            if (error.code == -1011) {
+                
+                [self.view makeToast:@"支付失败，您今天的额度或次数已超过限制" duration:2 position:@"center"];
+                
+            } else {
+                
+                [self.view makeToast:@"支付失败，请稍后再试" duration:2 position:@"center"];
+            }
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [self leftButtonClick:nil];
+            });
+            
+            return;
+            
         }
         
         DYCellDataItem *item = [DYCellDataItem new];

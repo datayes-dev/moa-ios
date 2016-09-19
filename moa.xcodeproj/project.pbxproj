@@ -33,6 +33,7 @@
 		4251849D1D8F90F300D94643 /* DYLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184971D8F90F300D94643 /* DYLoadingView.m */; };
 		4251849E1D8F90F300D94643 /* DYLoadingViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184991D8F90F300D94643 /* DYLoadingViewManager.m */; };
 		4251849F1D8F90F300D94643 /* DYWindowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */; };
+		425184A31D8F9BA800D94643 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184A21D8F9BA800D94643 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42590C621D894A3D008B5B78 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42590C601D894A3D008B5B78 /* PaySuccessViewController.m */; };
 		42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
@@ -142,6 +143,8 @@
 		4251849A1D8F90F300D94643 /* DYLoadingViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoadingViewProtocol.h; sourceTree = "<group>"; };
 		4251849B1D8F90F300D94643 /* DYWindowLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYWindowLoadingView.h; sourceTree = "<group>"; };
 		4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYWindowLoadingView.m; sourceTree = "<group>"; };
+		425184A11D8F9BA800D94643 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		425184A21D8F9BA800D94643 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		42590C5F1D894A3D008B5B78 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		42590C601D894A3D008B5B78 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
@@ -329,6 +332,7 @@
 		4251846D1D87D27B00D94643 /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
+				425184A01D8F9BA800D94643 /* Toast */,
 				425184951D8F90F300D94643 /* DYLoadingView */,
 				4251846E1D87D27B00D94643 /* UIImage+Creation.h */,
 				4251846F1D87D27B00D94643 /* UIImage+Creation.m */,
@@ -397,6 +401,15 @@
 				4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */,
 			);
 			path = DYLoadingView;
+			sourceTree = "<group>";
+		};
+		425184A01D8F9BA800D94643 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				425184A11D8F9BA800D94643 /* Toast+UIView.h */,
+				425184A21D8F9BA800D94643 /* Toast+UIView.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
@@ -788,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425184A31D8F9BA800D94643 /* Toast+UIView.m in Sources */,
 				4251849D1D8F90F300D94643 /* DYLoadingView.m in Sources */,
 				7C8E258F1D8794EA001629A7 /* DYAuthorityManager.m in Sources */,
 				425184681D87CCE800D94643 /* ScanViewController.m in Sources */,
