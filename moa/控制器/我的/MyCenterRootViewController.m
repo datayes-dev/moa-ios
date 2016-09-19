@@ -30,34 +30,15 @@
 #import "MyCenterRootViewController.h"
 #import "RootViewController.h"
 #import "MOALoginViewController.h"
-//#import "DYUserInfoHeadView.h"
-//#import "DYLoginUserInfo.h"
+#import "DYUserInfoHeadView.h"
+#import "DYLoginUserInfo.h"
 #import "DYGetUserInfoDataSource.h"
 #import "DYAuthTokenManager.h"
 #import "UIButton+AFNetworking.h"
-//#import "DYChangePasswordViewController.h"
-#import "DYTools+AppInfo.h"
-#import "DYAuthorityDataSource.h"
-#import "DYAuthorityResponseHelper.h"
 #import "DYAuthorityManager.h"
-//#import "DYLoginViewController.h"
-//#import "DYAuthorizationStatus.h"
-#import "AppDelegate.h"
-#import "Masonry.h"
 #import "DYAppearance.h"
 #import "DYDefine.h"
 #import "DYProgressHUD.h"
-
-#pragma mark - 退出账号相关
-//#import "DYDataSyncHelper.h"
-//#import "DYNoteInfoDataDBSync.h"
-#import "DYAppNotification.h"
-//#import "DYFavoriteStocksDataSource.h"
-//#import "DYSearchViewDataSource.h"
-//#import "DYStudyDetailDataSource.h"
-#import "DYAppConfigManager.h"
-//#import "InfoSubsciptionAdapter.h"
-//#import "DYCompanyDataSync.h"
 
 #define kRowHeight 44
 
@@ -67,7 +48,7 @@
 }
 @property (nonatomic, strong) UIImagePickerController *pickerController;
 
-//@property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
+@property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
 @property (nonatomic, strong) NSArray *mineFunctionsArray;
 @property (nonatomic, strong) NSArray *settingArray;
 @property (nonatomic, strong) NSArray *imageArray;
@@ -128,8 +109,8 @@
             [[DYGetUserInfoDataSource shareInstance] requestUserInfoResultBlock:^(id data, NSError *error) {
                 DDLogDebug(@"UserInfo:%@", data);
                 if (error == nil && data != nil) {
-//                    [DYLoginUserInfo shareInstance].userIdentityInfo = data;
-//                    [[DYLoginUserInfo shareInstance] parseFromDictionary];
+                    [DYLoginUserInfo shareInstance].userIdentityInfo = data;
+                    [[DYLoginUserInfo shareInstance] parseFromDictionary];
                 }
                 [weakself.tableView reloadData];
             }];
@@ -152,59 +133,6 @@
 {
     return [DYAuthTokenManager shareInstance].isLogined;
 }
-
-#pragma mark - actions
-
-/*
-- (void)setUserPortraitAction
-{
-    if ([DYAuthTokenManager shareInstance].isLogined)
-    {
-        if (IOS8_OR_LATER) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-            WS(weakSelf);
-            [alertController addAction:[UIAlertAction actionWithTitle:@"拍照"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  if (![DYAuthorizationStatus checkCameraAuthorization]) {
-                                                                      return;
-                                                                  }
-                                                                  weakSelf.pickerController.allowsEditing = YES;
-                                                                  weakSelf.pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-                                                                  [weakSelf presentViewController:weakSelf.pickerController animated:YES completion:nil];
-                                                              }]];
-            
-            [alertController addAction:[UIAlertAction actionWithTitle:@"从手机相册选择"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  if (![DYAuthorizationStatus checkPhotoAuthorization]) {
-                                                                      return;
-                                                                  }
-                                                                  
-                                                                  weakSelf.pickerController.allowsEditing = YES;
-                                                                  weakSelf.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                                                                  [weakSelf presentViewController:weakSelf.pickerController animated:YES completion:nil];
-                                                              }]];
-            
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.3) {
-                [cancelAction setValue:DYAppearanceColor(@"H9", 1.0) forKey:@"_titleTextColor"];
-            }
-            [alertController addAction:cancelAction];
-            
-            [self presentViewController:alertController animated:YES completion:nil];
-            
-        }
-        else
-        {
-            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从手机相册选择", nil];
-            [sheet showInView:self.view];
-        
-        }
-    }
-}
- */
-
 
 #pragma mark - UIActionSheet Delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -248,16 +176,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return kRowHeight;
+    return kRowHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cellIdentifier";
-//    DYBorderViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if (cell == nil) {
-//        cell = [[DYBorderViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -305,13 +229,13 @@
             break;
             
         case 2:{
-            RootViewController *rootVc = [[RootViewController alloc]init];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RootViewControllerIdentifier" bundle:[NSBundle mainBundle]];
+            RootViewController *rootVc = (RootViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
             [self.navigationController pushViewController:rootVc animated:YES];
             break;
         }
             
         case 3:{
-//            MOALoginViewController *loginVC = [[MOALoginViewController alloc]init];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
             MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
             [self.navigationController pushViewController:loginVC animated:YES];
@@ -333,7 +257,7 @@
     }
 }
 
-/*
+
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section ==1) {
@@ -346,7 +270,6 @@
         {
             userInfoView = self.userInfoView;
         }
-        [userInfoView.loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
         
         if ([DYAuthTokenManager shareInstance].isLogined) {
             NSString* avatar = [DYLoginUserInfo shareInstance].avatar;
@@ -381,18 +304,11 @@
                     [self.userInfoView.loadingIndicatorView stopAnimating];
                 }
             }
-            
-            // 移除之前的事件
-            [userInfoView.userPortraitButton removeTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-            [userInfoView.userPortraitButton addTarget:self action:@selector(setUserPortraitAction) forControlEvents:UIControlEventTouchUpInside];
         }
         else
         {
             [userInfoView.userPortraitButton setImage:[UIImage imageNamed:@"header"] forState:UIControlStateNormal];
             [self.userInfoView.loadingIndicatorView stopAnimating];
-            
-            // 未登录状态点击头像进入登录页面
-            [userInfoView.userPortraitButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
         }
         
         if ([DYAuthTokenManager shareInstance].isLogined) {
@@ -400,7 +316,7 @@
                 [userInfoView.userNameLabel setText:[DYLoginUserInfo shareInstance].userName];
             }
             else {
-                [userInfoView.userNameLabel setText:DYInterStr(@"MineVC_18",@"正在登录...")];
+                [userInfoView.userNameLabel setText:@"正在登录..."];
             }
             [userInfoView hasLogined:YES];
         }
@@ -408,70 +324,11 @@
         {
             [userInfoView hasLogined:NO];
         }
-        
         return userInfoView;
     } else {
         return [[UIView alloc]init];
     }
     
 }
- */
-
-
-#pragma mark --UIImagePickerController delegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
-{
-    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
-    if (![type isEqualToString:@"public.image"]) {
-        return;
-    }
-    NSData *imageData = nil;
-    if(picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
-        _userHeadInfoImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        NSString *extension = [[info objectForKey:UIImagePickerControllerReferenceURL] pathExtension];
-        if ([extension isEqualToString:@"JPG"]) {
-            imageData = UIImageJPEGRepresentation(_userHeadInfoImage, 1.0);
-        } else {
-            imageData = UIImagePNGRepresentation(_userHeadInfoImage);
-        }
-    } else if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
-        _userHeadInfoImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        imageData = UIImagePNGRepresentation(_userHeadInfoImage);
-    }
-//    [SandyBoxManager addPublicObject:imageData key:kUserInfoHeadImageKey];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    [self uploadAvatar:imageData];
-}
-
-//上传头像
-- (void)uploadAvatar:(NSData*)avatarData
-{
-    //压缩照片
-    UIImage* tempShowImg=[UIImage imageWithData:avatarData];
-    UIGraphicsBeginImageContext(CGSizeMake(200, 200*tempShowImg.size.height/tempShowImg.size.width));
-    [tempShowImg drawInRect:CGRectMake(0, 0, 200, 200*tempShowImg.size.height/tempShowImg.size.width)];
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    avatarData=UIImageJPEGRepresentation(scaledImage,0.8);
-    
-    if ([avatarData length] > 0) {
-        [DYProgressHUD showWaitingIndicatorInView:self.view withHideDelayTime:30];
-        __weak __typeof(self)weakSelf = self;
-        NSString *encodedAvata  = [avatarData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
-        [[DYAuthorityDataSource shareInstance] requestAddBase64Picture:encodedAvata resultBlock:^(id data, NSError *error) {
-            [DYProgressHUD hideWaiting];
-            if(error) {
-                [DYProgressHUD showToastInView:weakSelf.view message:@"头像设置未成功" position:@"bottom"];
-            } else {
-                [DYProgressHUD showToastInView:weakSelf.view message:@"头像设置成功" position:@"bottom"];
-            }
-            
-//            [DYLoginUserInfo shareInstance].avatar = data[@"data"];
-            [weakSelf.tableView reloadData];
-        }];
-    }
-}
-
-
 
 @end
