@@ -21,14 +21,55 @@
  * strictly forbidden unless prior written permission is obtained from DataYes.
  */
 //
-//  MyCenterRootViewController.h
+//  DYLoginUserInfo.h
 //  IntelligenceResearchReport
 //
-//  Created by yun.shu on 16/7/19.
+//  Created by wangshaiding on 15/9/25.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface MyCenterRootViewController : UITableViewController
+@interface DYLoginUserInfo : NSObject
+
+/**
+ *	@brief	单例
+ *
+ *	@return	返回单例本身
+ */
++ (instancetype)shareInstance;
+
+@property(strong, nonatomic) NSString *userName;
+@property(strong, nonatomic) NSString *avatar;
+
+/**
+ *	@brief	用户身份信息
+ */
+@property (nonatomic, strong) NSDictionary* userIdentityInfo;
+
+/**
+ *	@brief	获取信息
+ */
+- (void)parseFromDictionary;
+
+/**
+ *	@brief	头像地址
+ *
+ *	@return	返回上传头像地址
+ */
+- (NSURL*)avatarURL;
+
+/**
+ *	@brief	帐号是否绑定了企业帐号
+ *
+ *	@return	返回YES表示绑定了，返回NO
+ */
+- (BOOL)isBindToEnterpriseAccount;
+
+/**
+ *	@brief	当前企业帐号是否激活
+ *
+ *	@return	返回YES表示已激活，返回NO表示未激活
+ */
+- (BOOL)isEnterpriseAccount;
 
 @end

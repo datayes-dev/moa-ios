@@ -30,23 +30,17 @@
 #import "MyCenterRootViewController.h"
 #import "RootViewController.h"
 #import "MOALoginViewController.h"
-//#import "DYUserInfoHeadView.h"
-//#import "DYLoginUserInfo.h"
+#import "DYUserInfoHeadView.h"
+#import "DYLoginUserInfo.h"
 #import "DYGetUserInfoDataSource.h"
 #import "DYAuthTokenManager.h"
 #import "UIButton+AFNetworking.h"
-//#import "DYChangePasswordViewController.h"
-#import "DYTools+AppInfo.h"
-#import "DYAuthorityDataSource.h"
-#import "DYAuthorityResponseHelper.h"
 #import "DYAuthorityManager.h"
-//#import "DYLoginViewController.h"
-//#import "DYAuthorizationStatus.h"
-#import "AppDelegate.h"
-#import "Masonry.h"
 #import "DYAppearance.h"
 #import "DYDefine.h"
 #import "DYProgressHUD.h"
+#import "DYAppConfigManager.h"
+
 #import "ScanViewController.h"
 #import "MOATradeDetailViewController.h"
 
@@ -62,24 +56,15 @@
 //#import "DYCompanyDataSync.h"
 #import <AVFoundation/AVFoundation.h>
 
-
 #define kRowHeight 44
 
-@interface MyCenterRootViewController ()<UIActionSheetDelegate, UIGestureRecognizerDelegate>
-{
-    UIImage *_userHeadInfoImage;
-}
-@property (nonatomic, strong) UIImagePickerController *pickerController;
+@interface MyCenterRootViewController ()
 
-//@property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
+@property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
 @property (nonatomic, strong) NSArray *mineFunctionsArray;
 @property (nonatomic, strong) NSArray *settingArray;
-@property (nonatomic, strong) NSArray *imageArray;
 
 @property (nonatomic, assign) BOOL isLogin;
-@property (nonatomic, strong) UIView *footerView;
-@property (nonatomic, strong) UIButton *logoutButton;
-@property (nonatomic, assign) BOOL isShowCell;
 
 @end
 
@@ -108,20 +93,14 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    NSLog(@"%s",__FUNCTION__);
 }
-
-#pragma mark - notification
-- (void)notifyCellRefresh:(NSNotification *)notify
-{
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - private method
 - (void)addConcernedOption
 {
     _mineFunctionsArray = @[@"用餐刷卡"];
+    _settingArray = @[@"退出登录"];
 }
 
 - (void)fetchUserInfo
@@ -132,8 +111,8 @@
             [[DYGetUserInfoDataSource shareInstance] requestUserInfoResultBlock:^(id data, NSError *error) {
                 DDLogDebug(@"UserInfo:%@", data);
                 if (error == nil && data != nil) {
-//                    [DYLoginUserInfo shareInstance].userIdentityInfo = data;
-//                    [[DYLoginUserInfo shareInstance] parseFromDictionary];
+                    [DYLoginUserInfo shareInstance].userIdentityInfo = data;
+                    [[DYLoginUserInfo shareInstance] parseFromDictionary];
                 }
                 [weakself.tableView reloadData];
             }];
@@ -151,118 +130,42 @@
     }
 }
 
-#pragma mark - FooterView
-- (BOOL)isLogin
-{
-    return [DYAuthTokenManager shareInstance].isLogined;
-}
-
-#pragma mark - actions
-
-/*
-- (void)setUserPortraitAction
-{
-    if ([DYAuthTokenManager shareInstance].isLogined)
-    {
-        if (IOS8_OR_LATER) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-            WS(weakSelf);
-            [alertController addAction:[UIAlertAction actionWithTitle:@"拍照"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  if (![DYAuthorizationStatus checkCameraAuthorization]) {
-                                                                      return;
-                                                                  }
-                                                                  weakSelf.pickerController.allowsEditing = YES;
-                                                                  weakSelf.pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-                                                                  [weakSelf presentViewController:weakSelf.pickerController animated:YES completion:nil];
-                                                              }]];
-            
-            [alertController addAction:[UIAlertAction actionWithTitle:@"从手机相册选择"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  if (![DYAuthorizationStatus checkPhotoAuthorization]) {
-                                                                      return;
-                                                                  }
-                                                                  
-                                                                  weakSelf.pickerController.allowsEditing = YES;
-                                                                  weakSelf.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                                                                  [weakSelf presentViewController:weakSelf.pickerController animated:YES completion:nil];
-                                                              }]];
-            
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.3) {
-                [cancelAction setValue:DYAppearanceColor(@"H9", 1.0) forKey:@"_titleTextColor"];
-            }
-            [alertController addAction:cancelAction];
-            
-            [self presentViewController:alertController animated:YES completion:nil];
-            
-        }
-        else
-        {
-            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从手机相册选择", nil];
-            [sheet showInView:self.view];
-        
-        }
-    }
-}
- */
-
-
-#pragma mark - UIActionSheet Delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex ==0) {
-        _pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        _pickerController.allowsEditing = YES;
-        [self presentViewController:_pickerController animated:YES completion:nil];
-    }
-    else if (buttonIndex ==1) {
-        _pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        _pickerController.allowsEditing = YES;
-        [self presentViewController:_pickerController animated:YES completion:nil];
-    }
-}
-
 #pragma mark - UITableViewDelegate / UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
         case 0:
-            return 0;
-            break;
         case 1:
-            return self.mineFunctionsArray.count;
+            return 0;
             break;
             
         case 2:
+            return self.mineFunctionsArray.count;
+            break;
+            
         case 3:
+        case 4:
             return 1;
             
         default:
-            return 1;
+            return 0;
             break;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return kRowHeight;
+    return kRowHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cellIdentifier";
-//    DYBorderViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if (cell == nil) {
-//        cell = [[DYBorderViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -283,16 +186,22 @@
     switch (indexPath.section) {
         case 0:
         case 1:
-            cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
             break;
             
         case 2:{
-            cell.textLabel.text = @"消费记录";
+            cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
+            cell.imageView.image = [UIImage imageNamed:@"qrcode_2"];
             break;
         }
             
-        case 3:{
-            cell.textLabel.text = @"退出登录";
+        case 3:
+            cell.textLabel.text = @"消费记录";
+            cell.imageView.image = [UIImage imageNamed:@"trade"];
+            break;
+            
+        case 4:{
+            cell.textLabel.text = self.settingArray[indexPath.row];
+            cell.imageView.image = [UIImage imageNamed:@"logout2"];
             break;
         }
             
@@ -308,7 +217,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
         case 0:
-        case 1:{
+            break;
+
+        case 1:
+            break;
+            
+        case 2:{
+            
             NSString * mediaType = AVMediaTypeVideo;
             AVAuthorizationStatus  authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
             if (authorizationStatus == AVAuthorizationStatusRestricted|| authorizationStatus == AVAuthorizationStatusDenied) {
@@ -318,20 +233,24 @@
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }];
                 [alertC addAction:action];
-            }else{
+                
+            } else {
+                
+                ScanViewController *vc = [[ScanViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
             }
             
-            ScanViewController *vc = [[ScanViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-        case 2:{
+        case 3:{
             MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
             
-        case 3:{
+        case 4:{
+            [[DYAuthTokenManager shareInstance] logout];
+            [[DYAppConfigManager shareInstance] saveIntoFile];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
             MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
             [self.navigationController pushViewController:loginVC animated:YES];
@@ -346,14 +265,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 2 || section == 3) {
-        return 10;
-    }else {
-        return section == 1 ? 70: 10;
-    }
+    return section == 1 ? 70: 10;
 }
 
-/*
+
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section ==1) {
@@ -366,132 +281,50 @@
         {
             userInfoView = self.userInfoView;
         }
-        [userInfoView.loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
         
-        if ([DYAuthTokenManager shareInstance].isLogined) {
-            NSString* avatar = [DYLoginUserInfo shareInstance].avatar;
-            if ([avatar isKindOfClass:[NSString class]] && [avatar length] > 0) {
-                NSURL *avaterURL = [[DYLoginUserInfo shareInstance] avatarURL];
-                [UIButton setSharedImageCache:[UIButton sharedImageCache]];
-                
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:avaterURL];
-                [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
-                WS(weakSelf);
-                [self.userInfoView.userPortraitButton setImageForState:UIControlStateNormal
-                                                        withURLRequest:request
-                                                      placeholderImage:nil
-                                                               success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
-                                                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                                                       [weakSelf.userInfoView.userPortraitButton setImage:image forState:UIControlStateNormal];
-                                                                       [weakSelf.userInfoView.loadingIndicatorView stopAnimating];
-                                                                   });
-                                                               } failure:^(NSError * _Nonnull error) {
+        NSString* avatar = [DYLoginUserInfo shareInstance].avatar;
+        if ([avatar isKindOfClass:[NSString class]] && [avatar length] > 0) {
+            NSURL *avaterURL = [[DYLoginUserInfo shareInstance] avatarURL];
+            [UIButton setSharedImageCache:[UIButton sharedImageCache]];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:avaterURL];
+            [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+            WS(weakSelf);
+            [self.userInfoView.userPortraitButton setImageForState:UIControlStateNormal
+                                                    withURLRequest:request
+                                                  placeholderImage:nil
+                                                           success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [weakSelf.userInfoView.userPortraitButton setImage:image forState:UIControlStateNormal];
                                                                    [weakSelf.userInfoView.loadingIndicatorView stopAnimating];
-                                                               }];
-            }
-            else {
-                [userInfoView.userPortraitButton setImage:[UIImage imageNamed:@"header"] forState:UIControlStateNormal];
-                
-                // 如果没有用户昵称，代表这个数据还没有下发下来，如果昵称已经有了，代表数据已经有了，就不用转菊花了
-                if ([[DYLoginUserInfo shareInstance].userName length] <= 0) {
-                    [self.userInfoView.loadingIndicatorView startAnimating];
-                }
-                else
-                {
-                    [self.userInfoView.loadingIndicatorView stopAnimating];
-                }
-            }
-            
-            // 移除之前的事件
-            [userInfoView.userPortraitButton removeTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-            [userInfoView.userPortraitButton addTarget:self action:@selector(setUserPortraitAction) forControlEvents:UIControlEventTouchUpInside];
+                                                               });
+                                                           } failure:^(NSError * _Nonnull error) {
+                                                               [weakSelf.userInfoView.loadingIndicatorView stopAnimating];
+                                                           }];
         }
-        else
-        {
+        else {
             [userInfoView.userPortraitButton setImage:[UIImage imageNamed:@"header"] forState:UIControlStateNormal];
-            [self.userInfoView.loadingIndicatorView stopAnimating];
             
-            // 未登录状态点击头像进入登录页面
-            [userInfoView.userPortraitButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        }
-        
-        if ([DYAuthTokenManager shareInstance].isLogined) {
-            if ([[DYLoginUserInfo shareInstance].userName length] > 0) {
-                [userInfoView.userNameLabel setText:[DYLoginUserInfo shareInstance].userName];
+            // 如果没有用户昵称，代表这个数据还没有下发下来，如果昵称已经有了，代表数据已经有了，就不用转菊花了
+            if ([[DYLoginUserInfo shareInstance].userName length] <= 0) {
+                [self.userInfoView.loadingIndicatorView startAnimating];
             }
-            else {
-                [userInfoView.userNameLabel setText:DYInterStr(@"MineVC_18",@"正在登录...")];
+            else
+            {
+                [self.userInfoView.loadingIndicatorView stopAnimating];
             }
-            [userInfoView hasLogined:YES];
         }
-        else
-        {
-            [userInfoView hasLogined:NO];
+        if ([[DYLoginUserInfo shareInstance].userName length] > 0) {
+            [userInfoView.userNameLabel setText:[DYLoginUserInfo shareInstance].userName];
         }
-        
+        else {
+            [userInfoView.userNameLabel setText:@"正在登录..."];
+        }
+        [userInfoView hasLogined:YES];
         return userInfoView;
     } else {
         return [[UIView alloc]init];
     }
-    
 }
- */
-
-
-#pragma mark --UIImagePickerController delegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
-{
-    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
-    if (![type isEqualToString:@"public.image"]) {
-        return;
-    }
-    NSData *imageData = nil;
-    if(picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
-        _userHeadInfoImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        NSString *extension = [[info objectForKey:UIImagePickerControllerReferenceURL] pathExtension];
-        if ([extension isEqualToString:@"JPG"]) {
-            imageData = UIImageJPEGRepresentation(_userHeadInfoImage, 1.0);
-        } else {
-            imageData = UIImagePNGRepresentation(_userHeadInfoImage);
-        }
-    } else if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
-        _userHeadInfoImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        imageData = UIImagePNGRepresentation(_userHeadInfoImage);
-    }
-//    [SandyBoxManager addPublicObject:imageData key:kUserInfoHeadImageKey];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    [self uploadAvatar:imageData];
-}
-
-//上传头像
-- (void)uploadAvatar:(NSData*)avatarData
-{
-    //压缩照片
-    UIImage* tempShowImg=[UIImage imageWithData:avatarData];
-    UIGraphicsBeginImageContext(CGSizeMake(200, 200*tempShowImg.size.height/tempShowImg.size.width));
-    [tempShowImg drawInRect:CGRectMake(0, 0, 200, 200*tempShowImg.size.height/tempShowImg.size.width)];
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    avatarData=UIImageJPEGRepresentation(scaledImage,0.8);
-    
-    if ([avatarData length] > 0) {
-        [DYProgressHUD showWaitingIndicatorInView:self.view withHideDelayTime:30];
-        __weak __typeof(self)weakSelf = self;
-        NSString *encodedAvata  = [avatarData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
-        [[DYAuthorityDataSource shareInstance] requestAddBase64Picture:encodedAvata resultBlock:^(id data, NSError *error) {
-            [DYProgressHUD hideWaiting];
-            if(error) {
-                [DYProgressHUD showToastInView:weakSelf.view message:@"头像设置未成功" position:@"bottom"];
-            } else {
-                [DYProgressHUD showToastInView:weakSelf.view message:@"头像设置成功" position:@"bottom"];
-            }
-            
-//            [DYLoginUserInfo shareInstance].avatar = data[@"data"];
-            [weakSelf.tableView reloadData];
-        }];
-    }
-}
-
-
 
 @end

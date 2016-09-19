@@ -21,14 +21,29 @@
  * strictly forbidden unless prior written permission is obtained from DataYes.
  */
 //
-//  MyCenterRootViewController.h
+//  DYUserInfoHeadView.h
 //  IntelligenceResearchReport
 //
-//  Created by yun.shu on 16/7/19.
+//  Created by yun.shu on 16/7/25.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MyCenterRootViewController : UITableViewController
+@interface DYUserInfoHeadView : UIView
+
++ (id)createUserInfoView;
+
+@property (weak, nonatomic) IBOutlet UIButton *userPortraitButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIView *buttonsRootView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicatorView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *userInfoArrow;
+
+
+//是否已经成功登录
+- (void)hasLogined:(BOOL)isSuccess;
+
 
 @end
