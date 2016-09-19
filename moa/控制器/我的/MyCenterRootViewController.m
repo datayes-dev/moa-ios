@@ -42,21 +42,13 @@
 
 #define kRowHeight 44
 
-@interface MyCenterRootViewController ()<UIActionSheetDelegate, UIGestureRecognizerDelegate>
-{
-    UIImage *_userHeadInfoImage;
-}
-@property (nonatomic, strong) UIImagePickerController *pickerController;
+@interface MyCenterRootViewController ()
 
 @property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
 @property (nonatomic, strong) NSArray *mineFunctionsArray;
 @property (nonatomic, strong) NSArray *settingArray;
-@property (nonatomic, strong) NSArray *imageArray;
 
 @property (nonatomic, assign) BOOL isLogin;
-@property (nonatomic, strong) UIView *footerView;
-@property (nonatomic, strong) UIButton *logoutButton;
-@property (nonatomic, assign) BOOL isShowCell;
 
 @end
 
@@ -85,20 +77,14 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    NSLog(@"%s",__FUNCTION__);
 }
-
-#pragma mark - notification
-- (void)notifyCellRefresh:(NSNotification *)notify
-{
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - private method
 - (void)addConcernedOption
 {
     _mineFunctionsArray = @[@"用餐刷卡"];
+    _settingArray = @[@"退出登录"];
 }
 
 - (void)fetchUserInfo
@@ -128,27 +114,6 @@
     }
 }
 
-#pragma mark - FooterView
-- (BOOL)isLogin
-{
-    return [DYAuthTokenManager shareInstance].isLogined;
-}
-
-#pragma mark - UIActionSheet Delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex ==0) {
-        _pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        _pickerController.allowsEditing = YES;
-        [self presentViewController:_pickerController animated:YES completion:nil];
-    }
-    else if (buttonIndex ==1) {
-        _pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        _pickerController.allowsEditing = YES;
-        [self presentViewController:_pickerController animated:YES completion:nil];
-    }
-}
-
 #pragma mark - UITableViewDelegate / UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -168,8 +133,11 @@
             break;
             
         case 3:
+            return self.settingArray.count;
+            break;
+            
         default:
-            return 1;
+            return 0;
             break;
     }
 }
@@ -209,7 +177,7 @@
             break;
         }
         case 3:{
-            cell.textLabel.text = @"退出登录";
+            cell.textLabel.text = self.settingArray[indexPath.row];
             break;
         }
             
@@ -250,11 +218,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 2 || section == 3) {
-        return 10;
-    }else {
-        return section == 1 ? 70: 10;
-    }
+    return section == 1 ? 70: 10;
 }
 
 

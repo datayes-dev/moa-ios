@@ -29,8 +29,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define kUserInfoHeadImageKey @"userInfoHeadImageKey"
-
-@interface MyCenterRootViewController : UITableViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface MyCenterRootViewController : UITableViewController
 
 @end
