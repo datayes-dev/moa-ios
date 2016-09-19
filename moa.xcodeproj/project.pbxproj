@@ -30,6 +30,9 @@
 		4251848E1D89365E00D94643 /* DYCellDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848D1D89365E00D94643 /* DYCellDataItem.m */; };
 		425184931D896A4300D94643 /* MOATradeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184911D896A4300D94643 /* MOATradeDetailTableViewCell.m */; };
 		425184941D896A4300D94643 /* MOATradeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425184921D896A4300D94643 /* MOATradeDetailTableViewCell.xib */; };
+		4251849D1D8F90F300D94643 /* DYLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184971D8F90F300D94643 /* DYLoadingView.m */; };
+		4251849E1D8F90F300D94643 /* DYLoadingViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184991D8F90F300D94643 /* DYLoadingViewManager.m */; };
+		4251849F1D8F90F300D94643 /* DYWindowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */; };
 		42590C621D894A3D008B5B78 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42590C601D894A3D008B5B78 /* PaySuccessViewController.m */; };
 		42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
@@ -132,6 +135,13 @@
 		425184901D896A4300D94643 /* MOATradeDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOATradeDetailTableViewCell.h; sourceTree = "<group>"; };
 		425184911D896A4300D94643 /* MOATradeDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOATradeDetailTableViewCell.m; sourceTree = "<group>"; };
 		425184921D896A4300D94643 /* MOATradeDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOATradeDetailTableViewCell.xib; sourceTree = "<group>"; };
+		425184961D8F90F300D94643 /* DYLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoadingView.h; sourceTree = "<group>"; };
+		425184971D8F90F300D94643 /* DYLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLoadingView.m; sourceTree = "<group>"; };
+		425184981D8F90F300D94643 /* DYLoadingViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoadingViewManager.h; sourceTree = "<group>"; };
+		425184991D8F90F300D94643 /* DYLoadingViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLoadingViewManager.m; sourceTree = "<group>"; };
+		4251849A1D8F90F300D94643 /* DYLoadingViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLoadingViewProtocol.h; sourceTree = "<group>"; };
+		4251849B1D8F90F300D94643 /* DYWindowLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYWindowLoadingView.h; sourceTree = "<group>"; };
+		4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYWindowLoadingView.m; sourceTree = "<group>"; };
 		42590C5F1D894A3D008B5B78 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		42590C601D894A3D008B5B78 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
@@ -319,6 +329,7 @@
 		4251846D1D87D27B00D94643 /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
+				425184951D8F90F300D94643 /* DYLoadingView */,
 				4251846E1D87D27B00D94643 /* UIImage+Creation.h */,
 				4251846F1D87D27B00D94643 /* UIImage+Creation.m */,
 				0BC2BE1D1D87F3A00087F84D /* DYMessageDefine.h */,
@@ -372,6 +383,20 @@
 			);
 			name = "交易详情";
 			path = "视图/交易详情";
+			sourceTree = "<group>";
+		};
+		425184951D8F90F300D94643 /* DYLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				425184961D8F90F300D94643 /* DYLoadingView.h */,
+				425184971D8F90F300D94643 /* DYLoadingView.m */,
+				425184981D8F90F300D94643 /* DYLoadingViewManager.h */,
+				425184991D8F90F300D94643 /* DYLoadingViewManager.m */,
+				4251849A1D8F90F300D94643 /* DYLoadingViewProtocol.h */,
+				4251849B1D8F90F300D94643 /* DYWindowLoadingView.h */,
+				4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */,
+			);
+			path = DYLoadingView;
 			sourceTree = "<group>";
 		};
 		45D9AF875E78AD2BF8D4BAA0 /* Pods */ = {
@@ -763,6 +788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4251849D1D8F90F300D94643 /* DYLoadingView.m in Sources */,
 				7C8E258F1D8794EA001629A7 /* DYAuthorityManager.m in Sources */,
 				425184681D87CCE800D94643 /* ScanViewController.m in Sources */,
 				7C8E25971D8794EA001629A7 /* UIButton+DatayesAuthority.m in Sources */,
@@ -778,6 +804,7 @@
 				7C8E25B21D8794F4001629A7 /* DYDataSourceBase.m in Sources */,
 				7C8E25741D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m in Sources */,
 				7C8E25751D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m in Sources */,
+				4251849F1D8F90F300D94643 /* DYWindowLoadingView.m in Sources */,
 				7C8E25691D8794DB001629A7 /* DYErrorHelper.m in Sources */,
 				425184741D87DCE400D94643 /* MOAPayDataSourceBase.m in Sources */,
 				7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */,
@@ -794,6 +821,7 @@
 				425184701D87D27B00D94643 /* UIImage+Creation.m in Sources */,
 				7C8E25961D8794EA001629A7 /* DYGetUserInfoDataSource.m in Sources */,
 				7C8E25E71D87A136001629A7 /* PayInfoViewController.m in Sources */,
+				4251849E1D8F90F300D94643 /* DYLoadingViewManager.m in Sources */,
 				7C8E25661D8794DB001629A7 /* DYInterfaceRequestHelper.m in Sources */,
 				7C8E256C1D8794DB001629A7 /* DYNotifiesRequest.m in Sources */,
 				4251847C1D88F07B00D94643 /* MOAViewController.m in Sources */,

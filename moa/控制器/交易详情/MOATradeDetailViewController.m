@@ -9,6 +9,7 @@
 #import "MOATradeDetailViewController.h"
 #import "MOATradeInfoAdapter.h"
 #import "MOATradeDetailTableViewCell.h"
+#import "DYLoadingViewManager.h"
 
 @interface MOATradeDetailViewController ()<UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -48,7 +49,11 @@
     
     WS(weakSelf);
     
+    showLoadingAtWindow;
+    
     [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+        
+        dismisLoadingFromWindow;
         
         if (error) {
             return ;

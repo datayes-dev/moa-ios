@@ -11,6 +11,7 @@
 #import "MOATradeInfoAdapter.h"
 #import "PaySuccessViewController.h"
 #import "DYAuthTokenManager.h"
+#import "DYLoadingViewManager.h"
 
 @interface PayInfoViewController()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
@@ -83,7 +84,11 @@
     
     self.currentHotel = nil;
     
+    showLoadingAtWindow;
+    
     [self.adapter getHotelInfoWith:self.hotelQRCode withBlock:^(id data, NSError *error) {
+        
+        dismisLoadingFromWindow;
         
         weakSelf.currentHotel = (NSDictionary *)data;
         
@@ -115,7 +120,11 @@
     
     WS(weakSelf);
     
+    showLoadingAtWindow;
+    
     [self.adapter makeDealWithPrice:price inHotel:hotelId andMemoInfo:nil andResultBlock:^(id data, NSError *error) {
+        
+        dismisLoadingFromWindow;
         
         sender.enabled = YES;
         
