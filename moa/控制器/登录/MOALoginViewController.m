@@ -122,9 +122,11 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
     self.imageCheckTextField.placeholder = @"请输入验证码";
     [self.imageCheckTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.loginButton setTitle: @"登录" forState:UIControlStateNormal ];
-    [self.forgetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal ];
-    
     self.loginButton.enabled = NO;
+    
+    // 暂无"忘记密码"
+    [self.forgetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal ];
+    [self.forgetPasswordButton setHidden:YES];
     
 }
 
