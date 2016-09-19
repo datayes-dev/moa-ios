@@ -9,6 +9,7 @@
 #import "MOATradeDetailViewController.h"
 #import "MOATradeInfoAdapter.h"
 #import "MOATradeDetailTableViewCell.h"
+#import "DYLoadingViewManager.h"
 
 @interface MOATradeDetailViewController ()<UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -40,14 +41,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    [self removeRightButton];
     
     UINib *nib = [UINib nibWithNibName:@"MOATradeDetailTableViewCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"MOATradeDetailTableViewCell"];
     
     WS(weakSelf);
     
+    showLoadingAtWindow;
+    
     [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+        
+        dismisLoadingFromWindow;
+        
+        if (error) {
+            return ;
+        }
         
         weakSelf.infoArray = (NSArray *)data;
         
@@ -72,14 +82,15 @@
 {
     
     MOATradeDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MOATradeDetailTableViewCell"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (indexPath.row < [self.infoArray count]) {
         
         DYCellDataItem *item = self.infoArray[indexPath.row];
         
-        cell.hotelName.text = item.titleText;
-        cell.tradeDate.text = item.detailText;
+        cell.hotelName.text = item.hotelName;
+        cell.tradeDate.text = item.timeStamp;
+        cell.cash.text = item.price;
     }
     
     return cell;

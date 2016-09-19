@@ -9,6 +9,10 @@
 #import "PayInfoViewController.h"
 #import "DYAppearance.h"
 #import "MOATradeInfoAdapter.h"
+#import "PaySuccessViewController.h"
+#import "DYAuthTokenManager.h"
+#import "DYLoadingViewManager.h"
+#import "Toast+UIView.h"
 
 @interface PayInfoViewController()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
@@ -66,7 +70,7 @@
 {
     
     self.payBtn.layer.cornerRadius = 4;
-    
+    self.userName.text = [DYAuthTokenManager shareInstance].userName;
     self.sumTextField.layer.borderColor = [DYAppearance colorWithRGB:0xF8721B].CGColor;
     self.sumTextField.delegate = self;
     [self.sumTextField setKeyboardType:UIKeyboardTypeNumberPad];
@@ -81,7 +85,11 @@
     
     self.currentHotel = nil;
     
+    showLoadingAtWindow;
+    
     [self.adapter getHotelInfoWith:self.hotelQRCode withBlock:^(id data, NSError *error) {
+        
+        dismisLoadingFromWindow;
         
         weakSelf.currentHotel = (NSDictionary *)data;
         
@@ -105,16 +113,56 @@
 - (IBAction)payBtnClicked:(UIButton *)sender
 {
     
+    sender.enabled = NO;
+    [self.sumTextField resignFirstResponder];
+    
     NSString *price = self.sumTextField.text;
     NSString *hotelId = (NSString *)self.currentHotel[@"id"];
     
+    WS(weakSelf);
+    
+    showLoadingAtWindow;
+    
     [self.adapter makeDealWithPrice:price inHotel:hotelId andMemoInfo:nil andResultBlock:^(id data, NSError *error) {
+        
+        dismisLoadingFromWindow;
+        
+        sender.enabled = YES;
         
         if (error) {
             
+            sender.enabled = NO;
+            
+            if (error.code == -1011) {
+                
+                [self.view makeToast:@"支付失败，您今天的额度或次数已超过限制" duration:2 position:@"center"];
+                
+            } else {
+                
+                [self.view makeToast:@"支付失败，请稍后再试" duration:2 position:@"center"];
+            }
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [self leftButtonClick:nil];
+            });
+            
+            return;
+            
         }
         
+        DYCellDataItem *item = [DYCellDataItem new];
+        item.hotelName = self.restName.text;
+        item.price = price;
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+        item.timeStamp = [dateFormatter stringFromDate:date];
+        [weakSelf.adapter saveLastTradeInfo:item];
         
+        PaySuccessViewController *vc = [[PaySuccessViewController alloc] initWithNibName:@"PaySuccessViewController" bundle:[NSBundle mainBundle]];
+
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

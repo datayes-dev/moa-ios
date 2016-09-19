@@ -12,5 +12,10 @@
 
 @property (nonatomic, strong)NSString* titleText;
 @property (nonatomic, strong)NSString* detailText;
+@property (nonatomic, strong)NSString* hotelId;
+@property (nonatomic, strong)NSString* hotelName;
+@property (nonatomic, strong)NSString* price;
+@property (nonatomic, strong)NSString* timeStamp;
+@property (nonatomic, strong)NSString* userName;
 
 @end

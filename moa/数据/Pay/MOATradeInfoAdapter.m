@@ -25,9 +25,21 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
  */
 @property (nonatomic, strong)NSArray* hotelsArray;
 
+@property (nonatomic, strong) DYCellDataItem *lastTradeItem;
+
 @end
 
 @implementation MOATradeInfoAdapter
+
+- (NSMutableArray *)cellDataArray
+{
+    
+    if (_cellDataArray == nil) {
+        
+        _cellDataArray = [NSMutableArray array];
+    }
+    return _cellDataArray;
+}
 
 + (instancetype)shareInstance
 {
@@ -86,7 +98,15 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
            andResultBlock:(DYInterfaceResultBlock)resultBlock
 {
     
+    self.lastTradeItem = nil;
+    
     [self.datasource diningTradeWithPrice:[price floatValue] inHotel:pkId andMemoInfo:memoInfo andResultBlock:^(id data, NSError *error) {
+        
+        if (error) {
+            
+            resultBlock(nil, error);
+            return;
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             resultBlock(data,error);
@@ -111,19 +131,22 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
     
     [self.datasource getTradeListInfoWithResultBlock:^(id data, NSError *error) {
         
+        self.cellDataArray = [NSMutableArray array];
+        
         if (error == nil && data != nil && [data isKindOfClass:[NSData class]]) {
             
             NSArray* tradeListInfoArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
             for (NSDictionary* dic in tradeListInfoArray) {
                 
-                NSString* hotelId = dic[@"restaurant"];
-                NSDictionary* hotelDicInfo = [self getHotelInfo:hotelId];
-                NSString* hotelName = hotelDicInfo[@"name"];
+                NSString* time_stamp = dic[@"time_stamp"];
+                NSNumber* price = dic[@"price"];
+                NSString* hotelName = dic[@"restaurant_name"];
                 
                 DYCellDataItem* item = [DYCellDataItem new];
-                item.titleText = hotelName;
-                item.detailText = [NSString stringWithFormat:@"于%@成功收到%@", dic[@"time_stamp"], dic[@"price"]];
+                item.hotelName = hotelName;
+                item.timeStamp = time_stamp;
+                item.price = [NSString stringWithFormat:@"%@",price];
                 
                 [self.cellDataArray insertObject:item atIndex:0];
             }
@@ -147,5 +170,17 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
         }
     }
     return nil;
+}
+
+- (void)saveLastTradeInfo:(DYCellDataItem *)item
+{
+    
+    self.lastTradeItem = item;
+}
+
+- (DYCellDataItem *)getLastTradeInfo
+{
+    
+    return self.lastTradeItem;
 }
 @end

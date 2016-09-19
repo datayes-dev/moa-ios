@@ -113,7 +113,7 @@
         return rightButton;
     } else if (caption) {
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [rightButton setFrame: CGRectMake(0, 0, 44, 44)];
+        [rightButton setFrame: CGRectMake(0, 0, 50, 44)];
         rightButton.backgroundColor = [UIColor clearColor];
         rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [rightButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -15)];
