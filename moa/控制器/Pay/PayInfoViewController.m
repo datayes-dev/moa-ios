@@ -53,6 +53,7 @@
 {
     
     [super viewDidLoad];
+    self.title = @"刷卡确认";
     
     [self initUI];
 }

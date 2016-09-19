@@ -65,7 +65,7 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = DYAppearanceColor(@"H1", 1.0);
-    self.title = @"我的";
+    self.title = @"吃饭去";
     
     
 }

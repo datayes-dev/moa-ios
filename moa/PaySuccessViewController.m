@@ -32,6 +32,8 @@
 #pragma mark - View's Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"刷卡成功";
     // Do any additional setup after loading the view from its nib.
 }
 

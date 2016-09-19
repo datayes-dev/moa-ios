@@ -42,6 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"消费记录";
     [self removeRightButton];
     
     UINib *nib = [UINib nibWithNibName:@"MOATradeDetailTableViewCell" bundle:[NSBundle mainBundle]];

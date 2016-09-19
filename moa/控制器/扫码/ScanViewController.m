@@ -29,6 +29,8 @@
 #pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"用餐刷卡";
     // Do any additional setup after loading the view.
 }
 
