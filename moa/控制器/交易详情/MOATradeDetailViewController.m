@@ -77,7 +77,7 @@
 {
     
     MOATradeDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MOATradeDetailTableViewCell"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (indexPath.row < [self.infoArray count]) {
         
