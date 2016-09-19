@@ -11,6 +11,8 @@
 #import "RootViewController.h"
 #import "DYLogFormatter.h"
 #import "MOALoginViewController.h"
+#import "DYAuthTokenManager.h"
+#import "MyCenterRootViewController.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -23,8 +25,16 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupDDLog];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
-    MOALoginViewController *rootVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
+    UIViewController* rootVC = nil;
+    if ([DYAuthTokenManager shareInstance].isLogined) {
+        rootVC = [[MyCenterRootViewController alloc]init];
+    }
+    else
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
+        rootVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
+    }
+    
     MOANavigationViewController *navigation = [[MOANavigationViewController alloc] initWithRootViewController:rootVC];
     self.window.rootViewController = navigation;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

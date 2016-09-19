@@ -66,6 +66,8 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = DYAppearanceColor(@"H1", 1.0);
     self.title = @"我的";
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -73,11 +75,13 @@
     [super viewWillAppear:animated];
     [self.navigationItem setHidesBackButton:YES];
     [self addConcernedOption];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchUserInfo) name:kNotiAccessTokenAvailable object:nil];
     [self fetchUserInfo];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotiAccessTokenAvailable object:nil];
     [super viewWillDisappear:animated];
 }
 
