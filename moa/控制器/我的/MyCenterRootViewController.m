@@ -41,6 +41,10 @@
 #import "DYProgressHUD.h"
 #import "DYAppConfigManager.h"
 
+#import "ScanViewController.h"
+#import "MOATradeDetailViewController.h"
+
+
 #define kRowHeight 44
 
 @interface MyCenterRootViewController ()
@@ -48,7 +52,6 @@
 @property (nonatomic, strong) DYUserInfoHeadView *userInfoView;
 @property (nonatomic, strong) NSArray *mineFunctionsArray;
 @property (nonatomic, strong) NSArray *settingArray;
-@property (nonatomic, strong) NSArray *imageArray;
 
 @property (nonatomic, assign) BOOL isLogin;
 
@@ -87,8 +90,6 @@
 {
     _mineFunctionsArray = @[@"用餐刷卡"];
     _settingArray = @[@"退出登录"];
-    
-    _imageArray = @[@"qrcode_2"];
 }
 
 - (void)fetchUserInfo
@@ -121,7 +122,7 @@
 #pragma mark - UITableViewDelegate / UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -137,8 +138,8 @@
             break;
             
         case 3:
-            return self.settingArray.count;
-            break;
+        case 4:
+            return 1;
             
         default:
             return 0;
@@ -178,10 +179,16 @@
             
         case 2:{
             cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
-            cell.imageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
+            cell.imageView.image = [UIImage imageNamed:@"qrcode_2"];
             break;
         }
-        case 3:{
+            
+        case 3:
+            cell.textLabel.text = @"消费记录";
+            cell.imageView.image = [UIImage imageNamed:@"trade"];
+            break;
+            
+        case 4:{
             cell.textLabel.text = self.settingArray[indexPath.row];
             cell.imageView.image = [UIImage imageNamed:@"logout2"];
             break;
@@ -203,13 +210,17 @@
             break;
             
         case 2:{
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RootViewControllerIdentifier" bundle:[NSBundle mainBundle]];
-            RootViewController *rootVc = (RootViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RootViewControllerIdentifier"];
-            [self.navigationController pushViewController:rootVc animated:YES];
+            ScanViewController *vc = [[ScanViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 3:{
+            MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
             
-        case 3:{
+        case 4:{
             [[DYAuthTokenManager shareInstance] logout];
             [[DYAppConfigManager shareInstance] saveIntoFile];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
