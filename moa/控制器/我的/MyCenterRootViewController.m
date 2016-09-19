@@ -44,16 +44,6 @@
 #import "ScanViewController.h"
 #import "MOATradeDetailViewController.h"
 
-#pragma mark - 退出账号相关
-//#import "DYDataSyncHelper.h"
-//#import "DYNoteInfoDataDBSync.h"
-#import "DYAppNotification.h"
-//#import "DYFavoriteStocksDataSource.h"
-//#import "DYSearchViewDataSource.h"
-//#import "DYStudyDetailDataSource.h"
-#import "DYAppConfigManager.h"
-//#import "InfoSubsciptionAdapter.h"
-//#import "DYCompanyDataSync.h"
 #import <AVFoundation/AVFoundation.h>
 
 #define kRowHeight 44
