@@ -243,11 +243,7 @@
         }
             
         case 4:{
-            [[DYAuthTokenManager shareInstance] logout];
-            [[DYAppConfigManager shareInstance] saveIntoFile];
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
-            MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
-            [self.navigationController pushViewController:loginVC animated:YES];
+            [self logoutAccount];
             break;
         }
         
@@ -318,6 +314,21 @@
         return userInfoView;
     } else {
         return [[UIView alloc]init];
+    }
+}
+
+- (void)logoutAccount {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"确认退出当前帐号？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) { // 退出
+        [[DYAuthTokenManager shareInstance] logout];
+        [[DYAppConfigManager shareInstance] saveIntoFile];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
+        MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
+        [self.navigationController pushViewController:loginVC animated:YES];
     }
 }
 
