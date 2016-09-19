@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOAViewController.h"
 
-@interface RootViewController : UIViewController
+@interface RootViewController : MOAViewController
 
 
 @end

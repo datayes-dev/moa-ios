@@ -9,6 +9,8 @@
 #import "PayInfoViewController.h"
 #import "DYAppearance.h"
 #import "MOATradeInfoAdapter.h"
+#import "PaySuccessViewController.h"
+#import "DYAuthTokenManager.h"
 
 @interface PayInfoViewController()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
@@ -66,10 +68,10 @@
 {
     
     self.payBtn.layer.cornerRadius = 4;
-    
+    self.userName.text = [DYAuthTokenManager shareInstance].userName;
     self.sumTextField.layer.borderColor = [DYAppearance colorWithRGB:0xF8721B].CGColor;
     self.sumTextField.delegate = self;
-    [self.sumTextField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.sumTextField setKeyboardType:UIKeyboardTypeDecimalPad];
 }
 
 
@@ -105,16 +107,35 @@
 - (IBAction)payBtnClicked:(UIButton *)sender
 {
     
+    sender.enabled = NO;
+    [self.sumTextField resignFirstResponder];
+    
     NSString *price = self.sumTextField.text;
     NSString *hotelId = (NSString *)self.currentHotel[@"id"];
     
+    WS(weakSelf);
+    
     [self.adapter makeDealWithPrice:price inHotel:hotelId andMemoInfo:nil andResultBlock:^(id data, NSError *error) {
+        
+        sender.enabled = YES;
         
         if (error) {
             
+            [self leftButtonClick:nil];
         }
         
+        DYCellDataItem *item = [DYCellDataItem new];
+        item.hotelName = self.restName.text;
+        item.price = price;
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+        item.timeStamp = [dateFormatter stringFromDate:date];
+        [weakSelf.adapter saveLastTradeInfo:item];
         
+        PaySuccessViewController *vc = [[PaySuccessViewController alloc] initWithNibName:@"PaySuccessViewController" bundle:[NSBundle mainBundle]];
+
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

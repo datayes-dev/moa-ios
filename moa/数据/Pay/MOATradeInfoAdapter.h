@@ -25,4 +25,7 @@
 
 - (void)getTradeListInfoWithResultBlock:(DYInterfaceResultBlock)resultBlock;
 
+- (void)saveLastTradeInfo:(DYCellDataItem *)item;
+
+- (DYCellDataItem *)getLastTradeInfo;
 @end

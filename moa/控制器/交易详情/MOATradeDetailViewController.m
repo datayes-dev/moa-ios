@@ -40,7 +40,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    [self removeRightButton];
     
     UINib *nib = [UINib nibWithNibName:@"MOATradeDetailTableViewCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"MOATradeDetailTableViewCell"];
@@ -48,6 +49,10 @@
     WS(weakSelf);
     
     [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+        
+        if (error) {
+            return ;
+        }
         
         weakSelf.infoArray = (NSArray *)data;
         
@@ -78,8 +83,9 @@
         
         DYCellDataItem *item = self.infoArray[indexPath.row];
         
-        cell.hotelName.text = item.titleText;
-        cell.tradeDate.text = item.detailText;
+        cell.hotelName.text = item.hotelName;
+        cell.tradeDate.text = item.timeStamp;
+        cell.cash.text = item.price;
     }
     
     return cell;
