@@ -60,6 +60,8 @@
 #import "DYAppConfigManager.h"
 //#import "InfoSubsciptionAdapter.h"
 //#import "DYCompanyDataSync.h"
+#import <AVFoundation/AVFoundation.h>
+
 
 #define kRowHeight 44
 
@@ -307,6 +309,18 @@
     switch (indexPath.section) {
         case 0:
         case 1:{
+            NSString * mediaType = AVMediaTypeVideo;
+            AVAuthorizationStatus  authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+            if (authorizationStatus == AVAuthorizationStatusRestricted|| authorizationStatus == AVAuthorizationStatusDenied) {
+                UIAlertController * alertC = [UIAlertController alertControllerWithTitle:@"摄像头访问受限，请去设置-->隐私-->相机，打开权限" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [self presentViewController:alertC animated:YES completion:nil];
+                UIAlertAction * action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+                [alertC addAction:action];
+            }else{
+            }
+            
             ScanViewController *vc = [[ScanViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
