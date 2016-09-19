@@ -45,6 +45,7 @@
 #import "MOATradeDetailViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
+#import "DYTools+AppInfo.h"
 
 #define kRowHeight 44
 
@@ -55,6 +56,7 @@
 @property (nonatomic, strong) NSArray *settingArray;
 
 @property (nonatomic, assign) BOOL isLogin;
+@property (nonatomic, strong)UIView* footerView;
 
 @end
 
@@ -66,14 +68,13 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = DYAppearanceColor(@"H1", 1.0);
     self.title = @"吃饭去";
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationItem setHidesBackButton:YES];
+    [self.tableView setTableFooterView:self.footerView];
     [self addConcernedOption];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchUserInfo) name:kNotiAccessTokenAvailable object:nil];
     [self fetchUserInfo];
@@ -330,6 +331,21 @@
         MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
         [self.navigationController pushViewController:loginVC animated:YES];
     }
+}
+
+- (UIView*)footerView
+{
+    if (_footerView == nil) {
+        UILabel* labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 45)];
+        [labelView setTextAlignment:NSTextAlignmentCenter];
+        [labelView setTextColor:DYAppearanceColor(@"H3", 1.0)];
+        [labelView setFont:DYAppearanceFont(@"T4")];
+        [labelView setText:[NSString stringWithFormat:@"Version:%@.%@", [DYTools appVersion], [DYTools appBuildNumber]]];
+        
+        _footerView = labelView;
+    }
+    
+    return _footerView;
 }
 
 @end
