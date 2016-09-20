@@ -205,4 +205,28 @@ static DYLoginUserInfo* _sharedDYLoginUserInfo = nil;
     return NO;
 }
 
+- (NSString*)principleName
+{
+    if ([self isBindToEnterpriseAccount]) {
+        if (self.userIdentityInfo != nil && [self.userIdentityInfo isKindOfClass:[NSDictionary class]]) {
+            NSArray* accountArray = self.userIdentityInfo[@"accounts"];
+            if (accountArray != nil && [accountArray isKindOfClass:[NSArray class]] && [accountArray count] > 0) {
+                for (NSDictionary* dic in accountArray) {
+                    if (dic != nil && [dic isKindOfClass:[NSDictionary class]]) {
+                        NSNumber* isActive = dic[@"isActive"];
+                        if (isActive != nil && [isActive isKindOfClass:[NSNumber class]] && [isActive boolValue] == YES) {
+                            NSString* principalName = dic[@"principalName"];
+                            if (principalName != nil && [principalName isKindOfClass:[NSString class]]) {
+                                return principalName;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return nil;
+}
+
 @end

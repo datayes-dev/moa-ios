@@ -42,6 +42,7 @@
 
 #import "ScanViewController.h"
 #import "MOATradeDetailViewController.h"
+#import "MoneyViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import "DYTools+AppInfo.h"
@@ -129,7 +130,7 @@
 #pragma mark - UITableViewDelegate / UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -146,6 +147,7 @@
             
         case 3:
         case 4:
+        case 5:
             return 1;
             
         default:
@@ -194,8 +196,14 @@
             cell.textLabel.text = @"消费记录";
             cell.imageView.image = [UIImage imageNamed:@"trade"];
             break;
-            
-        case 4:{
+        case 4:
+        {
+            cell.textLabel.text = @"熊猫币";
+            cell.imageView.image = [UIImage imageNamed:@"trade"];
+            break;
+        }
+            break;
+        case 5:{
             cell.textLabel.text = self.settingArray[indexPath.row];
             cell.imageView.image = [UIImage imageNamed:@"logout2"];
             break;
@@ -244,7 +252,12 @@
             break;
         }
             
-        case 4:{
+        case 4: {
+            MoneyViewController *vc = [[MoneyViewController alloc] initWithNibName:@"MoneyViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 5:{
             [self logoutAccount];
             break;
         }

@@ -72,4 +72,11 @@
  */
 - (BOOL)isEnterpriseAccount;
 
+/**
+ *	@brief	获取当前有效的principleName
+ *
+ *	@return	返回principleName
+ */
+- (NSString*)principleName;
+
 @end

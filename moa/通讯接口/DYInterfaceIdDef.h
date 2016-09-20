@@ -196,6 +196,10 @@ typedef NS_ENUM(NSInteger, EInterfaceId) {
     eDiningGetQRCodeWithPK,                         // 获取二维码
     eDiningTradeRequest,                            // 执行交易
     eDiningGetTradeList,                            // 个人交易流水
+    eGetWalletInfo,                                 // 获取钱包接口
+    eCreateWallet,                                  // 新建钱包
+    eGetWalletDetailInfo,                           // 获取钱包详情
+    eGetWalletPaymentsInfo,                         // 获取钱包的交易历史
 };
 
 #endif /* DYInterfaceIdDef_h */
