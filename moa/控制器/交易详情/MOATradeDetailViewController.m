@@ -85,9 +85,10 @@
     MOATradeDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MOATradeDetailTableViewCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if (indexPath.row < [self.infoArray count]) {
+    NSInteger count = [self.infoArray count];
+    if (indexPath.row < count) {
         
-        DYCellDataItem *item = self.infoArray[indexPath.row];
+        DYCellDataItem *item = self.infoArray[count - indexPath.row - 1];
         
         cell.hotelName.text = item.hotelName;
         cell.tradeDate.text = item.timeStamp;

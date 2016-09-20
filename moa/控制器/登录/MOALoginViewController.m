@@ -226,7 +226,8 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
             [weakSelf.loginButton setEnabled:NO];
 
             MyCenterRootViewController *centerVC = [[MyCenterRootViewController alloc]init];
-            [self.navigationController pushViewController:centerVC animated:YES];
+            [self.navigationController setViewControllers:@[centerVC] animated:YES];
+            //[self.navigationController pushViewController:centerVC animated:YES];
 
             
             //握手接口调用

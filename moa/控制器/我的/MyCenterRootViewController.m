@@ -331,7 +331,8 @@
         [[DYAppConfigManager shareInstance] saveIntoFile];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MOALoginViewController" bundle:[NSBundle mainBundle]];
         MOALoginViewController *loginVC = (MOALoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MOALoginViewController"];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        [self.navigationController setViewControllers:@[loginVC] animated:YES];
+        //[self.navigationController pushViewController:loginVC animated:YES];
     }
 }
 
