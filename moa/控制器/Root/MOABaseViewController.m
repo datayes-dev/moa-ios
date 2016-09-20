@@ -88,7 +88,7 @@
 
 - (void)leftButtonClick:(UIButton *)button
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UIButton *)addRightButtonWithImage:(UIImage *)image caption:(NSString *)caption action:(SEL)action

@@ -43,7 +43,7 @@
     [super viewDidLoad];
 
     self.title = @"消费记录";
-    [self removeRightButton];
+    [self addLeftButtonWithImage:[UIImage imageNamed:@"back"] hightLightImage:nil caption:nil];
     
     UINib *nib = [UINib nibWithNibName:@"MOATradeDetailTableViewCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"MOATradeDetailTableViewCell"];

@@ -14,6 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *tradeDate;
 @property (weak, nonatomic) IBOutlet UILabel *cash;
 
-+ (NSString *)identifier;
+- (NSString *)identifier;
 
 @end

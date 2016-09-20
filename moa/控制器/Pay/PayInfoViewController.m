@@ -118,6 +118,11 @@
     [self.sumTextField resignFirstResponder];
     
     NSString *price = self.sumTextField.text;
+    if ([price intValue] <= 0) {
+        [self.view makeToast:@"支付金额必须大于0" duration:2 position:@"center"];
+        return;
+    }
+    
     NSString *hotelId = (NSString *)self.currentHotel[@"id"];
     
     WS(weakSelf);

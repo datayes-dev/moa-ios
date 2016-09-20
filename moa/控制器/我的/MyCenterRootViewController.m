@@ -65,6 +65,7 @@
 #pragma mark - View's Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = DYAppearanceColor(@"H1", 1.0);
     self.title = @"吃饭去";
@@ -74,6 +75,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationItem setHidesBackButton:YES];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
     [self.tableView setTableFooterView:self.footerView];
     [self addConcernedOption];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchUserInfo) name:kNotiAccessTokenAvailable object:nil];

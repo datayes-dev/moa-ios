@@ -34,6 +34,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.backgroundColor = DYAppearanceColor(@"W1", 1.0);
     self.userNameLabel.font = DYAppearanceFont(@"T5");
     self.userNameLabel.textColor = DYAppearanceColor(@"H13", 1.0);

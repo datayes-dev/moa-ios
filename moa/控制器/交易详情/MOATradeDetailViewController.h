@@ -6,8 +6,8 @@
 //  Copyright © 2016年 datayes. All rights reserved.
 //
 
-#import "MOAViewController.h"
+#import "MOABaseViewController.h"
 
-@interface MOATradeDetailViewController : MOAViewController
+@interface MOATradeDetailViewController : MOABaseViewController
 
 @end

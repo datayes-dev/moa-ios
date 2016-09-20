@@ -41,7 +41,7 @@
 }
 - (void)awakeFromNib
 {
-    
+    [super awakeFromNib];
 }
 - (id)init
 {
