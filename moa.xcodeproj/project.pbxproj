@@ -93,7 +93,6 @@
 		7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25D61D879B5C001629A7 /* DYCacheService.m */; };
 		7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25DB1D879C89001629A7 /* NSString+URL.m */; };
 		7C8E25DE1D879D4A001629A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */; };
-		7C8E25E31D87A12B001629A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25E11D87A12B001629A7 /* RootViewController.m */; };
 		7C8E25E71D87A136001629A7 /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25E51D87A136001629A7 /* PayInfoViewController.m */; };
 		7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */; };
 		7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25EC1D87A232001629A7 /* root.storyboard */; };
@@ -270,8 +269,6 @@
 		7C8E25DA1D879C89001629A7 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URL.h"; path = "通讯接口/NSString+URL.h"; sourceTree = "<group>"; };
 		7C8E25DB1D879C89001629A7 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URL.m"; path = "通讯接口/NSString+URL.m"; sourceTree = "<group>"; };
 		7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		7C8E25E11D87A12B001629A7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = "控制器/RootViewController.m"; sourceTree = "<group>"; };
-		7C8E25E21D87A12B001629A7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = "控制器/RootViewController.h"; sourceTree = "<group>"; };
 		7C8E25E41D87A136001629A7 /* PayInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayInfoViewController.h; path = "控制器/Pay/PayInfoViewController.h"; sourceTree = "<group>"; };
 		7C8E25E51D87A136001629A7 /* PayInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PayInfoViewController.m; path = "控制器/Pay/PayInfoViewController.m"; sourceTree = "<group>"; };
 		7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PayInfoViewController.xib; path = "控制器/Pay/PayInfoViewController.xib"; sourceTree = "<group>"; };
@@ -682,8 +679,6 @@
 		7C8E25DF1D87A111001629A7 /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
-				7C8E25E21D87A12B001629A7 /* RootViewController.h */,
-				7C8E25E11D87A12B001629A7 /* RootViewController.m */,
 				425184801D88FAB200D94643 /* 交易详情 */,
 				7C8E25EC1D87A232001629A7 /* root.storyboard */,
 				4251846D1D87D27B00D94643 /* 工具 */,
@@ -874,7 +869,6 @@
 				7C8E25D81D879B5C001629A7 /* DYCacheService.m in Sources */,
 				7CA9F33F1D893B44000A405A /* DYLogFormatter.m in Sources */,
 				4251848E1D89365E00D94643 /* DYCellDataItem.m in Sources */,
-				7C8E25E31D87A12B001629A7 /* RootViewController.m in Sources */,
 				7C8E25BC1D8794F4001629A7 /* SEUtilities.m in Sources */,
 				7C8E256D1D8794DB001629A7 /* DYAppModuleItem.m in Sources */,
 				7C8E25C81D879977001629A7 /* PromptView.m in Sources */,

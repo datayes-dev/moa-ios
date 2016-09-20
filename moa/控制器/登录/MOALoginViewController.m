@@ -21,7 +21,6 @@
 #import "DYResetPasswordStep1Controller.h"
 #import "DYProgressHUD.h"
 #import "Masonry.h"
-#import "RootViewController.h"
 #import "MyCenterRootViewController.h"
 
 #define ToastDefaultDuration 2.0

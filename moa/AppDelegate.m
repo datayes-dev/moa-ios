@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MOANavigationViewController.h"
-#import "RootViewController.h"
 #import "DYLogFormatter.h"
 #import "MOALoginViewController.h"
 #import "DYAuthTokenManager.h"

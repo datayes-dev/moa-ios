@@ -28,7 +28,6 @@
 //
 
 #import "MyCenterRootViewController.h"
-#import "RootViewController.h"
 #import "MOALoginViewController.h"
 #import "DYUserInfoHeadView.h"
 #import "DYLoginUserInfo.h"
