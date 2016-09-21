@@ -32,15 +32,23 @@ static DYMoneyDataSource* gDYMoneyDataSource = nil;
         });
     }
     
-    NSDictionary* dic = @{@"kExtraAddedSubUrlKey":principleName};
+    NSDictionary* dic = @{kExtraAddedSubUrlKey:principleName};
     [self sendRequestWithMsgId:eGetWalletInfo
                     parameters:dic
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
-                       dispatch_async(dispatch_get_main_queue(), ^{
-                           resultBlock(data,error);
-                       });
+                       if (error == nil && data != nil) {
+                           NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(dic,error);
+                           });
+                       }
+                       else {
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(data,error);
+                           });
+                       }
                    }];
 }
 
@@ -53,15 +61,23 @@ static DYMoneyDataSource* gDYMoneyDataSource = nil;
         });
     }
     
-    NSDictionary* dic = @{@"kExtraAddedSubUrlKey":principleName};
+    NSDictionary* dic = @{kExtraAddedSubUrlKey:principleName};
     [self sendRequestWithMsgId:eCreateWallet
                     parameters:dic
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
-                       dispatch_async(dispatch_get_main_queue(), ^{
-                           resultBlock(data,error);
-                       });
+                       if (error == nil && data != nil) {
+                           NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(dic,error);
+                           });
+                       }
+                       else {
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(data,error);
+                           });
+                       }
                    }];
 }
 
@@ -74,15 +90,23 @@ static DYMoneyDataSource* gDYMoneyDataSource = nil;
         });
     }
     
-    NSDictionary* dic = @{@"kExtraAddedSubUrlKey":principleName};
+    NSDictionary* dic = @{kExtraAddedSubUrlKey:principleName};
     [self sendRequestWithMsgId:eGetWalletDetailInfo
                     parameters:dic
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
-                       dispatch_async(dispatch_get_main_queue(), ^{
-                           resultBlock(data,error);
-                       });
+                       if (error == nil && data != nil) {
+                           NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(dic,error);
+                           });
+                       }
+                       else {
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(data,error);
+                           });
+                       }
                    }];
 }
 
@@ -95,15 +119,23 @@ static DYMoneyDataSource* gDYMoneyDataSource = nil;
         });
     }
     
-    NSDictionary* dic = @{@"kExtraAddedSubUrlKey":principleName};
+    NSDictionary* dic = @{kExtraAddedSubUrlKey:principleName};
     [self sendRequestWithMsgId:eGetWalletPaymentsInfo
                     parameters:dic
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
-                       dispatch_async(dispatch_get_main_queue(), ^{
-                           resultBlock(data,error);
-                       });
+                       if (error == nil && data != nil) {
+                           NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(dic,error);
+                           });
+                       }
+                       else {
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               resultBlock(data,error);
+                           });
+                       }
                    }];
 }
 

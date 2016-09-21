@@ -3017,7 +3017,7 @@
 					<key>basicUrl</key>
 					<string></string>
 					<key>subUrl</key>
-					<string>wallet</string>
+					<string>meal_ticket/wallet</string>
 					<key>requestType</key>
 					<integer>0</integer>
 					<key>responseBodyTiedType</key>
@@ -3029,7 +3029,7 @@
 					<key>allowMutableRequest</key>
 					<false/>
 					<key>needAuthInfoType</key>
-					<integer>10</integer>
+					<integer>9</integer>
 					<key>errorHandlerClass</key>
 					<string></string>
 					<key>version</key>
@@ -3039,7 +3039,7 @@
 					<key>basicUrl</key>
 					<string></string>
 					<key>subUrl</key>
-					<string>wallet</string>
+					<string>meal_ticket/wallet</string>
 					<key>requestType</key>
 					<integer>1</integer>
 					<key>responseBodyTiedType</key>
@@ -3051,7 +3051,7 @@
 					<key>allowMutableRequest</key>
 					<false/>
 					<key>needAuthInfoType</key>
-					<integer>10</integer>
+					<integer>9</integer>
 					<key>errorHandlerClass</key>
 					<string></string>
 					<key>version</key>
@@ -3061,7 +3061,7 @@
 					<key>basicUrl</key>
 					<string></string>
 					<key>subUrl</key>
-					<string>wallet/balances</string>
+					<string>meal_ticket/wallet/balances</string>
 					<key>requestType</key>
 					<integer>0</integer>
 					<key>responseBodyTiedType</key>
@@ -3073,7 +3073,7 @@
 					<key>allowMutableRequest</key>
 					<false/>
 					<key>needAuthInfoType</key>
-					<integer>10</integer>
+					<integer>9</integer>
 					<key>errorHandlerClass</key>
 					<string></string>
 					<key>version</key>
@@ -3083,7 +3083,7 @@
 					<key>basicUrl</key>
 					<string></string>
 					<key>subUrl</key>
-					<string>wallet/payments</string>
+					<string>meal_ticket/wallet/payments</string>
 					<key>requestType</key>
 					<integer>0</integer>
 					<key>responseBodyTiedType</key>
@@ -3095,7 +3095,7 @@
 					<key>allowMutableRequest</key>
 					<false/>
 					<key>needAuthInfoType</key>
-					<integer>10</integer>
+					<integer>9</integer>
 					<key>errorHandlerClass</key>
 					<string></string>
 					<key>version</key>

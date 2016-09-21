@@ -70,6 +70,7 @@ static DYAuthTokenManager* gAuthTokenManager = nil;
     [[DYInterfaceRequestHelper shareInstance].cmsNeedAuthInfoRequest setAccessToken:accessToken];
     [[DYInterfaceRequestHelper shareInstance].addMutipartFormDataRequest setAccessToken:accessToken];
     [[DYInterfaceRequestHelper shareInstance].diningRequest setAccessToken:accessToken];
+    [[DYInterfaceRequestHelper shareInstance].diningRequest2 setAccessToken:accessToken];
     
     // 如果accessToken还有效，则重新发起请求
     if ([accessToken length] > 0) {

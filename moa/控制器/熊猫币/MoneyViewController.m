@@ -44,6 +44,9 @@
 {
     [super viewWillAppear:animated];
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 98;
+    
     [self getWalletInfo];
 }
 
@@ -96,14 +99,25 @@
 - (void)getWalletInfo
 {
     [[DYMoneyDataSource shareInstance] getWalletInfoWithResultBlock:^(id data, NSError *error) {
-        if (error == nil && data != nil && [data isKindOfClass:[NSDictionary class]]) {
-            NSString* code = data[@"code"];
-            if ([code intValue] == 404) {
+        if (error != nil && [error.localizedDescription isEqualToString:@"Request failed: not found (404)"]) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.5f* NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createNewWallet];
-            }
-            else {
+            });
+        }
+        else {
+            NSString* username = data[@"username"];
+            NSString* address = data[@"address"];
+            
+            DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
+            item.titleText = @"用户信息";
+            item.detailText = [NSString stringWithFormat:@"username:%@(address:%@)", username, address];
+            
+            [self.cellDataArray addObject:item];
+            [self.tableView reloadData];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.5f* NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self getWalletDetailInfo];
-            }
+            });
         }
     }];
 }
@@ -117,13 +131,15 @@
             NSString* address = data[@"address"];
             
             DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
-            item.titleText = username;
-            item.detailText = [NSString stringWithFormat:@"%@(%@)", secret, address];
+            item.titleText = @"新建了钱包";
+            item.detailText = [NSString stringWithFormat:@"username:%@(secret:%@-address:%@)", username, secret, address];
             
             [self.cellDataArray addObject:item];
             [self.tableView reloadData];
             
-            [self getWalletDetailInfo];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.5f* NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [self getWalletDetailInfo];
+            });
         }
     }];
 }
@@ -136,13 +152,15 @@
             NSString* ETHER = data[@"ETHER"];
             
             DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
-            item.titleText = [NSString stringWithFormat:@"%@:%@", @"PANDA", PANDA];
-            item.detailText = [NSString stringWithFormat:@"%@:%@", @"ETHER", ETHER];
+            item.titleText = @"钱包详情";
+            item.detailText = [NSString stringWithFormat:@"PANDA:%@ and ETHER:%@", PANDA, ETHER];
             
             [self.cellDataArray addObject:item];
             [self.tableView reloadData];
             
-            [self getWalletPaymentsInfo];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.5f* NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [self getWalletPaymentsInfo];
+            });
         }
     }];
 }
@@ -153,14 +171,24 @@
         if (error == nil && data != nil && [data isKindOfClass:[NSArray class]]) {
             NSArray* array = data;
             
+            DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
+            item.titleText = @"分割线：以下是交易历史";
+            item.detailText = @"---------------------------------------------------------------------------------------";
+            [self.cellDataArray addObject:item];
+            
             for (NSDictionary* dic in array) {
                 NSString* currency = dic[@"currency"];
                 NSString* amount = dic[@"amount"];
                 NSString* block = dic[@"block"];
                 
+                NSString* hash = dic[@"hash"];
+                NSString* source_account = dic[@"source_account"];
+                NSString* destination_account = dic[@"destination_account"];
+                NSString* issuer = dic[@"issuer"];
+                
                 DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
-                item.titleText = [NSString stringWithFormat:@"%@:(%@)", amount, currency];
-                item.detailText = [NSString stringWithFormat:@"in block %@", block];
+                item.titleText = [NSString stringWithFormat:@"amount:%@(currency:%@) block:%@", amount, currency, block];
+                item.detailText = [NSString stringWithFormat:@"hash:%@-source_account:%@-destination_account:%@-issuer:%@", hash, source_account, destination_account, issuer];
                 
                 [self.cellDataArray addObject:item];
             }
