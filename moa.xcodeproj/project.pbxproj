@@ -97,6 +97,7 @@
 		7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */; };
 		7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25EC1D87A232001629A7 /* root.storyboard */; };
 		7CA9F33F1D893B44000A405A /* DYLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9F33E1D893B44000A405A /* DYLogFormatter.m */; };
+		7CC60D0F1D92762700CF7708 /* MoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */; };
 		7CF5C3A61D913BD10044DF52 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5C3A41D913BD10044DF52 /* MoneyViewController.m */; };
 		7CF5C3A71D913BD10044DF52 /* MoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF5C3A51D913BD10044DF52 /* MoneyViewController.xib */; };
 		7CF5C3AB1D913F580044DF52 /* DYMoneyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5C3AA1D913F580044DF52 /* DYMoneyDataSource.m */; };
@@ -278,6 +279,8 @@
 		7C8E25ED1D87A232001629A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/root.storyboard; sourceTree = "<group>"; };
 		7CA9F33D1D893B44000A405A /* DYLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLogFormatter.h; sourceTree = "<group>"; };
 		7CA9F33E1D893B44000A405A /* DYLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLogFormatter.m; sourceTree = "<group>"; };
+		7CC60D0C1D92762700CF7708 /* MoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTableViewCell.h; sourceTree = "<group>"; };
+		7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTableViewCell.m; sourceTree = "<group>"; };
 		7CF5C3A31D913BD10044DF52 /* MoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyViewController.h; sourceTree = "<group>"; };
 		7CF5C3A41D913BD10044DF52 /* MoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyViewController.m; sourceTree = "<group>"; };
 		7CF5C3A51D913BD10044DF52 /* MoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyViewController.xib; sourceTree = "<group>"; };
@@ -634,6 +637,7 @@
 		7C8E25BE1D879905001629A7 /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
+				7CC60D0B1D92760500CF7708 /* 熊猫币 */,
 				4251848F1D896A2000D94643 /* 交易详情 */,
 				7C8E25C91D879A1E001629A7 /* 第三方框架 */,
 				7C8E25BF1D87990C001629A7 /* Common */,
@@ -712,6 +716,16 @@
 				42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */,
 			);
 			name = Pay;
+			sourceTree = "<group>";
+		};
+		7CC60D0B1D92760500CF7708 /* 熊猫币 */ = {
+			isa = PBXGroup;
+			children = (
+				7CC60D0C1D92762700CF7708 /* MoneyTableViewCell.h */,
+				7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */,
+			);
+			name = "熊猫币";
+			path = "视图/熊猫币";
 			sourceTree = "<group>";
 		};
 		7CF5C3A21D913B990044DF52 /* 熊猫币 */ = {
@@ -925,6 +939,7 @@
 				0BC2BE0E1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m in Sources */,
 				0B34A8FA1D8FB2F400F30B89 /* MyCenterRootViewController.m in Sources */,
 				7C8E256F1D8794DB001629A7 /* DYErrorHandlerBase.m in Sources */,
+				7CC60D0F1D92762700CF7708 /* MoneyTableViewCell.m in Sources */,
 				7C8E25B31D8794F4001629A7 /* SEDatabase.m in Sources */,
 				7C8E25781D8794DB001629A7 /* DYUserAuthorityData.m in Sources */,
 				7C8E25DC1D879C89001629A7 /* NSString+URL.m in Sources */,

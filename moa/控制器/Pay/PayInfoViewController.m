@@ -135,11 +135,11 @@
         
         sender.enabled = YES;
         
-        if (error) {
+        if (error != nil) {
             
             sender.enabled = NO;
             
-            if (error.code == -1011) {
+            if ([error.localizedDescription containsString:@"(600)"]) {
                 
                 [self.view makeToast:@"支付失败，您今天的额度或次数已超过限制" duration:2 position:@"center"];
                 

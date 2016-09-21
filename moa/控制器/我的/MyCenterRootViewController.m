@@ -199,7 +199,7 @@
         case 4:
         {
             cell.textLabel.text = @"熊猫币";
-            cell.imageView.image = [UIImage imageNamed:@"trade"];
+            cell.imageView.image = [UIImage imageNamed:@"money"];
             break;
         }
             break;

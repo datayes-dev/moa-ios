@@ -8,6 +8,8 @@
 
 #import "MoneyViewController.h"
 #import "DYMoneyDataSource.h"
+#import "MoneyTableViewCell.h"
+#import "SDAutoLayout.h"
 
 @interface DYMoneyCellDataItem : NSObject
 
@@ -36,7 +38,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"熊猫币";
+    [self addLeftButtonWithImage:[UIImage imageNamed:@"back"] hightLightImage:nil caption:nil];
     self.cellDataArray = [NSMutableArray array];
+    [self.tableView registerClass:[MoneyTableViewCell class] forCellReuseIdentifier:@"MoneyTableViewCell"];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -78,17 +84,22 @@
     return [self.cellDataArray count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 获取cell高度
+    return [self cellHeightForIndexPath:indexPath cellContentViewWidth:[UIScreen mainScreen].bounds.size.width tableView:self.tableView];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"defaultTableViewCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"defaultTableViewCell"];
-    }
+    MoneyTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MoneyTableViewCell"];
     
     if ([self.cellDataArray count] > indexPath.row) {
         DYMoneyCellDataItem* item = self.cellDataArray[indexPath.row];
-        [cell.textLabel setText:item.titleText];
-        [cell.detailTextLabel setText:item.detailText];
+        [cell.mainLabel setText:item.titleText];
+        [cell.subLabel setText:item.detailText];
+        
+        [cell setupAutoHeightWithBottomView:cell.subLabel bottomMargin:10];
     }
     
     return cell;
@@ -99,7 +110,7 @@
 - (void)getWalletInfo
 {
     [[DYMoneyDataSource shareInstance] getWalletInfoWithResultBlock:^(id data, NSError *error) {
-        if (error != nil && [error.localizedDescription isEqualToString:@"Request failed: not found (404)"]) {
+        if (error != nil && [error.localizedDescription containsString:@"(404)"]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.5f* NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createNewWallet];
             });
@@ -110,7 +121,7 @@
             
             DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
             item.titleText = @"用户信息";
-            item.detailText = [NSString stringWithFormat:@"username:%@(address:%@)", username, address];
+            item.detailText = [NSString stringWithFormat:@"username:%@\naddress:%@", username, address];
             
             [self.cellDataArray addObject:item];
             [self.tableView reloadData];
@@ -132,7 +143,7 @@
             
             DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
             item.titleText = @"新建了钱包";
-            item.detailText = [NSString stringWithFormat:@"username:%@(secret:%@-address:%@)", username, secret, address];
+            item.detailText = [NSString stringWithFormat:@"username:%@\nsecret:%@\naddress:%@", username, secret, address];
             
             [self.cellDataArray addObject:item];
             [self.tableView reloadData];
@@ -153,7 +164,7 @@
             
             DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
             item.titleText = @"钱包详情";
-            item.detailText = [NSString stringWithFormat:@"PANDA:%@ and ETHER:%@", PANDA, ETHER];
+            item.detailText = [NSString stringWithFormat:@"PANDA:%@\nETHER:%@", PANDA, ETHER];
             
             [self.cellDataArray addObject:item];
             [self.tableView reloadData];
@@ -172,8 +183,8 @@
             NSArray* array = data;
             
             DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
-            item.titleText = @"分割线：以下是交易历史";
-            item.detailText = @"---------------------------------------------------------------------------------------";
+            item.titleText =  @"分割线：以下是交易历史----------------------------";
+            item.detailText = @"";
             [self.cellDataArray addObject:item];
             
             for (NSDictionary* dic in array) {
@@ -188,7 +199,7 @@
                 
                 DYMoneyCellDataItem* item = [DYMoneyCellDataItem new];
                 item.titleText = [NSString stringWithFormat:@"amount:%@(currency:%@) block:%@", amount, currency, block];
-                item.detailText = [NSString stringWithFormat:@"hash:%@-source_account:%@-destination_account:%@-issuer:%@", hash, source_account, destination_account, issuer];
+                item.detailText = [NSString stringWithFormat:@"hash:%@\nsource_account:%@\ndestination_account:%@\nissuer:%@", hash, source_account, destination_account, issuer];
                 
                 [self.cellDataArray addObject:item];
             }
