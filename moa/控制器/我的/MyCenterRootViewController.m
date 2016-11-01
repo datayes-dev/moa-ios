@@ -43,6 +43,7 @@
 #import "ScanViewController.h"
 #import "MOATradeDetailViewController.h"
 #import "MoneyViewController.h"
+#import "MyQRCodeViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import "DYTools+AppInfo.h"
@@ -130,7 +131,7 @@
 #pragma mark - UITableViewDelegate / UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -148,6 +149,7 @@
         case 3:
         case 4:
         case 5:
+        case 6:
             return 1;
             
         default:
@@ -186,26 +188,25 @@
         case 1:
             break;
             
-        case 2:{
+        case 2:
             cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
             cell.imageView.image = [UIImage imageNamed:@"qrcode_2"];
             break;
-        }
-            
         case 3:
             cell.textLabel.text = @"消费记录";
             cell.imageView.image = [UIImage imageNamed:@"trade"];
             break;
         case 4:
-        {
             cell.textLabel.text = @"熊猫币";
             cell.imageView.image = [UIImage imageNamed:@"money"];
             break;
-        }
+        case 5:
+            cell.textLabel.text = @"我的二维码";
+            cell.imageView.image = [UIImage imageNamed:@"qrcode"];
             break;
-        case 5:{
+        case 6:{
             cell.textLabel.text = self.settingArray[indexPath.row];
-            cell.imageView.image = [UIImage imageNamed:@"logout2"];
+            cell.imageView.image = [UIImage imageNamed:@"qrcode_2"];
             break;
         }
             
@@ -257,7 +258,12 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
-        case 5:{
+        case 5: {
+            MyQRCodeViewController *vc = [[MyQRCodeViewController alloc] initWithNibName:@"MyQRCodeViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 6:{
             [self logoutAccount];
             break;
         }

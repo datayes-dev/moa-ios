@@ -135,6 +135,11 @@ typedef NS_ENUM(NSUInteger, ECurrentEnvType){
  */
 @property (nonatomic) NSNumber *currentEnvironment;
 
+/**
+ *	@brief	是否为顾客
+ */
+@property (nonatomic) BOOL isCustomer;
+
 @property (nonatomic, strong) NSString *lastTimeHongguanPreload;
 @property (nonatomic, strong) NSString *lastTimeChanjingPreload;
 @property (nonatomic, strong) NSString *lastTimeCompanyPreload;
