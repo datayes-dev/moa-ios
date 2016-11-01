@@ -22,6 +22,7 @@
 #import "DYProgressHUD.h"
 #import "Masonry.h"
 #import "MyCenterRootViewController.h"
+#import "MyQRCodeViewController.h"
 
 #define ToastDefaultDuration 2.0
 
@@ -224,8 +225,11 @@ NSString *visitLoginName = @"visitLoginName";   // 记录访问登录界面的�
             [DYProgressHUD showToastInView:weakSelf.view message:@"登录中..." durationTime:ToastDefaultDuration];
             [weakSelf.loginButton setEnabled:NO];
 
-            MyCenterRootViewController *centerVC = [[MyCenterRootViewController alloc]init];
-            [self.navigationController setViewControllers:@[centerVC] animated:YES];
+//            MyCenterRootViewController *centerVC = [[MyCenterRootViewController alloc]init];
+//            [self.navigationController setViewControllers:@[centerVC] animated:YES];
+            MyQRCodeViewController *qrCodeVC = [[MyQRCodeViewController alloc] init];
+            [self.navigationController setViewControllers:@[qrCodeVC] animated:YES];
+            
             //[self.navigationController pushViewController:centerVC animated:YES];
 
             

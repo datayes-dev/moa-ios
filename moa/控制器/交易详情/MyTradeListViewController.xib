@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyTradeListViewController">
+            <connections>
+                <outlet property="calendarContentView" destination="rzt-pz-7Hm" id="jHZ-kM-Xjo"/>
+                <outlet property="calendarMenuView" destination="VOL-ss-89I" id="Fgf-dh-Mhy"/>
+                <outlet property="calendarRootView" destination="VXz-Z1-A0X" id="xiw-Xf-gqd"/>
+                <outlet property="selectDateButton" destination="KDV-To-Rmd" id="nQS-dl-2Yw"/>
+                <outlet property="tradeListTableView" destination="Aab-oR-raP" id="vh2-Oj-8L7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weekDayView" destination="tel-mM-Ac6" id="rQP-hl-d8e"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-oR-raP">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDV-To-Rmd" userLabel="点击选择日期">
+                    <rect key="frame" x="49" y="0.0" width="276" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3Ij-6O-TUQ"/>
+                    </constraints>
+                    <state key="normal" title="  点击选择日期" image="dropdownunsel"/>
+                    <connections>
+                        <action selector="selectDateTime:" destination="-1" eventType="touchUpInside" id="QNe-LV-X6s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QB-EC-TIw">
+                    <rect key="frame" x="0.0" y="0.0" width="49" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="49" id="5U4-iQ-Pyd"/>
+                        <constraint firstAttribute="height" constant="44" id="e0q-Oj-x6l"/>
+                    </constraints>
+                    <state key="normal" image="arrowleft"/>
+                    <connections>
+                        <action selector="selectPreDateTime:" destination="-1" eventType="touchUpInside" id="fQK-Jb-YAw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-Du-pkU">
+                    <rect key="frame" x="325" y="0.0" width="49" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2er-Ua-mkI"/>
+                        <constraint firstAttribute="width" constant="49" id="ygI-65-UsX"/>
+                    </constraints>
+                    <state key="normal" image="arrowright"/>
+                    <connections>
+                        <action selector="selectNextDateTime:" destination="-1" eventType="touchUpInside" id="43Q-Yh-tCa"/>
+                    </connections>
+                </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXz-Z1-A0X">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-ri-Q2C">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-ss-89I" customClass="JTCalendarMenuView">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="KJp-AR-vdN"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tel-mM-Ac6" customClass="JTCalendarWeekDayView">
+                                    <rect key="frame" x="0.0" y="22" width="375" height="22"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="nRW-8h-dd7"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzt-pz-7Hm" customClass="JTVerticalCalendarView">
+                                    <rect key="frame" x="0.0" y="44" width="375" height="268"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="VOL-ss-89I" firstAttribute="top" secondItem="zBg-ri-Q2C" secondAttribute="top" id="3HQ-29-jnI"/>
+                                <constraint firstAttribute="trailing" secondItem="VOL-ss-89I" secondAttribute="trailing" id="9xe-aA-cVc"/>
+                                <constraint firstItem="rzt-pz-7Hm" firstAttribute="top" secondItem="tel-mM-Ac6" secondAttribute="bottom" id="LP0-CC-asV"/>
+                                <constraint firstAttribute="bottom" secondItem="rzt-pz-7Hm" secondAttribute="bottom" constant="-12" id="LRh-d0-ZBG"/>
+                                <constraint firstItem="tel-mM-Ac6" firstAttribute="leading" secondItem="zBg-ri-Q2C" secondAttribute="leading" id="bec-wM-nyO"/>
+                                <constraint firstItem="VOL-ss-89I" firstAttribute="leading" secondItem="zBg-ri-Q2C" secondAttribute="leading" id="fhe-fH-8ds"/>
+                                <constraint firstAttribute="trailing" secondItem="rzt-pz-7Hm" secondAttribute="trailing" id="fr2-rG-Kv3"/>
+                                <constraint firstItem="rzt-pz-7Hm" firstAttribute="leading" secondItem="zBg-ri-Q2C" secondAttribute="leading" id="kyh-ia-xly"/>
+                                <constraint firstAttribute="trailing" secondItem="tel-mM-Ac6" secondAttribute="trailing" id="m4i-fO-dYy"/>
+                                <constraint firstAttribute="height" constant="300" id="sTj-Ft-cDq"/>
+                                <constraint firstItem="tel-mM-Ac6" firstAttribute="top" secondItem="VOL-ss-89I" secondAttribute="bottom" id="uaI-jj-n09"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9D-oa-fpb">
+                            <rect key="frame" x="0.0" y="300" width="375" height="323"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismissCalendarView:" destination="-1" eventType="touchUpInside" id="kAc-zR-00O"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="e9D-oa-fpb" firstAttribute="leading" secondItem="VXz-Z1-A0X" secondAttribute="leading" id="3cF-O8-QHL"/>
+                        <constraint firstItem="zBg-ri-Q2C" firstAttribute="top" secondItem="VXz-Z1-A0X" secondAttribute="top" id="4wR-vX-7o8"/>
+                        <constraint firstItem="zBg-ri-Q2C" firstAttribute="leading" secondItem="VXz-Z1-A0X" secondAttribute="leading" id="6LQ-bb-yC6"/>
+                        <constraint firstAttribute="bottom" secondItem="e9D-oa-fpb" secondAttribute="bottom" id="9tN-tT-4sY"/>
+                        <constraint firstItem="e9D-oa-fpb" firstAttribute="top" secondItem="zBg-ri-Q2C" secondAttribute="bottom" id="EjN-dj-ASO"/>
+                        <constraint firstAttribute="trailing" secondItem="e9D-oa-fpb" secondAttribute="trailing" id="YqE-XJ-MSI"/>
+                        <constraint firstAttribute="trailing" secondItem="zBg-ri-Q2C" secondAttribute="trailing" id="bk3-WH-WOS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VXz-Z1-A0X" secondAttribute="trailing" id="0fY-lT-sJ4"/>
+                <constraint firstAttribute="bottom" secondItem="Aab-oR-raP" secondAttribute="bottom" id="4rz-rf-PKB"/>
+                <constraint firstItem="6QB-EC-TIw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8MM-cb-pcv"/>
+                <constraint firstItem="VXz-Z1-A0X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9zo-a9-dpB"/>
+                <constraint firstAttribute="bottom" secondItem="VXz-Z1-A0X" secondAttribute="bottom" id="AGj-Fq-j1Q"/>
+                <constraint firstItem="VXz-Z1-A0X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="BiN-Hv-UcG"/>
+                <constraint firstItem="Aab-oR-raP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fl3-ok-mDN"/>
+                <constraint firstItem="KDV-To-Rmd" firstAttribute="leading" secondItem="6QB-EC-TIw" secondAttribute="trailing" id="GxO-HG-mHv"/>
+                <constraint firstAttribute="trailing" secondItem="QM7-Du-pkU" secondAttribute="trailing" constant="1" id="M0b-mW-xDk"/>
+                <constraint firstItem="Aab-oR-raP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="bpd-eG-qfc"/>
+                <constraint firstItem="QM7-Du-pkU" firstAttribute="leading" secondItem="KDV-To-Rmd" secondAttribute="trailing" id="cwf-xf-CVz"/>
+                <constraint firstItem="6QB-EC-TIw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eIC-rR-R5m"/>
+                <constraint firstItem="KDV-To-Rmd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rNp-Hx-FQj"/>
+                <constraint firstItem="QM7-Du-pkU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vXA-ez-XFs"/>
+                <constraint firstAttribute="trailing" secondItem="Aab-oR-raP" secondAttribute="trailing" id="xhq-mq-vXv"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowleft" width="20" height="20"/>
+        <image name="arrowright" width="20" height="20"/>
+        <image name="dropdownunsel" width="12" height="7"/>
+    </resources>
+</document>

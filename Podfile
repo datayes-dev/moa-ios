@@ -8,6 +8,7 @@ pod "SSKeychain"
 pod "CocoaLumberjack"
 pod "MJRefresh"
 pod "SDAutoLayout"
+pod "JTCalendar"
 pod 'DYCommonTools', :git => 'http://git.datayes.com/iOS-Library/DYCommonTools.git'
 pod 'DYAppearance', :git => 'http://git.datayes.com/iOS-Library/DYAppearance.git'
 use_frameworks!

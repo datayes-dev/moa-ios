@@ -37,4 +37,6 @@
  */
 - (void)setAuthorityImage;
 
+
+
 @end

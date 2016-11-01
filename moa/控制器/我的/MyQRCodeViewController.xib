@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robocode" translatesAutoresizingMaskIntoConstraints="NO" id="5tm-C8-H5i">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="5tm-C8-H5i">
                     <rect key="frame" x="16" y="20" width="343" height="343"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="343" id="e1j-cP-viV"/>
@@ -51,6 +51,6 @@
         </view>
     </objects>
     <resources>
-        <image name="robocode" width="16" height="16"/>
+        <image name="loading" width="16" height="16"/>
     </resources>
 </document>

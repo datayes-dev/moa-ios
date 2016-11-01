@@ -12,6 +12,8 @@
 #import "MOALoginViewController.h"
 #import "DYAuthTokenManager.h"
 #import "MyCenterRootViewController.h"
+#import "MyQRCodeViewController.h"
+#import "DYAppConfigManager.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -26,7 +28,12 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
     [self setupDDLog];
     UIViewController* rootVC = nil;
     if ([DYAuthTokenManager shareInstance].isLogined) {
-        rootVC = [[MyCenterRootViewController alloc]init];
+        if ([DYAppConfigManager shareInstance].isCustomer) {
+            rootVC = [[MyQRCodeViewController alloc] init];
+        }
+        else {
+            rootVC = [[MyCenterRootViewController alloc] init];
+        }
     }
     else
     {

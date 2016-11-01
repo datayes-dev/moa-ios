@@ -47,6 +47,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "DYTools+AppInfo.h"
+#import "MyTradeListViewController.h"
 
 #define kRowHeight 44
 
@@ -97,8 +98,11 @@
 #pragma mark - private method
 - (void)addConcernedOption
 {
-    _mineFunctionsArray = @[@"用餐刷卡"];
-    _settingArray = @[@"退出登录"];
+    _mineFunctionsArray = @[@{@"text":@"用餐刷卡", @"image":@"qrcode_2"},
+                            @{@"text":@"消费记录", @"image":@"trade"},
+                            @{@"text":@"熊猫币", @"image":@"money"},
+                            @{@"text":@"我的二维码", @"image":@"qrcode"},
+                            @{@"text":@"退出登录", @"image":@"logout2"}];
 }
 
 - (void)fetchUserInfo
@@ -131,7 +135,7 @@
 #pragma mark - UITableViewDelegate / UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 7;
+    return _mineFunctionsArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -139,22 +143,15 @@
     switch (section) {
         case 0:
         case 1:
-            return 0;
-            break;
-            
+            return 1;
         case 2:
-            return self.mineFunctionsArray.count;
-            break;
-            
         case 3:
+            return 1;
         case 4:
-        case 5:
-        case 6:
             return 1;
             
         default:
             return 0;
-            break;
     }
 }
 
@@ -183,36 +180,9 @@
     cell.selectedBackgroundView = [[UIView alloc]initWithFrame:cell.contentView.frame];
     cell.selectedBackgroundView.backgroundColor = DYAppearanceColor(@"H1", 1.0);
 
-    switch (indexPath.section) {
-        case 0:
-        case 1:
-            break;
-            
-        case 2:
-            cell.textLabel.text = self.mineFunctionsArray[indexPath.row];
-            cell.imageView.image = [UIImage imageNamed:@"qrcode_2"];
-            break;
-        case 3:
-            cell.textLabel.text = @"消费记录";
-            cell.imageView.image = [UIImage imageNamed:@"trade"];
-            break;
-        case 4:
-            cell.textLabel.text = @"熊猫币";
-            cell.imageView.image = [UIImage imageNamed:@"money"];
-            break;
-        case 5:
-            cell.textLabel.text = @"我的二维码";
-            cell.imageView.image = [UIImage imageNamed:@"qrcode"];
-            break;
-        case 6:{
-            cell.textLabel.text = self.settingArray[indexPath.row];
-            cell.imageView.image = [UIImage imageNamed:@"qrcode_2"];
-            break;
-        }
-            
-        default:
-            break;
-    }
+    NSDictionary* dic = self.mineFunctionsArray[indexPath.section];
+    cell.textLabel.text = dic[@"text"];
+    cell.imageView.image = [UIImage imageNamed:dic[@"image"]];
     
     return cell;
 }
@@ -221,13 +191,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
-        case 0:
-            break;
-
-        case 1:
-            break;
-            
-        case 2:{
+        case 0:{
             
             NSString * mediaType = AVMediaTypeVideo;
             AVAuthorizationStatus  authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
@@ -247,23 +211,25 @@
             
             break;
         }
-        case 3:{
-            MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
-            [self.navigationController pushViewController:vc animated:YES];
+        case 1:{
+//            MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
+//            [self.navigationController pushViewController:vc animated:YES];
+            MyTradeListViewController* tradeListVC = [[MyTradeListViewController alloc] init];
+            [self.navigationController pushViewController:tradeListVC animated:YES];
             break;
         }
             
-        case 4: {
+        case 2: {
             MoneyViewController *vc = [[MoneyViewController alloc] initWithNibName:@"MoneyViewController" bundle:[NSBundle mainBundle]];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
-        case 5: {
+        case 3: {
             MyQRCodeViewController *vc = [[MyQRCodeViewController alloc] initWithNibName:@"MyQRCodeViewController" bundle:[NSBundle mainBundle]];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-        case 6:{
+        case 4:{
             [self logoutAccount];
             break;
         }
@@ -276,13 +242,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return section == 1 ? 70: 10;
+    return section == 0 ? 70: 10;
 }
 
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section ==1) {
+    if (section == 0) {
         DYUserInfoHeadView* userInfoView = nil;
         if (self.userInfoView == nil) {
             userInfoView = [DYUserInfoHeadView createUserInfoView];

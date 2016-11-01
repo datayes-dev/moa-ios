@@ -31,6 +31,7 @@ PODS:
   - DYAppearance (0.0.1)
   - DYCommonTools (0.0.1):
     - SSKeychain
+  - JTCalendar (2.1.9)
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
   - SDAutoLayout (2.1.7)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - DYAppearance (from `http://git.datayes.com/iOS-Library/DYAppearance.git`)
   - DYCommonTools (from `http://git.datayes.com/iOS-Library/DYCommonTools.git`)
+  - JTCalendar
   - Masonry (~> 1.0)
   - MJRefresh
   - SDAutoLayout
@@ -65,11 +67,12 @@ SPEC CHECKSUMS:
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   DYAppearance: 2f884f40996bf530223be7e0cbd4b792294c0e68
   DYCommonTools: b2e12e8abefacb353e87134f72d07934605a6e37
+  JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
 
-PODFILE CHECKSUM: 29d51fcc73ff51823332fb52930217f74d96323f
+PODFILE CHECKSUM: f21d9a9c3c013c3576302ed2f0883dd86d3e9f47
 
 COCOAPODS: 1.1.0.beta.1

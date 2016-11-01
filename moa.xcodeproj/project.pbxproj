@@ -99,6 +99,8 @@
 		7C9109BF1DC74CBA00C31940 /* MyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9109BD1DC74CBA00C31940 /* MyQRCodeViewController.m */; };
 		7C9109C01DC74CBA00C31940 /* MyQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9109BE1DC74CBA00C31940 /* MyQRCodeViewController.xib */; };
 		7CA9F33F1D893B44000A405A /* DYLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9F33E1D893B44000A405A /* DYLogFormatter.m */; };
+		7CC1EDCF1DC884CD00D1D38D /* MyTradeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1EDCD1DC884CD00D1D38D /* MyTradeListViewController.m */; };
+		7CC1EDD01DC884CD00D1D38D /* MyTradeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC1EDCE1DC884CD00D1D38D /* MyTradeListViewController.xib */; };
 		7CC60D0F1D92762700CF7708 /* MoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */; };
 		7CF5C3A61D913BD10044DF52 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5C3A41D913BD10044DF52 /* MoneyViewController.m */; };
 		7CF5C3A71D913BD10044DF52 /* MoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF5C3A51D913BD10044DF52 /* MoneyViewController.xib */; };
@@ -284,6 +286,9 @@
 		7C9109BE1DC74CBA00C31940 /* MyQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQRCodeViewController.xib; sourceTree = "<group>"; };
 		7CA9F33D1D893B44000A405A /* DYLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLogFormatter.h; sourceTree = "<group>"; };
 		7CA9F33E1D893B44000A405A /* DYLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLogFormatter.m; sourceTree = "<group>"; };
+		7CC1EDCC1DC884CD00D1D38D /* MyTradeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTradeListViewController.h; sourceTree = "<group>"; };
+		7CC1EDCD1DC884CD00D1D38D /* MyTradeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTradeListViewController.m; sourceTree = "<group>"; };
+		7CC1EDCE1DC884CD00D1D38D /* MyTradeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTradeListViewController.xib; sourceTree = "<group>"; };
 		7CC60D0C1D92762700CF7708 /* MoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTableViewCell.h; sourceTree = "<group>"; };
 		7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTableViewCell.m; sourceTree = "<group>"; };
 		7CF5C3A31D913BD10044DF52 /* MoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyViewController.h; sourceTree = "<group>"; };
@@ -434,6 +439,9 @@
 				425184811D88FADA00D94643 /* MOATradeDetailViewController.h */,
 				425184821D88FADA00D94643 /* MOATradeDetailViewController.m */,
 				425184831D88FADA00D94643 /* MOATradeDetailViewController.xib */,
+				7CC1EDCC1DC884CD00D1D38D /* MyTradeListViewController.h */,
+				7CC1EDCD1DC884CD00D1D38D /* MyTradeListViewController.m */,
+				7CC1EDCE1DC884CD00D1D38D /* MyTradeListViewController.xib */,
 			);
 			name = "交易详情";
 			path = "控制器/交易详情";
@@ -843,6 +851,7 @@
 				0B34A8FB1D8FB2F400F30B89 /* MyCenterRootViewController.storyboard in Resources */,
 				42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */,
 				7CF5C3A71D913BD10044DF52 /* MoneyViewController.xib in Resources */,
+				7CC1EDD01DC884CD00D1D38D /* MyTradeListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,6 +976,7 @@
 				0BC2BE151D87E0790087F84D /* MOALoginViewController.m in Sources */,
 				7C8E25CF1D879A4D001629A7 /* DYProgressHUD.m in Sources */,
 				7C8E25731D8794DB001629A7 /* DYInterfaceReqeustItem.m in Sources */,
+				7CC1EDCF1DC884CD00D1D38D /* MyTradeListViewController.m in Sources */,
 				7C8E25C71D879977001629A7 /* DYDataSourceErrorView.m in Sources */,
 				7C8E25B91D8794F4001629A7 /* DYNoticeInfoManager.m in Sources */,
 				7C8E25651D8794DB001629A7 /* DYInterfaceRequesterBase.m in Sources */,
