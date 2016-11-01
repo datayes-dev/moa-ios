@@ -20,13 +20,13 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (2.4.0):
-    - CocoaLumberjack/Default (= 2.4.0)
-    - CocoaLumberjack/Extensions (= 2.4.0)
-  - CocoaLumberjack/Core (2.4.0)
-  - CocoaLumberjack/Default (2.4.0):
+  - CocoaLumberjack (3.0.0):
+    - CocoaLumberjack/Default (= 3.0.0)
+    - CocoaLumberjack/Extensions (= 3.0.0)
+  - CocoaLumberjack/Core (3.0.0)
+  - CocoaLumberjack/Default (3.0.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.4.0):
+  - CocoaLumberjack/Extensions (3.0.0):
     - CocoaLumberjack/Default
   - DYAppearance (0.0.1)
   - DYCommonTools (0.0.1):
@@ -62,7 +62,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   DYAppearance: 2f884f40996bf530223be7e0cbd4b792294c0e68
   DYCommonTools: b2e12e8abefacb353e87134f72d07934605a6e37
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
