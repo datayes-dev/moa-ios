@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DYDataSourceBase.h"
 #import "DYCellDataItem.h"
+#import "DingTradeInfoItem.h"
 
 @interface MOATradeInfoAdapter : DYDataSourceBase
 

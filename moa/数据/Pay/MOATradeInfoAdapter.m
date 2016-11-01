@@ -196,7 +196,34 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
                                            endDate:endDate
                                              admin:admin
                                        ResultBlock:^(id data, NSError *error) {
-                                           //
+                                           
+                                           if (error) {
+                                               
+                                               resultBlock(nil, [[NSError alloc] init]);
+                                               return ;
+                                           }
+                                           
+                                           NSArray *dataArr = (NSArray *)data;
+                                           
+                                           NSMutableArray *muteArr = [NSMutableArray array];
+                                           
+                                           for (NSDictionary* dic in dataArr) {
+                                               
+                                               NSString* infoId = dic[@"id"];
+                                               NSNumber* price = dic[@"price"];
+                                               NSString* memo = dic[@"memo"];
+                                               NSString* restaurant = dic[@"restaurant"];
+                                               NSString* restaurant_name = dic[@"restaurant_name"];
+                                               NSString* time_stamp = dic[@"time_stamp"];
+                                               NSString* user = dic[@"user"];
+                                               
+                                               DingTradeInfoItem* item = [[DingTradeInfoItem alloc] initWithInfoId:infoId memo:memo price:[price doubleValue] restaurant:restaurant restaurant_name:restaurant_name time_stamp:time_stamp user:user];
+                                               
+                                               [muteArr insertObject:item atIndex:0];
+                                           }
+
+                                           
+                                           resultBlock(muteArr,nil);
                                        }];
 }
 

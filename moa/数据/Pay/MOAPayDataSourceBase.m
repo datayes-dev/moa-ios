@@ -122,6 +122,11 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
                        
+                       if (error) {
+                           
+                           resultBlock(nil,error);
+                           return;
+                       }
                        
                        dispatch_async(dispatch_get_main_queue(), ^{
                            resultBlock(data,error);
