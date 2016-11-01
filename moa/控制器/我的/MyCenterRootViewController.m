@@ -146,7 +146,7 @@
             return 1;
         case 2:
         case 3:
-            return 1;
+            return 0;
         case 4:
             return 1;
             
