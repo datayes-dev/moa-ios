@@ -39,6 +39,7 @@
 		4251849E1D8F90F300D94643 /* DYLoadingViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184991D8F90F300D94643 /* DYLoadingViewManager.m */; };
 		4251849F1D8F90F300D94643 /* DYWindowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */; };
 		425184A31D8F9BA800D94643 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184A21D8F9BA800D94643 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4258F2801DC8B1E2001DF410 /* DingTradeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4258F27F1DC8B1E2001DF410 /* DingTradeInfoItem.m */; };
 		42590C621D894A3D008B5B78 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42590C601D894A3D008B5B78 /* PaySuccessViewController.m */; };
 		42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */; };
 		7C8E22711D868818001629A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
@@ -165,6 +166,8 @@
 		4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYWindowLoadingView.m; sourceTree = "<group>"; };
 		425184A11D8F9BA800D94643 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		425184A21D8F9BA800D94643 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		4258F27E1DC8B1E2001DF410 /* DingTradeInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DingTradeInfoItem.h; sourceTree = "<group>"; };
+		4258F27F1DC8B1E2001DF410 /* DingTradeInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DingTradeInfoItem.m; sourceTree = "<group>"; };
 		42590C5F1D894A3D008B5B78 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		42590C601D894A3D008B5B78 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
@@ -419,6 +422,8 @@
 				4251848A1D8927DE00D94643 /* MOATradeInfoAdapter.m */,
 				4251848C1D89365E00D94643 /* DYCellDataItem.h */,
 				4251848D1D89365E00D94643 /* DYCellDataItem.m */,
+				4258F27E1DC8B1E2001DF410 /* DingTradeInfoItem.h */,
+				4258F27F1DC8B1E2001DF410 /* DingTradeInfoItem.m */,
 			);
 			name = Pay;
 			path = "数据/Pay";
@@ -885,7 +890,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2D74E8931F5A7293CF57D36 /* [CP] Embed Pods Frameworks */ = {
@@ -965,6 +970,7 @@
 				0BC2BE251D87F4E60087F84D /* DYTextField.m in Sources */,
 				4251847F1D88F91200D94643 /* MOABaseViewController.m in Sources */,
 				7C8E25761D8794DB001629A7 /* DYMutipartFormDataRequest.m in Sources */,
+				4258F2801DC8B1E2001DF410 /* DingTradeInfoItem.m in Sources */,
 				0BC2BE0F1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m in Sources */,
 				7C8E256B1D8794DB001629A7 /* DYAuthTokenManager.m in Sources */,
 				4251848B1D8927DE00D94643 /* MOATradeInfoAdapter.m in Sources */,

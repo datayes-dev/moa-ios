@@ -52,18 +52,35 @@
     
     showLoadingAtWindow;
     
-    [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
-        
-        dismisLoadingFromWindow;
-        
-        if (error) {
-            return ;
-        }
-        
-        weakSelf.infoArray = (NSArray *)data;
-        
-        [weakSelf.tableView reloadData];
-    }];
+//    [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+//        
+//        dismisLoadingFromWindow;
+//        
+//        if (error) {
+//            return ;
+//        }
+//        
+//        weakSelf.infoArray = (NSArray *)data;
+//        
+//        [weakSelf.tableView reloadData];
+//    }];
+    
+    [self.adapter getTradeListInfoWithBeginDate:@"2016-11-01 00:00:00"
+                                        endDate:@"2016-11-01 23:59:59"
+                                          admin:@"zsddft@datayes.com"
+                                    ResultBlock:^(id data, NSError *error) {
+                                        dismisLoadingFromWindow;
+                                        
+                                        if (error) {
+                                            return ;
+                                        }
+                                        
+                                        weakSelf.infoArray = (NSArray *)data;
+                                        
+                                        [weakSelf.tableView reloadData];
+                                    }];
+
+    
 }
 
 #pragma mark - Tableview Delegate
@@ -88,11 +105,11 @@
     NSInteger count = [self.infoArray count];
     if (indexPath.row < count) {
         
-        DYCellDataItem *item = self.infoArray[count - indexPath.row - 1];
+        DingTradeInfoItem *item = self.infoArray[count - indexPath.row - 1];
         
-        cell.hotelName.text = item.hotelName;
-        cell.tradeDate.text = item.timeStamp;
-        cell.cash.text = item.price;
+        cell.hotelName.text = item.restaurant_name;
+        cell.tradeDate.text = item.time_stamp;
+        cell.cash.text = [NSString stringWithFormat:@"%.2f",item.price];
     }
     
     return cell;
