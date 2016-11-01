@@ -17,15 +17,15 @@
 {
     self.requestOperationManager = [[AFHTTPRequestOperationManager alloc] init];
     self.requestOperationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [self.requestOperationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [self.requestOperationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 //    [self.requestOperationManager.requestSerializer setValue:@"text/html" forHTTPHeaderField:@"Accept"];
     
 //    [self.requestOperationManager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
 //    self.requestOperationManager.requestSerializer.timeoutInterval = TIMEOUT_VALUE;
 //    [self.requestOperationManager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
-    self.requestOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [self.requestOperationManager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"text/html", nil]];
+    self.requestOperationManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    [self.requestOperationManager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"text/html", nil]];
 }
 
 @end

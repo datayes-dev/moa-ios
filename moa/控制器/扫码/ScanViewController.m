@@ -10,6 +10,9 @@
 #import "PayInfoViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "DYAppearance.h"
+#import "DYLoadingViewManager.h"
+#import "MOATradeInfoAdapter.h"
+#import "Toast+UIView.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 /**
@@ -21,6 +24,8 @@
  *	@brief	显示需要扫的二维码信息
  */
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *layer;
+
+@property (strong, nonatomic) MOATradeInfoAdapter *adapter;
 
 @end
 
@@ -89,14 +94,59 @@
         // 将预览图层移除
         [self.layer removeFromSuperlayer];
         
-        PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:[NSBundle mainBundle]];
-        
-        vc.hotelQRCode = object.stringValue;
-        
-        [self.navigationController pushViewController:vc animated:YES];
+        [self payWithCode:object.stringValue];
+//        PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:[NSBundle mainBundle]];
+//        
+//        vc.hotelQRCode = object.stringValue;
+//        
+//        [self.navigationController pushViewController:vc animated:YES];
         
     } else {
         NSLog(@"没有扫描到数据");
     }
+}
+
+- (MOATradeInfoAdapter *)adapter
+{
+    
+    if (_adapter == nil) {
+        
+        _adapter = [MOATradeInfoAdapter shareInstance];
+    }
+    return _adapter;
+}
+
+- (void)delayBack
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.0f* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
+
+- (void)payWithCode:(NSString*)qrCode
+{
+    WS(weakSelf);
+    
+    showLoadingAtWindow;
+    
+    [self.adapter addTransWithRestaurant:@"866f0bd8-a002-11e6-8f4c-0242c0a80003RES_" QRString:qrCode ResultBlock:^(id data, NSError *error) {
+        dismisLoadingFromWindow;
+        
+        if (error == nil) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", dic);
+            if ([dic[@"message"] isEqualToString:@"Quota error"]) {
+                [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
+            }
+            else if ([dic[@"message"] isEqualToString:@"Qrcode error"]) {
+                [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
+            }
+            else {
+                [weakSelf.view makeToast:@"支付成功" duration:2 position:@"center"];
+            }
+            
+            [weakSelf delayBack];
+        }
+    }];
 }
 @end

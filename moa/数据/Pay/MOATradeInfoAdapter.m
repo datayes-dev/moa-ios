@@ -203,7 +203,7 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
                                                return ;
                                            }
                                            
-                                           NSArray *dataArr = (NSArray *)data;
+                                           NSArray *dataArr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                            
                                            NSMutableArray *muteArr = [NSMutableArray array];
                                            
@@ -242,7 +242,9 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
     [self.datasource addTransWithRestaurant:@"866f0bd8-a002-11e6-8f4c-0242c0a80003RES_"
                                    QRString:qrStr
                                 ResultBlock:^(id data, NSError *error) {
-                                    //
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        resultBlock(data, error);
+                                    });
                                 }];
 }
 

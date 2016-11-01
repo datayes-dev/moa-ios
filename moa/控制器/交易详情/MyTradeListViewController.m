@@ -68,18 +68,24 @@
     
     showLoadingAtWindow;
     
-    [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
-        
-        dismisLoadingFromWindow;
-        
-        if (error) {
-            return ;
-        }
-        
-        weakSelf.infoArray = (NSArray *)data;
-        
-        [weakSelf.tradeListTableView reloadData];
-    }];
+    NSString* dateString = [[self dateFormatter] stringFromDate:_dateSelected];
+    NSString* beginDateTime = [NSString stringWithFormat:@"%@ 00:00:00", dateString];
+    NSString* endDateTime = [NSString stringWithFormat:@"%@ 23:59:59", dateString];
+    
+    [self.adapter getTradeListInfoWithBeginDate:beginDateTime
+                                        endDate:endDateTime
+                                          admin:@"zsddft@datayes.com"
+                                    ResultBlock:^(id data, NSError *error) {
+                                        dismisLoadingFromWindow;
+                                        
+                                        if (error) {
+                                            return ;
+                                        }
+                                        
+                                        weakSelf.infoArray = (NSArray *)data;
+                                        
+                                        [weakSelf.tradeListTableView reloadData];
+                                    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -251,6 +257,7 @@
     _dateSelected = dateSelected;
     [_calendarManager setDate:dateSelected];
     [self showCurrentDate];
+    [self loadData];
 }
 
 - (MOATradeInfoAdapter *)adapter
@@ -295,11 +302,16 @@
     NSInteger count = [self.infoArray count];
     if (indexPath.row < count) {
         
-        DYCellDataItem *item = self.infoArray[count - indexPath.row - 1];
+//        DYCellDataItem *item = self.infoArray[count - indexPath.row - 1];
+//        
+//        cell.hotelName.text = item.hotelName;
+//        cell.tradeDate.text = item.timeStamp;
+//        cell.cash.text = item.price;
+        DingTradeInfoItem *item = self.infoArray[count - indexPath.row - 1];
         
-        cell.hotelName.text = item.hotelName;
-        cell.tradeDate.text = item.timeStamp;
-        cell.cash.text = item.price;
+        cell.hotelName.text = item.restaurant_name;
+        cell.tradeDate.text = item.time_stamp;
+        cell.cash.text = [NSString stringWithFormat:@"%.2f",item.price];
     }
     
     return cell;

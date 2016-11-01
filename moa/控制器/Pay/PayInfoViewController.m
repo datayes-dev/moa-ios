@@ -63,7 +63,8 @@
     
     [super viewWillAppear:animated];
     
-    [self getCurrentHotelInfo];
+//    [self getCurrentHotelInfo];
+    [self pay];
 }
 
 #pragma mark - init
@@ -79,6 +80,32 @@
 
 
 #pragma mark - Method
+- (void)pay
+{
+    WS(weakSelf);
+    
+    self.currentHotel = nil;
+    
+    showLoadingAtWindow;
+    
+    [self.adapter addTransWithRestaurant:@"866f0bd8-a002-11e6-8f4c-0242c0a80003RES_" QRString:self.hotelQRCode ResultBlock:^(id data, NSError *error) {
+        dismisLoadingFromWindow;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if ([dic[@"message"] isEqualToString:@"Quota error"]) {
+            [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
+        }
+        else if ([dic[@"message"] isEqualToString:@"Qrcode error"]) {
+            [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
+        }
+        else {
+            [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
+//            PaySuccessViewController *vc = [[PaySuccessViewController alloc] initWithNibName:@"PaySuccessViewController" bundle:[NSBundle mainBundle]];
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
+        NSLog(@"%@", dic);
+    }];
+}
+
 - (void)getCurrentHotelInfo
 {
     

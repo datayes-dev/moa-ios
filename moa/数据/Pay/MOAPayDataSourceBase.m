@@ -149,7 +149,8 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
     
     [self sendRequestWithMsgId:eDiningTradeRequest
                     parameters:@{@"restaurant":NilToEmptyString(restaurant),
-                                 @"qrStr":NilToEmptyString(qrStr)}
+                                 @"qrstring":NilToEmptyString(qrStr),
+                                 @"memo":@""}
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
