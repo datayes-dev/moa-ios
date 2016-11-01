@@ -48,22 +48,31 @@
     UINib *nib = [UINib nibWithNibName:@"MOATradeDetailTableViewCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"MOATradeDetailTableViewCell"];
     
-    WS(weakSelf);
+//    WS(weakSelf);
     
-    showLoadingAtWindow;
+//    showLoadingAtWindow;
     
-    [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
-        
-        dismisLoadingFromWindow;
-        
-        if (error) {
-            return ;
-        }
-        
-        weakSelf.infoArray = (NSArray *)data;
-        
-        [weakSelf.tableView reloadData];
-    }];
+//    [self.adapter getTradeListInfoWithResultBlock:^(id data, NSError *error) {
+//        
+//        dismisLoadingFromWindow;
+//        
+//        if (error) {
+//            return ;
+//        }
+//        
+//        weakSelf.infoArray = (NSArray *)data;
+//        
+//        [weakSelf.tableView reloadData];
+//    }];
+    
+    [self.adapter getTradeListInfoWithBeginDate:@"2016-11-01 00:00:00"
+                                        endDate:@"2016-11-01 23:59:59"
+                                          admin:@"zsddft@datayes.com"
+                                    ResultBlock:^(id data, NSError *error) {
+                                        //
+                                    }];
+
+    
 }
 
 #pragma mark - Tableview Delegate

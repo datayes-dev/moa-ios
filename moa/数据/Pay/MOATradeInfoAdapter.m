@@ -183,4 +183,41 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
     
     return self.lastTradeItem;
 }
+
+#pragma mark - 新接口
+
+- (void)getTradeListInfoWithBeginDate:(NSString *)beginDate
+                              endDate:(NSString *)endDate
+                                admin:(NSString *)admin
+                          ResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    [self.datasource getTradeListInfoWithBeginDate:beginDate
+                                           endDate:endDate
+                                             admin:admin
+                                       ResultBlock:^(id data, NSError *error) {
+                                           //
+                                       }];
+}
+
+- (void)getUserPayQRWithResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    [self.datasource getUserPayQRWithResultBlock:^(id data, NSError *error) {
+        //
+    }];
+}
+
+- (void)addTransWithRestaurant:(NSString *)restaurant
+                      QRString:(NSString *)qrStr
+                   ResultBlock:(DYInterfaceResultBlock)resultBlock{
+    
+    [self.datasource addTransWithRestaurant:@"866f0bd8-a002-11e6-8f4c-0242c0a80003RES_"
+                                   QRString:qrStr
+                                ResultBlock:^(id data, NSError *error) {
+                                    //
+                                }];
+}
+
+
 @end

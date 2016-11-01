@@ -58,5 +58,22 @@
  */
 - (void)getTradeListInfoWithResultBlock:(DYInterfaceResultBlock)resultBlock;
 
+#pragma mark - 新街口
+//获取交易流水
+- (void)getTradeListInfoWithBeginDate:(NSString *)beginDate
+                              endDate:(NSString *)endDate
+                                admin:(NSString *)admin
+                          ResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+
+//执行交易
+- (void)addTransWithRestaurant:(NSString *)restaurant
+                      QRString:(NSString *)qrStr
+                   ResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+
+//获取个人付款二维码
+- (void)getUserPayQRWithResultBlock:(DYInterfaceResultBlock)resultBlock;
+
 
 @end

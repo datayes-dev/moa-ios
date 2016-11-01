@@ -95,14 +95,79 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
                    }];
 }
 
-- (void)getTradeListInfoWithResultBlock:(DYInterfaceResultBlock)resultBlock
+
+#pragma mark - 新接口
+
+//获取交易流水
+- (void)getTradeListInfoWithBeginDate:(NSString *)beginDate
+                              endDate:(NSString *)endDate
+                                admin:(NSString *)admin
+                          ResultBlock:(DYInterfaceResultBlock)resultBlock
 {
-    [self sendRequestWithMsgId:eDiningGetTradeList
+    
+    if ([beginDate length] == 0 || [endDate length] == 0) {
+        
+        NSError *error = [[NSError alloc] init];
+        resultBlock(nil,error);
+        return;
+    }
+    
+    NSDictionary *dic = @{@"begin":NilToEmptyString(beginDate),
+                          @"end":NilToEmptyString(endDate),
+                          @"admin":NilToEmptyString(admin)};
+    
+    [self sendRequestWithMsgId:eGetTradeList
+                    parameters:dic
+                 canUsingCache:NO
+                   forceReload:NO
+                   resultBlock:^(id data, NSError *error) {
+                       
+                       
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           resultBlock(data,error);
+                       });
+                   }];
+}
+
+
+//执行交易
+- (void)addTransWithRestaurant:(NSString *)restaurant
+                      QRString:(NSString *)qrStr
+                   ResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    if ([restaurant length] == 0 || [qrStr length] ==0) {
+        
+        resultBlock(nil,[[NSError alloc] init]);
+        return;
+    }
+    
+    [self sendRequestWithMsgId:eDiningTradeRequest
+                    parameters:@{@"restaurant":NilToEmptyString(restaurant),
+                                 @"qrStr":NilToEmptyString(qrStr)}
+                 canUsingCache:NO
+                   forceReload:NO
+                   resultBlock:^(id data, NSError *error) {
+                       
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           
+                           resultBlock(data,error);
+                       });
+                   }];
+}
+
+
+//获取个人付款二维码
+- (void)getUserPayQRWithResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    [self sendRequestWithMsgId:eGetUserPayQR
                     parameters:nil
                  canUsingCache:NO
                    forceReload:NO
                    resultBlock:^(id data, NSError *error) {
+                       
                        dispatch_async(dispatch_get_main_queue(), ^{
+                           
                            resultBlock(data,error);
                        });
                    }];
