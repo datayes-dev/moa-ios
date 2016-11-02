@@ -48,6 +48,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DYTools+AppInfo.h"
 #import "MyTradeListViewController.h"
+#import "DYTools+AppInfo.h"
 
 #define kRowHeight 44
 
@@ -70,7 +71,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = DYAppearanceColor(@"H1", 1.0);
-    self.title = @"吃饭去";
+    self.title = [DYTools appDisplayName];
 }
 
 - (void)viewWillAppear:(BOOL)animated

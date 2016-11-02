@@ -15,6 +15,12 @@
 #import "Toast+UIView.h"
 #import "MOATradeDetailViewController.h"
 
+typedef NS_ENUM(NSInteger, EAlertViewType) {
+    eAlertViewTradecheck = 1,           // 交易确认
+    eAlertViewTradeFailed,              // 交易失败
+    eAlertViewTradeSuccess,             // 交易成功
+};
+
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 /**
  *	@brief	连接摄像头
@@ -53,7 +59,6 @@
 #pragma mark - Method
 - (void)beginScanQR
 {
-    
     // 1.创建捕捉会话
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     self.session = session;
@@ -156,21 +161,21 @@
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", dic);
             if ([dic[@"message"] isEqualToString:@"Quota error"]) {
-                [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
-                [weakSelf delayBack];
+//                [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
+//                [weakSelf delayBack];
+                [weakSelf showFailed:@"配额用完了"];
             }
             else if ([dic[@"message"] isEqualToString:@"Qrcode error"]) {
-                [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
-                [weakSelf delayBack];
+//                [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
+//                [weakSelf delayBack];
+                [weakSelf showFailed:@"二维码不正确"];
             }
             else if ([dic[@"result"] isEqualToString:@"success"]){
-                [weakSelf.view makeToast:@"支付成功" duration:2 position:@"center"];
-                
-                [weakSelf delayNavToTradeListVC];
+//                [weakSelf.view makeToast:@"交易成功" duration:2 position:@"center"];
+                [weakSelf showSuccess];
             }
             else {
-                [weakSelf.view makeToast:@"未知错误，请稍后重试" duration:2 position:@"center"];
-                
+                [weakSelf.view makeToast:@"未知错误，请稍后重试" duration:3 position:@"center"];
                 [weakSelf delayBack];
             }
         }
@@ -179,12 +184,40 @@
 
 - (void)checkForTrade {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"确认交易？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+    alert.tag = eAlertViewTradecheck;
+    [alert show];
+}
+
+- (void)showFailed:(NSString *)failString
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:failString delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    alert.tag = eAlertViewTradeFailed;
+    [alert show];
+}
+
+- (void)showSuccess
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"交易成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"查看交易", nil];
+    alert.tag = eAlertViewTradeSuccess;
     [alert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 1) { // 确认交易
-        [self payWithCode:self.qrCodeString];
+    if (alertView.tag == eAlertViewTradecheck) {
+        if (buttonIndex == 1) { // 确认交易
+            [self payWithCode:self.qrCodeString];
+        }
+    }
+    else if (alertView.tag == eAlertViewTradeFailed) {
+        [self beginScanQR];
+    }
+    else if (alertView.tag == eAlertViewTradeSuccess) {
+        if (buttonIndex == 1) {
+            [self delayNavToTradeListVC];
+        }
+        else {
+            [self beginScanQR];
+        }
     }
 }
 @end

@@ -24,4 +24,11 @@
     return buildNumber;
 }
 
++ (NSString *)appDisplayName
+{
+    NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
+    NSString* displayName =[infoDict objectForKey:@"CFBundleDisplayName"];
+    return displayName;
+}
+
 @end

@@ -24,4 +24,11 @@
  */
 + (NSString *)appBuildNumber;
 
+/**
+ *	@brief	获取app的名称
+ *
+ *	@return	返回app的名称
+ */
++ (NSString *)appDisplayName;
+
 @end
