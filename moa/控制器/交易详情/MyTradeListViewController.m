@@ -309,7 +309,7 @@
 //        cell.cash.text = item.price;
         DingTradeInfoItem *item = self.infoArray[count - indexPath.row - 1];
         
-        cell.hotelName.text = item.restaurant_name;
+        cell.hotelName.text = item.user;
         cell.tradeDate.text = item.time_stamp;
         cell.cash.text = [NSString stringWithFormat:@"%.2f",item.price];
     }

@@ -65,6 +65,16 @@
                                 admin:(NSString *)admin
                           ResultBlock:(DYInterfaceResultBlock)resultBlock;
 
+/**
+ *	@brief	获取最新的交易流水（只有10条）
+ *
+ *	@param 	beginDate 	起始日期
+ *	@param 	endDate 	结束日期
+ *	@param 	resultBlock 	结果回调
+ */
+- (void)getLatestTradeListInfoWithBeginDate:(NSString *)beginDate
+                                    endDate:(NSString *)endDate
+                                ResultBlock:(DYInterfaceResultBlock)resultBlock;
 
 //执行交易
 - (void)addTransWithRestaurant:(NSString *)restaurant

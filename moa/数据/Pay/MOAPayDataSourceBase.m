@@ -134,6 +134,39 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
                    }];
 }
 
+- (void)getLatestTradeListInfoWithBeginDate:(NSString *)beginDate
+                                    endDate:(NSString *)endDate
+                                ResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    if ([beginDate length] == 0 || [endDate length] == 0) {
+        
+        NSError *error = [[NSError alloc] init];
+        resultBlock(nil,error);
+        return;
+    }
+    
+    NSDictionary *dic = @{@"begin":NilToEmptyString(beginDate),
+                          @"end":NilToEmptyString(endDate)};
+    
+    [self sendRequestWithMsgId:eGetLatestTradeList
+                    parameters:dic
+                 canUsingCache:NO
+                   forceReload:NO
+                   resultBlock:^(id data, NSError *error) {
+                       
+                       if (error) {
+                           
+                           resultBlock(nil,error);
+                           return;
+                       }
+                       
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           resultBlock(data,error);
+                       });
+                   }];
+}
+
 
 //执行交易
 - (void)addTransWithRestaurant:(NSString *)restaurant

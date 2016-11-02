@@ -3145,6 +3145,28 @@
 					<key>version</key>
 					<string>2.8.0</string>
 				</dict>
+				<dict>
+					<key>basicUrl</key>
+					<string></string>
+					<key>subUrl</key>
+					<string>meal_ticket/transaction-restaurant-app</string>
+					<key>requestType</key>
+					<integer>1</integer>
+					<key>responseBodyTiedType</key>
+					<integer>0</integer>
+					<key>parseClass</key>
+					<string></string>
+					<key>comment</key>
+					<string>查询最近的交易流水</string>
+					<key>allowMutableRequest</key>
+					<false/>
+					<key>needAuthInfoType</key>
+					<integer>9</integer>
+					<key>errorHandlerClass</key>
+					<string></string>
+					<key>version</key>
+					<string>2.8.0</string>
+				</dict>
 			</array>
 		</dict>
 	</array>

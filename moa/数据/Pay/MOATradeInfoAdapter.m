@@ -227,6 +227,25 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
                                        }];
 }
 
+- (void)getLatestTradeListInfoWithBeginDate:(NSString *)beginDate
+                                    endDate:(NSString *)endDate
+                                ResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    
+    [self.datasource getLatestTradeListInfoWithBeginDate:beginDate
+                                                 endDate:endDate
+                                             ResultBlock:^(id data, NSError *error) {
+                                           
+                                           if (error) {
+                                               resultBlock(nil, [[NSError alloc] init]);
+                                               return ;
+                                           }
+                                           
+                                           NSDictionary *dataInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                                           resultBlock(dataInfo,nil);
+                                       }];
+}
+
 - (void)getUserPayQRWithResultBlock:(DYInterfaceResultBlock)resultBlock
 {
     

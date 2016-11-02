@@ -13,6 +13,7 @@
 #import "DYLoadingViewManager.h"
 #import "MOATradeInfoAdapter.h"
 #import "Toast+UIView.h"
+#import "MOATradeDetailViewController.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 /**
@@ -26,6 +27,8 @@
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *layer;
 
 @property (strong, nonatomic) MOATradeInfoAdapter *adapter;
+
+@property (strong, nonatomic) NSString* qrCodeString;
 
 @end
 
@@ -88,13 +91,9 @@
         
         NSLog(@"扫描二维码的结果：%@", object.stringValue);
         
-        // 停止扫描
-        [self.session stopRunning];
-        
-        // 将预览图层移除
-        [self.layer removeFromSuperlayer];
-        
-        [self payWithCode:object.stringValue];
+        self.qrCodeString = object.stringValue;
+        [self stopScanQR];
+        [self checkForTrade];
 //        PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:[NSBundle mainBundle]];
 //        
 //        vc.hotelQRCode = object.stringValue;
@@ -104,6 +103,15 @@
     } else {
         NSLog(@"没有扫描到数据");
     }
+}
+
+- (void)stopScanQR
+{
+    // 停止扫描
+    [self.session stopRunning];
+    
+    // 将预览图层移除
+    [self.layer removeFromSuperlayer];
 }
 
 - (MOATradeInfoAdapter *)adapter
@@ -123,6 +131,18 @@
     });
 }
 
+- (void)delayNavToTradeListVC
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1.0f* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSMutableArray* vcArray = [self.navigationController viewControllers].mutableCopy;
+        [vcArray removeLastObject];
+        
+        MOATradeDetailViewController* vc = [[MOATradeDetailViewController alloc] init];
+        [vcArray addObject:vc];
+        [self.navigationController setViewControllers:vcArray animated:YES];
+    });
+}
+
 - (void)payWithCode:(NSString*)qrCode
 {
     WS(weakSelf);
@@ -137,16 +157,34 @@
             NSLog(@"%@", dic);
             if ([dic[@"message"] isEqualToString:@"Quota error"]) {
                 [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
+                [weakSelf delayBack];
             }
             else if ([dic[@"message"] isEqualToString:@"Qrcode error"]) {
                 [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
+                [weakSelf delayBack];
+            }
+            else if ([dic[@"result"] isEqualToString:@"success"]){
+                [weakSelf.view makeToast:@"支付成功" duration:2 position:@"center"];
+                
+                [weakSelf delayNavToTradeListVC];
             }
             else {
-                [weakSelf.view makeToast:@"支付成功" duration:2 position:@"center"];
+                [weakSelf.view makeToast:@"未知错误，请稍后重试" duration:2 position:@"center"];
+                
+                [weakSelf delayBack];
             }
-            
-            [weakSelf delayBack];
         }
     }];
+}
+
+- (void)checkForTrade {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"确认交易？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) { // 确认交易
+        [self payWithCode:self.qrCodeString];
+    }
 }
 @end

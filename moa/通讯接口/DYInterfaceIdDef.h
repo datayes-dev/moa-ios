@@ -201,7 +201,8 @@ typedef NS_ENUM(NSInteger, EInterfaceId) {
     eGetWalletDetailInfo,                           // 获取钱包详情
     eGetWalletPaymentsInfo,                         // 获取钱包的交易历史
     eGetUserPayQR,                                  // 获取用户付款二维码
-    eGetTradeList                                   // 查询交易流水
+    eGetTradeList,                                  // 查询交易流水
+    eGetLatestTradeList,                            // 查询交易流水
 };
 
 #endif /* DYInterfaceIdDef_h */

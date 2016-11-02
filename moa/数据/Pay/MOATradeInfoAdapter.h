@@ -42,4 +42,8 @@
 - (void)addTransWithRestaurant:(NSString *)restaurant
                       QRString:(NSString *)qrStr
                    ResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+- (void)getLatestTradeListInfoWithBeginDate:(NSString *)beginDate
+                                    endDate:(NSString *)endDate
+                                ResultBlock:(DYInterfaceResultBlock)resultBlock;
 @end

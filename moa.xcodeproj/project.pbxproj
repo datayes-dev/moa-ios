@@ -25,7 +25,6 @@
 		425184701D87D27B00D94643 /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846F1D87D27B00D94643 /* UIImage+Creation.m */; };
 		425184741D87DCE400D94643 /* MOAPayDataSourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */; };
 		425184771D87E93E00D94643 /* interfaceUri.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184761D87E93E00D94643 /* interfaceUri.plist */; };
-		425184791D87F33C00D94643 /* appConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184781D87F33C00D94643 /* appConfig.plist */; };
 		4251847C1D88F07B00D94643 /* MOAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251847B1D88F07B00D94643 /* MOAViewController.m */; };
 		4251847F1D88F91200D94643 /* MOABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251847E1D88F91200D94643 /* MOABaseViewController.m */; };
 		425184841D88FADA00D94643 /* MOATradeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184821D88FADA00D94643 /* MOATradeDetailViewController.m */; };
@@ -100,6 +99,107 @@
 		7C9109BF1DC74CBA00C31940 /* MyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9109BD1DC74CBA00C31940 /* MyQRCodeViewController.m */; };
 		7C9109C01DC74CBA00C31940 /* MyQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9109BE1DC74CBA00C31940 /* MyQRCodeViewController.xib */; };
 		7CA9F33F1D893B44000A405A /* DYLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9F33E1D893B44000A405A /* DYLogFormatter.m */; };
+		7CB434DA1DC979DC00B60F07 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184A21D8F9BA800D94643 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7CB434DB1DC979DC00B60F07 /* DYLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184971D8F90F300D94643 /* DYLoadingView.m */; };
+		7CB434DC1DC979DC00B60F07 /* DYAuthorityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257B1D8794EA001629A7 /* DYAuthorityManager.m */; };
+		7CB434DD1DC979DC00B60F07 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184671D87CCE800D94643 /* ScanViewController.m */; };
+		7CB434DE1DC979DC00B60F07 /* UIButton+DatayesAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E258C1D8794EA001629A7 /* UIButton+DatayesAuthority.m */; };
+		7CB434DF1DC979DC00B60F07 /* DYAuthorityLoginDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257D1D8794EA001629A7 /* DYAuthorityLoginDataSource.m */; };
+		7CB434E01DC979DC00B60F07 /* DYNetStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E255B1D8794DB001629A7 /* DYNetStatusManager.m */; };
+		7CB434E11DC979DC00B60F07 /* DYHttpRequestWithCacheOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25351D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m */; };
+		7CB434E21DC979DC00B60F07 /* DYXFormRequestWithJsonResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25601D8794DB001629A7 /* DYXFormRequestWithJsonResponseRequest.m */; };
+		7CB434E31DC979DC00B60F07 /* MOATradeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184911D896A4300D94643 /* MOATradeDetailTableViewCell.m */; };
+		7CB434E41DC979DC00B60F07 /* DYMoneyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5C3AA1D913F580044DF52 /* DYMoneyDataSource.m */; };
+		7CB434E51DC979DC00B60F07 /* DYErrorHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E254D1D8794DB001629A7 /* DYErrorHandlerHelper.m */; };
+		7CB434E61DC979DC00B60F07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25CE1D879A4D001629A7 /* MBProgressHUD.m */; };
+		7CB434E71DC979DC00B60F07 /* DYAuthorityResetPasswordDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25871D8794EA001629A7 /* DYAuthorityResetPasswordDataSource.m */; };
+		7CB434E81DC979DC00B60F07 /* MOANavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846B1D87D1CB00D94643 /* MOANavigationViewController.m */; };
+		7CB434E91DC979DC00B60F07 /* DYDataSourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25991D8794F4001629A7 /* DYDataSourceBase.m */; };
+		7CB434EA1DC979DC00B60F07 /* DYJsonRequestWithGBufResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25551D8794DB001629A7 /* DYJsonRequestWithGBufResponseRequest.m */; };
+		7CB434EB1DC979DC00B60F07 /* DYJsonRequestWithJsonResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25571D8794DB001629A7 /* DYJsonRequestWithJsonResponseRequest.m */; };
+		7CB434EC1DC979DC00B60F07 /* DYWindowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251849C1D8F90F300D94643 /* DYWindowLoadingView.m */; };
+		7CB434ED1DC979DC00B60F07 /* DYErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E253B1D8794DB001629A7 /* DYErrorHelper.m */; };
+		7CB434EE1DC979DC00B60F07 /* MOAPayDataSourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */; };
+		7CB434EF1DC979DC00B60F07 /* DYCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25D61D879B5C001629A7 /* DYCacheService.m */; };
+		7CB434F01DC979DC00B60F07 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5C3A41D913BD10044DF52 /* MoneyViewController.m */; };
+		7CB434F11DC979DC00B60F07 /* DYLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9F33E1D893B44000A405A /* DYLogFormatter.m */; };
+		7CB434F21DC979DC00B60F07 /* DYCellDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848D1D89365E00D94643 /* DYCellDataItem.m */; };
+		7CB434F31DC979DC00B60F07 /* SEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25B01D8794F4001629A7 /* SEUtilities.m */; };
+		7CB434F41DC979DC00B60F07 /* DYAppModuleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25461D8794DB001629A7 /* DYAppModuleItem.m */; };
+		7CB434F51DC979DC00B60F07 /* PromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25C41D879977001629A7 /* PromptView.m */; };
+		7CB434F61DC979DC00B60F07 /* DYResultHeaderHandleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25AB1D8794F4001629A7 /* DYResultHeaderHandleHelper.m */; };
+		7CB434F71DC979DC00B60F07 /* DYUserInfoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF0C601D8FC31700C42A27 /* DYUserInfoHeadView.m */; };
+		7CB434F81DC979DC00B60F07 /* MyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9109BD1DC74CBA00C31940 /* MyQRCodeViewController.m */; };
+		7CB434F91DC979DC00B60F07 /* DYAppPushDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25481D8794DB001629A7 /* DYAppPushDataSource.m */; };
+		7CB434FA1DC979DC00B60F07 /* DYInterfaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E254F1D8794DB001629A7 /* DYInterfaceInfo.m */; };
+		7CB434FB1DC979DC00B60F07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22731D868818001629A7 /* AppDelegate.m */; };
+		7CB434FC1DC979DC00B60F07 /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251846F1D87D27B00D94643 /* UIImage+Creation.m */; };
+		7CB434FD1DC979DC00B60F07 /* DYGetUserInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E258A1D8794EA001629A7 /* DYGetUserInfoDataSource.m */; };
+		7CB434FE1DC979DC00B60F07 /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25E51D87A136001629A7 /* PayInfoViewController.m */; };
+		7CB434FF1DC979DC00B60F07 /* DYLoadingViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184991D8F90F300D94643 /* DYLoadingViewManager.m */; };
+		7CB435001DC979DC00B60F07 /* DYInterfaceRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25371D8794DB001629A7 /* DYInterfaceRequestHelper.m */; };
+		7CB435011DC979DC00B60F07 /* DYNotifiesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25441D8794DB001629A7 /* DYNotifiesRequest.m */; };
+		7CB435021DC979DC00B60F07 /* MOAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251847B1D88F07B00D94643 /* MOAViewController.m */; };
+		7CB435031DC979DC00B60F07 /* DYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E253A1D8794DB001629A7 /* DYCacheManager.m */; };
+		7CB435041DC979DC00B60F07 /* DYAuthorityDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257F1D8794EA001629A7 /* DYAuthorityDataSource.m */; };
+		7CB435051DC979DC00B60F07 /* UIImageView+DatayesAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E258E1D8794EA001629A7 /* UIImageView+DatayesAuthority.m */; };
+		7CB435061DC979DC00B60F07 /* NSObject+Representation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25621D8794DB001629A7 /* NSObject+Representation.m */; };
+		7CB435071DC979DC00B60F07 /* DYResetPasswordStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0A1D87D6BA0087F84D /* DYResetPasswordStep1Controller.m */; };
+		7CB435081DC979DC00B60F07 /* MyCenterRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B34A8F81D8FB2F400F30B89 /* MyCenterRootViewController.m */; };
+		7CB435091DC979DC00B60F07 /* DYErrorHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E254B1D8794DB001629A7 /* DYErrorHandlerBase.m */; };
+		7CB4350A1DC979DC00B60F07 /* MoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */; };
+		7CB4350B1DC979DC00B60F07 /* SEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E259A1D8794F4001629A7 /* SEDatabase.m */; };
+		7CB4350C1DC979DC00B60F07 /* DYUserAuthorityData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E255E1D8794DB001629A7 /* DYUserAuthorityData.m */; };
+		7CB4350D1DC979DC00B60F07 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25DB1D879C89001629A7 /* NSString+URL.m */; };
+		7CB4350E1DC979DC00B60F07 /* DYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE241D87F4E60087F84D /* DYTextField.m */; };
+		7CB4350F1DC979DC00B60F07 /* MOABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251847E1D88F91200D94643 /* MOABaseViewController.m */; };
+		7CB435101DC979DC00B60F07 /* DYMutipartFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25591D8794DB001629A7 /* DYMutipartFormDataRequest.m */; };
+		7CB435111DC979DC00B60F07 /* DingTradeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4258F27F1DC8B1E2001DF410 /* DingTradeInfoItem.m */; };
+		7CB435121DC979DC00B60F07 /* DYResetPasswordStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0C1D87D6BA0087F84D /* DYResetPasswordStep2Controller.m */; };
+		7CB435131DC979DC00B60F07 /* DYAuthTokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25401D8794DB001629A7 /* DYAuthTokenManager.m */; };
+		7CB435141DC979DC00B60F07 /* MOATradeInfoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4251848A1D8927DE00D94643 /* MOATradeInfoAdapter.m */; };
+		7CB435151DC979DC00B60F07 /* DYAuthorityRegisterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25851D8794EA001629A7 /* DYAuthorityRegisterDataSource.m */; };
+		7CB435161DC979DC00B60F07 /* DYAutoSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A41D8794F4001629A7 /* DYAutoSaver.m */; };
+		7CB435171DC979DC00B60F07 /* DYAuthorityChangePasswordDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257C1D8794EA001629A7 /* DYAuthorityChangePasswordDataSource.m */; };
+		7CB435181DC979DC00B60F07 /* MOATradeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184821D88FADA00D94643 /* MOATradeDetailViewController.m */; };
+		7CB435191DC979DC00B60F07 /* DYLoginUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF0C661D8FC40600C42A27 /* DYLoginUserInfo.m */; };
+		7CB4351A1DC979DC00B60F07 /* MOALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2BE141D87E0790087F84D /* MOALoginViewController.m */; };
+		7CB4351B1DC979DC00B60F07 /* DYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25CC1D879A4D001629A7 /* DYProgressHUD.m */; };
+		7CB4351C1DC979DC00B60F07 /* DYInterfaceReqeustItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25531D8794DB001629A7 /* DYInterfaceReqeustItem.m */; };
+		7CB4351D1DC979DC00B60F07 /* MyTradeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1EDCD1DC884CD00D1D38D /* MyTradeListViewController.m */; };
+		7CB4351E1DC979DC00B60F07 /* DYDataSourceErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25C31D879977001629A7 /* DYDataSourceErrorView.m */; };
+		7CB4351F1DC979DC00B60F07 /* DYNoticeInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A91D8794F4001629A7 /* DYNoticeInfoManager.m */; };
+		7CB435201DC979DC00B60F07 /* DYInterfaceRequesterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25361D8794DB001629A7 /* DYInterfaceRequesterBase.m */; };
+		7CB435211DC979DC00B60F07 /* DYDataSourceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A61D8794F4001629A7 /* DYDataSourceError.m */; };
+		7CB435221DC979DC00B60F07 /* DYCacheBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25D31D879B5C001629A7 /* DYCacheBaseUtil.m */; };
+		7CB435231DC979DC00B60F07 /* DYJsonRequestWithTextHtmlResponseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 425184871D89219F00D94643 /* DYJsonRequestWithTextHtmlResponseRequest.m */; };
+		7CB435241DC979DC00B60F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E22701D868818001629A7 /* main.m */; };
+		7CB435251DC979DC00B60F07 /* DYAuthorityResponseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E257E1D8794EA001629A7 /* DYAuthorityResponseHelper.m */; };
+		7CB435261DC979DC00B60F07 /* DYAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC014381D89165000FED226 /* DYAppNotification.m */; };
+		7CB435271DC979DC00B60F07 /* DYInterfacePropertiesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25511D8794DB001629A7 /* DYInterfacePropertiesManager.m */; };
+		7CB435281DC979DC00B60F07 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42590C601D894A3D008B5B78 /* PaySuccessViewController.m */; };
+		7CB435291DC979DC00B60F07 /* DYAppConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E25A01D8794F4001629A7 /* DYAppConfigManager.m */; };
+		7CB4352B1DC979DC00B60F07 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8E25DD1D879D4A001629A7 /* libsqlite3.tbd */; };
+		7CB4352C1DC979DC00B60F07 /* Pods_moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1519EB01F7CCA22839538B31 /* Pods_moa.framework */; };
+		7CB4352D1DC979DC00B60F07 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8E24D91D86AA69001629A7 /* FMDB.framework */; };
+		7CB4352F1DC979DC00B60F07 /* interfaceUri.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425184761D87E93E00D94643 /* interfaceUri.plist */; };
+		7CB435311DC979DC00B60F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */; };
+		7CB435321DC979DC00B60F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E227B1D868818001629A7 /* Assets.xcassets */; };
+		7CB435331DC979DC00B60F07 /* MOALoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE161D87E0D00087F84D /* MOALoginViewController.storyboard */; };
+		7CB435341DC979DC00B60F07 /* MOATradeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425184921D896A4300D94643 /* MOATradeDetailTableViewCell.xib */; };
+		7CB435351DC979DC00B60F07 /* DYUserInfoHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BBF0C611D8FC31700C42A27 /* DYUserInfoHeadView.xib */; };
+		7CB435361DC979DC00B60F07 /* MOATradeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425184831D88FADA00D94643 /* MOATradeDetailViewController.xib */; };
+		7CB435371DC979DC00B60F07 /* MyQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9109BE1DC74CBA00C31940 /* MyQRCodeViewController.xib */; };
+		7CB435381DC979DC00B60F07 /* root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25EC1D87A232001629A7 /* root.storyboard */; };
+		7CB435391DC979DC00B60F07 /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E25E61D87A136001629A7 /* PayInfoViewController.xib */; };
+		7CB4353A1DC979DC00B60F07 /* DYResetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2BE0D1D87D6BA0087F84D /* DYResetPasswordViewController.storyboard */; };
+		7CB4353B1DC979DC00B60F07 /* MyCenterRootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B34A8F91D8FB2F400F30B89 /* MyCenterRootViewController.storyboard */; };
+		7CB4353C1DC979DC00B60F07 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */; };
+		7CB4353D1DC979DC00B60F07 /* MoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF5C3A51D913BD10044DF52 /* MoneyViewController.xib */; };
+		7CB4353E1DC979DC00B60F07 /* MyTradeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC1EDCE1DC884CD00D1D38D /* MyTradeListViewController.xib */; };
+		7CB4354A1DC97A2300B60F07 /* appConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CB435471DC97A2300B60F07 /* appConfig.plist */; };
+		7CB4354C1DC97A5500B60F07 /* appConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CB435491DC97A2300B60F07 /* appConfig.plist */; };
+		7CB4354E1DC985E300B60F07 /* moa2B-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4354D1DC985E300B60F07 /* moa2B-Info.plist */; };
 		7CC1EDCF1DC884CD00D1D38D /* MyTradeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1EDCD1DC884CD00D1D38D /* MyTradeListViewController.m */; };
 		7CC1EDD01DC884CD00D1D38D /* MyTradeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC1EDCE1DC884CD00D1D38D /* MyTradeListViewController.xib */; };
 		7CC60D0F1D92762700CF7708 /* MoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC60D0D1D92762700CF7708 /* MoneyTableViewCell.m */; };
@@ -140,7 +240,6 @@
 		425184721D87DCE400D94643 /* MOAPayDataSourceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAPayDataSourceBase.h; sourceTree = "<group>"; };
 		425184731D87DCE400D94643 /* MOAPayDataSourceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAPayDataSourceBase.m; sourceTree = "<group>"; };
 		425184761D87E93E00D94643 /* interfaceUri.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = interfaceUri.plist; sourceTree = "<group>"; };
-		425184781D87F33C00D94643 /* appConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appConfig.plist; sourceTree = "<group>"; };
 		4251847A1D88F07B00D94643 /* MOAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAViewController.h; sourceTree = "<group>"; };
 		4251847B1D88F07B00D94643 /* MOAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAViewController.m; sourceTree = "<group>"; };
 		4251847D1D88F91200D94643 /* MOABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOABaseViewController.h; sourceTree = "<group>"; };
@@ -173,13 +272,13 @@
 		42590C611D894A3D008B5B78 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
 		7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moa.release.xcconfig"; path = "Pods/Target Support Files/Pods-moa/Pods-moa.release.xcconfig"; sourceTree = "<group>"; };
-		7C8E226C1D868818001629A7 /* moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C8E226C1D868818001629A7 /* moa2C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa2C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C8E22701D868818001629A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C8E22721D868818001629A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C8E22731D868818001629A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7C8E227B1D868818001629A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C8E227E1D868818001629A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7C8E22801D868818001629A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C8E22801D868818001629A7 /* moa2C-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "moa2C-Info.plist"; sourceTree = "<group>"; };
 		7C8E24D81D86A4BC001629A7 /* moa-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "moa-Prefix.pch"; sourceTree = "<group>"; };
 		7C8E24D91D86AA69001629A7 /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FMDB.framework; sourceTree = "<group>"; };
 		7C8E25351D8794DB001629A7 /* DYHttpRequestWithCacheOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DYHttpRequestWithCacheOperationManager.m; path = "通讯接口/DYHttpRequestWithCacheOperationManager.m"; sourceTree = "<group>"; };
@@ -289,6 +388,10 @@
 		7C9109BE1DC74CBA00C31940 /* MyQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQRCodeViewController.xib; sourceTree = "<group>"; };
 		7CA9F33D1D893B44000A405A /* DYLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLogFormatter.h; sourceTree = "<group>"; };
 		7CA9F33E1D893B44000A405A /* DYLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLogFormatter.m; sourceTree = "<group>"; };
+		7CB435441DC979DC00B60F07 /* moa2B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moa2B.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB435471DC97A2300B60F07 /* appConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appConfig.plist; sourceTree = "<group>"; };
+		7CB435491DC97A2300B60F07 /* appConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appConfig.plist; sourceTree = "<group>"; };
+		7CB4354D1DC985E300B60F07 /* moa2B-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "moa2B-Info.plist"; sourceTree = "<group>"; };
 		7CC1EDCC1DC884CD00D1D38D /* MyTradeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTradeListViewController.h; sourceTree = "<group>"; };
 		7CC1EDCD1DC884CD00D1D38D /* MyTradeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTradeListViewController.m; sourceTree = "<group>"; };
 		7CC1EDCE1DC884CD00D1D38D /* MyTradeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTradeListViewController.xib; sourceTree = "<group>"; };
@@ -309,6 +412,16 @@
 				7C8E25DE1D879D4A001629A7 /* libsqlite3.tbd in Frameworks */,
 				1C37B1C7BD13057FF6C49F3B /* Pods_moa.framework in Frameworks */,
 				7C8E24DA1D86AA69001629A7 /* FMDB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB4352A1DC979DC00B60F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB4352B1DC979DC00B60F07 /* libsqlite3.tbd in Frameworks */,
+				7CB4352C1DC979DC00B60F07 /* Pods_moa.framework in Frameworks */,
+				7CB4352D1DC979DC00B60F07 /* FMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +545,8 @@
 		425184751D87E93E00D94643 /* 配置文件 */ = {
 			isa = PBXGroup;
 			children = (
-				425184781D87F33C00D94643 /* appConfig.plist */,
+				7CB435461DC97A2300B60F07 /* 2C */,
+				7CB435481DC97A2300B60F07 /* 2B */,
 				425184761D87E93E00D94643 /* interfaceUri.plist */,
 			);
 			path = "配置文件";
@@ -508,7 +622,8 @@
 		7C8E226D1D868818001629A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C8E226C1D868818001629A7 /* moa.app */,
+				7C8E226C1D868818001629A7 /* moa2C.app */,
+				7CB435441DC979DC00B60F07 /* moa2B.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,7 +641,8 @@
 				7CA9F33D1D893B44000A405A /* DYLogFormatter.h */,
 				7CA9F33E1D893B44000A405A /* DYLogFormatter.m */,
 				7C8E227B1D868818001629A7 /* Assets.xcassets */,
-				7C8E22801D868818001629A7 /* Info.plist */,
+				7C8E22801D868818001629A7 /* moa2C-Info.plist */,
+				7CB4354D1DC985E300B60F07 /* moa2B-Info.plist */,
 				7C8E227D1D868818001629A7 /* LaunchScreen.storyboard */,
 				7C8E226F1D868818001629A7 /* Supporting Files */,
 			);
@@ -739,6 +855,22 @@
 			name = Pay;
 			sourceTree = "<group>";
 		};
+		7CB435461DC97A2300B60F07 /* 2C */ = {
+			isa = PBXGroup;
+			children = (
+				7CB435471DC97A2300B60F07 /* appConfig.plist */,
+			);
+			path = 2C;
+			sourceTree = "<group>";
+		};
+		7CB435481DC97A2300B60F07 /* 2B */ = {
+			isa = PBXGroup;
+			children = (
+				7CB435491DC97A2300B60F07 /* appConfig.plist */,
+			);
+			path = 2B;
+			sourceTree = "<group>";
+		};
 		7CC60D0B1D92760500CF7708 /* 熊猫币 */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,9 +915,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C8E226B1D868818001629A7 /* moa */ = {
+		7C8E226B1D868818001629A7 /* moa2C */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C8E22831D868818001629A7 /* Build configuration list for PBXNativeTarget "moa" */;
+			buildConfigurationList = 7C8E22831D868818001629A7 /* Build configuration list for PBXNativeTarget "moa2C" */;
 			buildPhases = (
 				A0D9405DF7ED28CC5D801380 /* [CP] Check Pods Manifest.lock */,
 				7C8E22681D868818001629A7 /* Sources */,
@@ -798,9 +930,29 @@
 			);
 			dependencies = (
 			);
-			name = moa;
+			name = moa2C;
 			productName = moa;
-			productReference = 7C8E226C1D868818001629A7 /* moa.app */;
+			productReference = 7C8E226C1D868818001629A7 /* moa2C.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7CB434D71DC979DC00B60F07 /* moa2B */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CB435411DC979DC00B60F07 /* Build configuration list for PBXNativeTarget "moa2B" */;
+			buildPhases = (
+				7CB434D81DC979DC00B60F07 /* [CP] Check Pods Manifest.lock */,
+				7CB434D91DC979DC00B60F07 /* Sources */,
+				7CB4352A1DC979DC00B60F07 /* Frameworks */,
+				7CB4352E1DC979DC00B60F07 /* Resources */,
+				7CB4353F1DC979DC00B60F07 /* [CP] Embed Pods Frameworks */,
+				7CB435401DC979DC00B60F07 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = moa2B;
+			productName = moa;
+			productReference = 7CB435441DC979DC00B60F07 /* moa2B.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -814,6 +966,9 @@
 				TargetAttributes = {
 					7C8E226B1D868818001629A7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 54LMN39WV7;
+					};
+					7CB434D71DC979DC00B60F07 = {
 						DevelopmentTeam = 54LMN39WV7;
 					};
 				};
@@ -831,7 +986,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C8E226B1D868818001629A7 /* moa */,
+				7C8E226B1D868818001629A7 /* moa2C */,
+				7CB434D71DC979DC00B60F07 /* moa2B */,
 			);
 		};
 /* End PBXProject section */
@@ -842,21 +998,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				425184771D87E93E00D94643 /* interfaceUri.plist in Resources */,
-				425184791D87F33C00D94643 /* appConfig.plist in Resources */,
 				7C8E227F1D868818001629A7 /* LaunchScreen.storyboard in Resources */,
 				7C8E227C1D868818001629A7 /* Assets.xcassets in Resources */,
 				0BC2BE171D87E0D00087F84D /* MOALoginViewController.storyboard in Resources */,
 				425184941D896A4300D94643 /* MOATradeDetailTableViewCell.xib in Resources */,
 				0BBF0C631D8FC31700C42A27 /* DYUserInfoHeadView.xib in Resources */,
 				425184851D88FADA00D94643 /* MOATradeDetailViewController.xib in Resources */,
+				7CB4354E1DC985E300B60F07 /* moa2B-Info.plist in Resources */,
 				7C9109C01DC74CBA00C31940 /* MyQRCodeViewController.xib in Resources */,
 				7C8E25EE1D87A232001629A7 /* root.storyboard in Resources */,
 				7C8E25E81D87A136001629A7 /* PayInfoViewController.xib in Resources */,
 				0BC2BE101D87D6BA0087F84D /* DYResetPasswordViewController.storyboard in Resources */,
 				0B34A8FB1D8FB2F400F30B89 /* MyCenterRootViewController.storyboard in Resources */,
+				7CB4354A1DC97A2300B60F07 /* appConfig.plist in Resources */,
 				42590C631D894A3D008B5B78 /* PaySuccessViewController.xib in Resources */,
 				7CF5C3A71D913BD10044DF52 /* MoneyViewController.xib in Resources */,
 				7CC1EDD01DC884CD00D1D38D /* MyTradeListViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB4352E1DC979DC00B60F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB4354C1DC97A5500B60F07 /* appConfig.plist in Resources */,
+				7CB4352F1DC979DC00B60F07 /* interfaceUri.plist in Resources */,
+				7CB435311DC979DC00B60F07 /* LaunchScreen.storyboard in Resources */,
+				7CB435321DC979DC00B60F07 /* Assets.xcassets in Resources */,
+				7CB435331DC979DC00B60F07 /* MOALoginViewController.storyboard in Resources */,
+				7CB435341DC979DC00B60F07 /* MOATradeDetailTableViewCell.xib in Resources */,
+				7CB435351DC979DC00B60F07 /* DYUserInfoHeadView.xib in Resources */,
+				7CB435361DC979DC00B60F07 /* MOATradeDetailViewController.xib in Resources */,
+				7CB435371DC979DC00B60F07 /* MyQRCodeViewController.xib in Resources */,
+				7CB435381DC979DC00B60F07 /* root.storyboard in Resources */,
+				7CB435391DC979DC00B60F07 /* PayInfoViewController.xib in Resources */,
+				7CB4353A1DC979DC00B60F07 /* DYResetPasswordViewController.storyboard in Resources */,
+				7CB4353B1DC979DC00B60F07 /* MyCenterRootViewController.storyboard in Resources */,
+				7CB4353C1DC979DC00B60F07 /* PaySuccessViewController.xib in Resources */,
+				7CB4353D1DC979DC00B60F07 /* MoneyViewController.xib in Resources */,
+				7CB4353E1DC979DC00B60F07 /* MyTradeListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +1044,51 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		4B940D61AC8848BD5523454D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-moa/Pods-moa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB434D81DC979DC00B60F07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB4353F1DC979DC00B60F07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-moa/Pods-moa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB435401DC979DC00B60F07 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -998,6 +1223,93 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CB434D91DC979DC00B60F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB434DA1DC979DC00B60F07 /* Toast+UIView.m in Sources */,
+				7CB434DB1DC979DC00B60F07 /* DYLoadingView.m in Sources */,
+				7CB434DC1DC979DC00B60F07 /* DYAuthorityManager.m in Sources */,
+				7CB434DD1DC979DC00B60F07 /* ScanViewController.m in Sources */,
+				7CB434DE1DC979DC00B60F07 /* UIButton+DatayesAuthority.m in Sources */,
+				7CB434DF1DC979DC00B60F07 /* DYAuthorityLoginDataSource.m in Sources */,
+				7CB434E01DC979DC00B60F07 /* DYNetStatusManager.m in Sources */,
+				7CB434E11DC979DC00B60F07 /* DYHttpRequestWithCacheOperationManager.m in Sources */,
+				7CB434E21DC979DC00B60F07 /* DYXFormRequestWithJsonResponseRequest.m in Sources */,
+				7CB434E31DC979DC00B60F07 /* MOATradeDetailTableViewCell.m in Sources */,
+				7CB434E41DC979DC00B60F07 /* DYMoneyDataSource.m in Sources */,
+				7CB434E51DC979DC00B60F07 /* DYErrorHandlerHelper.m in Sources */,
+				7CB434E61DC979DC00B60F07 /* MBProgressHUD.m in Sources */,
+				7CB434E71DC979DC00B60F07 /* DYAuthorityResetPasswordDataSource.m in Sources */,
+				7CB434E81DC979DC00B60F07 /* MOANavigationViewController.m in Sources */,
+				7CB434E91DC979DC00B60F07 /* DYDataSourceBase.m in Sources */,
+				7CB434EA1DC979DC00B60F07 /* DYJsonRequestWithGBufResponseRequest.m in Sources */,
+				7CB434EB1DC979DC00B60F07 /* DYJsonRequestWithJsonResponseRequest.m in Sources */,
+				7CB434EC1DC979DC00B60F07 /* DYWindowLoadingView.m in Sources */,
+				7CB434ED1DC979DC00B60F07 /* DYErrorHelper.m in Sources */,
+				7CB434EE1DC979DC00B60F07 /* MOAPayDataSourceBase.m in Sources */,
+				7CB434EF1DC979DC00B60F07 /* DYCacheService.m in Sources */,
+				7CB434F01DC979DC00B60F07 /* MoneyViewController.m in Sources */,
+				7CB434F11DC979DC00B60F07 /* DYLogFormatter.m in Sources */,
+				7CB434F21DC979DC00B60F07 /* DYCellDataItem.m in Sources */,
+				7CB434F31DC979DC00B60F07 /* SEUtilities.m in Sources */,
+				7CB434F41DC979DC00B60F07 /* DYAppModuleItem.m in Sources */,
+				7CB434F51DC979DC00B60F07 /* PromptView.m in Sources */,
+				7CB434F61DC979DC00B60F07 /* DYResultHeaderHandleHelper.m in Sources */,
+				7CB434F71DC979DC00B60F07 /* DYUserInfoHeadView.m in Sources */,
+				7CB434F81DC979DC00B60F07 /* MyQRCodeViewController.m in Sources */,
+				7CB434F91DC979DC00B60F07 /* DYAppPushDataSource.m in Sources */,
+				7CB434FA1DC979DC00B60F07 /* DYInterfaceInfo.m in Sources */,
+				7CB434FB1DC979DC00B60F07 /* AppDelegate.m in Sources */,
+				7CB434FC1DC979DC00B60F07 /* UIImage+Creation.m in Sources */,
+				7CB434FD1DC979DC00B60F07 /* DYGetUserInfoDataSource.m in Sources */,
+				7CB434FE1DC979DC00B60F07 /* PayInfoViewController.m in Sources */,
+				7CB434FF1DC979DC00B60F07 /* DYLoadingViewManager.m in Sources */,
+				7CB435001DC979DC00B60F07 /* DYInterfaceRequestHelper.m in Sources */,
+				7CB435011DC979DC00B60F07 /* DYNotifiesRequest.m in Sources */,
+				7CB435021DC979DC00B60F07 /* MOAViewController.m in Sources */,
+				7CB435031DC979DC00B60F07 /* DYCacheManager.m in Sources */,
+				7CB435041DC979DC00B60F07 /* DYAuthorityDataSource.m in Sources */,
+				7CB435051DC979DC00B60F07 /* UIImageView+DatayesAuthority.m in Sources */,
+				7CB435061DC979DC00B60F07 /* NSObject+Representation.m in Sources */,
+				7CB435071DC979DC00B60F07 /* DYResetPasswordStep1Controller.m in Sources */,
+				7CB435081DC979DC00B60F07 /* MyCenterRootViewController.m in Sources */,
+				7CB435091DC979DC00B60F07 /* DYErrorHandlerBase.m in Sources */,
+				7CB4350A1DC979DC00B60F07 /* MoneyTableViewCell.m in Sources */,
+				7CB4350B1DC979DC00B60F07 /* SEDatabase.m in Sources */,
+				7CB4350C1DC979DC00B60F07 /* DYUserAuthorityData.m in Sources */,
+				7CB4350D1DC979DC00B60F07 /* NSString+URL.m in Sources */,
+				7CB4350E1DC979DC00B60F07 /* DYTextField.m in Sources */,
+				7CB4350F1DC979DC00B60F07 /* MOABaseViewController.m in Sources */,
+				7CB435101DC979DC00B60F07 /* DYMutipartFormDataRequest.m in Sources */,
+				7CB435111DC979DC00B60F07 /* DingTradeInfoItem.m in Sources */,
+				7CB435121DC979DC00B60F07 /* DYResetPasswordStep2Controller.m in Sources */,
+				7CB435131DC979DC00B60F07 /* DYAuthTokenManager.m in Sources */,
+				7CB435141DC979DC00B60F07 /* MOATradeInfoAdapter.m in Sources */,
+				7CB435151DC979DC00B60F07 /* DYAuthorityRegisterDataSource.m in Sources */,
+				7CB435161DC979DC00B60F07 /* DYAutoSaver.m in Sources */,
+				7CB435171DC979DC00B60F07 /* DYAuthorityChangePasswordDataSource.m in Sources */,
+				7CB435181DC979DC00B60F07 /* MOATradeDetailViewController.m in Sources */,
+				7CB435191DC979DC00B60F07 /* DYLoginUserInfo.m in Sources */,
+				7CB4351A1DC979DC00B60F07 /* MOALoginViewController.m in Sources */,
+				7CB4351B1DC979DC00B60F07 /* DYProgressHUD.m in Sources */,
+				7CB4351C1DC979DC00B60F07 /* DYInterfaceReqeustItem.m in Sources */,
+				7CB4351D1DC979DC00B60F07 /* MyTradeListViewController.m in Sources */,
+				7CB4351E1DC979DC00B60F07 /* DYDataSourceErrorView.m in Sources */,
+				7CB4351F1DC979DC00B60F07 /* DYNoticeInfoManager.m in Sources */,
+				7CB435201DC979DC00B60F07 /* DYInterfaceRequesterBase.m in Sources */,
+				7CB435211DC979DC00B60F07 /* DYDataSourceError.m in Sources */,
+				7CB435221DC979DC00B60F07 /* DYCacheBaseUtil.m in Sources */,
+				7CB435231DC979DC00B60F07 /* DYJsonRequestWithTextHtmlResponseRequest.m in Sources */,
+				7CB435241DC979DC00B60F07 /* main.m in Sources */,
+				7CB435251DC979DC00B60F07 /* DYAuthorityResponseHelper.m in Sources */,
+				7CB435261DC979DC00B60F07 /* DYAppNotification.m in Sources */,
+				7CB435271DC979DC00B60F07 /* DYInterfacePropertiesManager.m in Sources */,
+				7CB435281DC979DC00B60F07 /* PaySuccessViewController.m in Sources */,
+				7CB435291DC979DC00B60F07 /* DYAppConfigManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -1120,10 +1432,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "./moa/moa-Prefix.pch";
-				INFOPLIST_FILE = moa/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/moa/moa2C-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa2C;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1143,10 +1455,58 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "./moa/moa-Prefix.pch";
-				INFOPLIST_FILE = moa/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/moa/moa2C-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa2C;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		7CB435421DC979DC00B60F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7934F90E61BCEC3D83B882EE /* Pods-moa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 54LMN39WV7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "./moa/moa-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/moa/moa2B-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa2B;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		7CB435431DC979DC00B60F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B2E93E2BEA202F251D97551 /* Pods-moa.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 54LMN39WV7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "./moa/moa-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/moa/moa2B-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.moa2B;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1164,11 +1524,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C8E22831D868818001629A7 /* Build configuration list for PBXNativeTarget "moa" */ = {
+		7C8E22831D868818001629A7 /* Build configuration list for PBXNativeTarget "moa2C" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C8E22841D868818001629A7 /* Debug */,
 				7C8E22851D868818001629A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CB435411DC979DC00B60F07 /* Build configuration list for PBXNativeTarget "moa2B" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CB435421DC979DC00B60F07 /* Debug */,
+				7CB435431DC979DC00B60F07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

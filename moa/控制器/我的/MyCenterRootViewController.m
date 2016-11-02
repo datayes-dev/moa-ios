@@ -212,10 +212,10 @@
             break;
         }
         case 1:{
-//            MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
-//            [self.navigationController pushViewController:vc animated:YES];
-            MyTradeListViewController* tradeListVC = [[MyTradeListViewController alloc] init];
-            [self.navigationController pushViewController:tradeListVC animated:YES];
+            MOATradeDetailViewController *vc = [[MOATradeDetailViewController alloc] initWithNibName:@"MOATradeDetailViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:vc animated:YES];
+//            MyTradeListViewController* tradeListVC = [[MyTradeListViewController alloc] init];
+//            [self.navigationController pushViewController:tradeListVC animated:YES];
             break;
         }
             

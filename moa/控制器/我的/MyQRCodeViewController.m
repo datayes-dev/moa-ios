@@ -150,7 +150,7 @@
 
 - (void)setupTimer
 {
-    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(requestQRCode) userInfo:nil repeats:YES];
+    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:60*60 target:self selector:@selector(requestQRCode) userInfo:nil repeats:YES];
     [timer fire];
     self.timer = timer;
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>channelId</key>
+	<integer>1</integer>
+	<key>productId</key>
+	<integer>6</integer>
+	<key>irrProductId</key>
+	<integer>9</integer>
+	<key>mobileTypeId</key>
+	<integer>0</integer>
+	<key>accessToken</key>
+	<string></string>
+	<key>refreshToken</key>
+	<string></string>
+	<key>notifyToken</key>
+	<string></string>
+	<key>deviceId</key>
+	<string></string>
+	<key>dbVersion</key>
+	<integer>10</integer>
+	<key>version</key>
+	<integer>15</integer>
+	<key>isLogined</key>
+	<false/>
+	<key>isScreenLocked</key>
+	<false/>
+	<key>isFirstTimeRun</key>
+	<true/>
+	<key>hasChooseIntersting</key>
+	<false/>
+	<key>isShowDefaultData</key>
+	<true/>
+	<key>currentEnvironment</key>
+	<integer>2</integer>
+	<key>lastTimeHongguanPreload</key>
+	<string></string>
+	<key>lastTimeChanjingPreload</key>
+	<string></string>
+	<key>lastTimeCompanyPreload</key>
+	<string></string>
+	<key>lastTimeSubscribePreload</key>
+	<string></string>
+	<key>lastTimeAnnPreload</key>
+	<string></string>
+	<key>isCustomer</key>
+	<true/>
+</dict>
+</plist>
