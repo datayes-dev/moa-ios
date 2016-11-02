@@ -179,6 +179,9 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
                 [weakSelf delayBack];
             }
         }
+        else {
+            [weakSelf delayBack];
+        }
     }];
 }
 
@@ -213,7 +216,8 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
     }
     else if (alertView.tag == eAlertViewTradeSuccess) {
         if (buttonIndex == 1) {
-            [self delayNavToTradeListVC];
+            MOATradeDetailViewController* vc = [[MOATradeDetailViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         else {
             [self beginScanQR];
