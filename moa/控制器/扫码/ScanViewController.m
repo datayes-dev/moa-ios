@@ -210,6 +210,9 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
         if (buttonIndex == 1) { // 确认交易
             [self payWithCode:self.qrCodeString];
         }
+        else {
+            [self beginScanQR];
+        }
     }
     else if (alertView.tag == eAlertViewTradeFailed) {
         [self beginScanQR];
