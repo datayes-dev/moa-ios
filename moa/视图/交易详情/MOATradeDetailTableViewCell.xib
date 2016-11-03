@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,33 +16,45 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="餐厅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avN-Sx-Vbo">
-                        <rect key="frame" x="15" y="5" width="34" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="餐厅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="avN-Sx-Vbo">
+                        <rect key="frame" x="5" y="5" width="257" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="FWU-97-OKl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wts-lV-pya">
-                        <rect key="frame" x="15" y="26" width="48" height="15"/>
+                        <rect key="frame" x="5" y="26" width="257" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="kVx-vN-Kix"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdK-MS-Eav">
-                        <rect key="frame" x="271" y="11" width="34" height="21"/>
+                        <rect key="frame" x="270" y="11" width="35" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="4hZ-hT-y5h"/>
+                            <constraint firstAttribute="width" constant="35" id="BEe-su-418"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="avN-Sx-Vbo" secondAttribute="trailing" constant="50" id="0G6-Hv-hMw"/>
                     <constraint firstAttribute="trailing" secondItem="KdK-MS-Eav" secondAttribute="trailing" constant="15" id="5Oe-23-DK7"/>
-                    <constraint firstItem="Wts-lV-pya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ytq-ry-sGw"/>
+                    <constraint firstItem="Wts-lV-pya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Ytq-ry-sGw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Wts-lV-pya" secondAttribute="trailing" constant="50" id="dqk-H8-1mh"/>
                     <constraint firstItem="KdK-MS-Eav" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dvL-uf-K5q"/>
-                    <constraint firstItem="avN-Sx-Vbo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="eg3-BY-P0j"/>
+                    <constraint firstItem="avN-Sx-Vbo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="eg3-BY-P0j"/>
                     <constraint firstItem="avN-Sx-Vbo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qyM-0l-V4F"/>
                     <constraint firstAttribute="bottom" secondItem="Wts-lV-pya" secondAttribute="bottom" constant="3" id="way-D4-PFF"/>
                 </constraints>

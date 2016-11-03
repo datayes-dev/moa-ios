@@ -70,7 +70,7 @@
         
         for (NSDictionary* dic in array) {
             NSString* time_stamp = dic[@"time_stamp"];
-            NSString* user = dic[@"user"];
+            NSString* user = dic[@"id"];
             
             DingTradeInfoItem* item = [[DingTradeInfoItem alloc] init];
             item.time_stamp = time_stamp;
