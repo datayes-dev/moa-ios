@@ -258,7 +258,7 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
                       QRString:(NSString *)qrStr
                    ResultBlock:(DYInterfaceResultBlock)resultBlock{
     
-    [self.datasource addTransWithRestaurant:@"866f0bd8-a002-11e6-8f4c-0242c0a80003RES_"
+    [self.datasource addTransWithRestaurant:@"888cf414-a270-11e6-b99a-02730bb67404RES_"
                                    QRString:qrStr
                                 ResultBlock:^(id data, NSError *error) {
                                     dispatch_async(dispatch_get_main_queue(), ^{
