@@ -30,7 +30,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestQRCode) name:ACCESS_TOKEN_VALID object:nil];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

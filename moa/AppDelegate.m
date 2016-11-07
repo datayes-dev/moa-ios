@@ -14,6 +14,7 @@
 #import "MyCenterRootViewController.h"
 #import "MyQRCodeViewController.h"
 #import "DYAppConfigManager.h"
+#import "DYAuthorityManager.h"
 
 const DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -26,6 +27,7 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupDDLog];
+    [self checkToken];
     UIViewController* rootVC = nil;
     if ([DYAuthTokenManager shareInstance].isLogined) {
         if ([DYAppConfigManager shareInstance].isCustomer) {
@@ -100,4 +102,12 @@ const DDLogLevel ddLogLevel = DDLogLevelAll;
     return [[_fileLogger currentLogFileInfo] filePath];
 }
 
+- (void)checkToken
+{
+    if([DYAuthTokenManager shareInstance].isLogined) {
+        if (![DYAuthTokenManager shareInstance].isAccessTokenValid) {
+            [[DYAuthorityManager sharedInstance] refreshAccessTokenWithRefreshToken];
+        }
+    }
+}
 @end
