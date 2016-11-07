@@ -115,6 +115,7 @@
                                          } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
                                              [weakSelf.qrCodeImageView setImage:[UIImage imageNamed:@"error"]];
                                              dismisLoadingFromWindow;
+                                             [[NSNotificationCenter defaultCenter] postNotificationName:ACCESS_TOKEN_NEED_UPDATE object:nil];
                                              [weakSelf.qrCodeButton setEnabled:YES];
                                          }];
 }

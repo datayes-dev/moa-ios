@@ -14,6 +14,7 @@
 #import "MOATradeInfoAdapter.h"
 #import "Toast+UIView.h"
 #import "MOATradeDetailViewController.h"
+#import "DYAuthTokenManager.h"
 
 typedef NS_ENUM(NSInteger, EAlertViewType) {
     eAlertViewTradecheck = 1,           // 交易确认
@@ -163,11 +164,13 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
             if ([dic[@"message"] isEqualToString:@"Quota error"]) {
 //                [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
 //                [weakSelf delayBack];
+                [[NSNotificationCenter defaultCenter] postNotificationName:ACCESS_TOKEN_NEED_UPDATE object:nil];
                 [weakSelf showFailed:@"配额用完了"];
             }
             else if ([dic[@"message"] isEqualToString:@"Qrcode error"]) {
 //                [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
 //                [weakSelf delayBack];
+                [[NSNotificationCenter defaultCenter] postNotificationName:ACCESS_TOKEN_NEED_UPDATE object:nil];
                 [weakSelf showFailed:@"二维码不正确"];
             }
             else if ([dic[@"result"] isEqualToString:@"success"]){
