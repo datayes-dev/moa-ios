@@ -1,6 +1,6 @@
-platform :ios, ‘8.0’
+platform :ios, ‘7.0’
 
-target "moa" do
+abstract_target 'moa' do
 
 pod "AFNetworking", "~> 2.6"
 pod "Masonry", "~> 1.0"
@@ -11,6 +11,13 @@ pod "SDAutoLayout"
 pod "JTCalendar"
 pod 'DYCommonTools', :git => 'http://git.datayes.com/iOS-Library/DYCommonTools.git'
 pod 'DYAppearance', :git => 'http://git.datayes.com/iOS-Library/DYAppearance.git'
-use_frameworks!
+
+target 'moa2C' do
+    #
+end
+
+target 'moa2B' do
+    #
+end
 
 end

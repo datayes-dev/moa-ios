@@ -1,6 +1,0 @@
-framework module DYAppearance {
-  umbrella header "DYAppearance-umbrella.h"
-
-  export *
-  module * { export * }
-}
