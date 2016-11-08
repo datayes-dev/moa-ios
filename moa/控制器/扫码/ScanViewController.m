@@ -15,6 +15,7 @@
 #import "Toast+UIView.h"
 #import "MOATradeDetailViewController.h"
 #import "DYAuthTokenManager.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 typedef NS_ENUM(NSInteger, EAlertViewType) {
     eAlertViewTradecheck = 1,           // 交易确认
@@ -91,6 +92,7 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
 // 当扫描到数据时就会执行该方法
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
+    static NSString* lastQRCode = @"";
     if (metadataObjects.count > 0) {
         //获得扫描数据，最后一个时最新扫描的数据
         AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
@@ -98,8 +100,13 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
         NSLog(@"扫描二维码的结果：%@", object.stringValue);
         
         self.qrCodeString = object.stringValue;
-        [self stopScanQR];
-        [self checkForTrade];
+        if (![lastQRCode isEqualToString:object.stringValue]) {
+            [self stopScanQR];
+            [self payWithCode:object.stringValue];
+            lastQRCode = [object.stringValue copy];
+        }
+//        [self playSound];
+//        [self checkForTrade];
 //        PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:[NSBundle mainBundle]];
 //        
 //        vc.hotelQRCode = object.stringValue;
@@ -162,20 +169,24 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", dic);
             if ([dic[@"message"] isEqualToString:@"Quota error"]) {
-//                [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
+                [weakSelf.view makeToast:@"配额用完了" duration:2 position:@"center"];
 //                [weakSelf delayBack];
                 [[NSNotificationCenter defaultCenter] postNotificationName:ACCESS_TOKEN_NEED_UPDATE object:nil];
-                [weakSelf showFailed:@"配额用完了"];
+                [weakSelf beginScanQR];
+//                [weakSelf showFailed:@"配额用完了"];
             }
             else if ([dic[@"message"] isEqualToString:@"Qrcode error"]) {
-//                [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
+                [weakSelf.view makeToast:@"二维码不正确" duration:2 position:@"center"];
 //                [weakSelf delayBack];
                 [[NSNotificationCenter defaultCenter] postNotificationName:ACCESS_TOKEN_NEED_UPDATE object:nil];
-                [weakSelf showFailed:@"二维码不正确"];
+                [weakSelf beginScanQR];
+//                [weakSelf showFailed:@"二维码不正确"];
             }
             else if ([dic[@"result"] isEqualToString:@"success"]){
 //                [weakSelf.view makeToast:@"交易成功" duration:2 position:@"center"];
-                [weakSelf showSuccess];
+                [weakSelf playSound];
+                [weakSelf beginScanQR];
+//                [weakSelf showSuccess];
             }
             else {
                 [weakSelf.view makeToast:@"未知错误，请稍后重试" duration:3 position:@"center"];
@@ -229,5 +240,22 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
             [self beginScanQR];
         }
     }
+}
+
+-(void) playSound
+{
+    static SystemSoundID soundID = 0;
+    if (soundID == 0) {
+        NSString *strSoundFile = [[NSBundle mainBundle] pathForResource:@"di" ofType:@"wav"];
+        OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:strSoundFile],&soundID);
+        NSLog(@"error is %d", (int)error);
+    }
+    AudioServicesPlaySystemSound(soundID);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+}
+
+- (void) playVibrate
+{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 @end
