@@ -32,6 +32,7 @@
 #import "DYInterfaceRequestHelper.h"
 
 #define kExtraAddedSubUrlKey @"extraAddedSubUrl"
+#define kExtraAddedSubUrlKey2 @"extraAddedSubUrl2"
 
 typedef NS_ENUM(NSUInteger, SerializerFromat) {
     SerializerFromatProtobuf,

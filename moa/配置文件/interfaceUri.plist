@@ -62,6 +62,14 @@
 	<string>https://gw.wmcloud-stg.com/mobilemaster/</string>
 	<key>productCMSUrl</key>
 	<string>https://gw.wmcloud.com/mobilemaster/</string>
+	<key>devWeixinAPIUrl</key>
+	<string>https://qyapi.weixin.qq.com/cgi-bin/</string>
+	<key>qaWeixinAPIUrl</key>
+	<string>https://qyapi.weixin.qq.com/cgi-bin/</string>
+	<key>stageWeixinAPIUrl</key>
+	<string>https://qyapi.weixin.qq.com/cgi-bin/</string>
+	<key>productWeixinAPIUrl</key>
+	<string>https://qyapi.weixin.qq.com/cgi-bin/</string>
 	<key>interfaceModules</key>
 	<array>
 		<dict>
@@ -3162,6 +3170,59 @@
 					<false/>
 					<key>needAuthInfoType</key>
 					<integer>9</integer>
+					<key>errorHandlerClass</key>
+					<string></string>
+					<key>version</key>
+					<string>2.8.0</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>startIndex</key>
+			<real>1300</real>
+			<key>moduleName</key>
+			<string>吃饭交易接口</string>
+			<key>interfaces</key>
+			<array>
+				<dict>
+					<key>basicUrl</key>
+					<string></string>
+					<key>subUrl</key>
+					<string>gettoken</string>
+					<key>requestType</key>
+					<integer>0</integer>
+					<key>responseBodyTiedType</key>
+					<integer>0</integer>
+					<key>parseClass</key>
+					<string></string>
+					<key>comment</key>
+					<string>获取商户的access_token</string>
+					<key>allowMutableRequest</key>
+					<false/>
+					<key>needAuthInfoType</key>
+					<integer>11</integer>
+					<key>errorHandlerClass</key>
+					<string></string>
+					<key>version</key>
+					<string>2.8.0</string>
+				</dict>
+				<dict>
+					<key>basicUrl</key>
+					<string></string>
+					<key>subUrl</key>
+					<string>card/code/consume</string>
+					<key>requestType</key>
+					<integer>1</integer>
+					<key>responseBodyTiedType</key>
+					<integer>0</integer>
+					<key>parseClass</key>
+					<string></string>
+					<key>comment</key>
+					<string>消耗二维码</string>
+					<key>allowMutableRequest</key>
+					<false/>
+					<key>needAuthInfoType</key>
+					<integer>11</integer>
 					<key>errorHandlerClass</key>
 					<string></string>
 					<key>version</key>

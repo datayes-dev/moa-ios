@@ -81,12 +81,25 @@ static NSString* const kParametersKey = @"parametersKey";       // 字典里参�
             else if ([blockParams isKindOfClass:[NSDictionary class]])
             {
                 NSString* extraAddedSubUrl = [blockParams objectForKey:kExtraAddedSubUrlKey];
+                NSString* extraAddedSubUrl2 = [blockParams objectForKey:kExtraAddedSubUrlKey2];
+                
                 if (extraAddedSubUrl != nil) {
                     url = [NSString stringWithFormat:@"%@/%@", url, extraAddedSubUrl];
                     
                     NSMutableDictionary* mDic = [NSMutableDictionary dictionary];
                     for (id key in [blockParams allKeys]) {
                         if ([key isKindOfClass:[NSString class]] && ![key isEqualToString:kExtraAddedSubUrlKey]) {
+                            [mDic setObject:[blockParams objectForKey:key] forKey:key];
+                        }
+                    }
+                    blockParams = mDic;
+                }
+                else if (extraAddedSubUrl2 != nil) {
+                    url = [NSString stringWithFormat:@"%@?%@", url, extraAddedSubUrl2];
+                    
+                    NSMutableDictionary* mDic = [NSMutableDictionary dictionary];
+                    for (id key in [blockParams allKeys]) {
+                        if ([key isKindOfClass:[NSString class]] && ![key isEqualToString:kExtraAddedSubUrlKey2]) {
                             [mDic setObject:[blockParams objectForKey:key] forKey:key];
                         }
                     }

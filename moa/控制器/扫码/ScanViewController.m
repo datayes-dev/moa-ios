@@ -38,6 +38,10 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
 
 @property (strong, nonatomic) NSString* qrCodeString;
 
+@property (nonatomic, strong) NSString* accessToken;
+
+@property (nonatomic, strong)NSTimer* accessTokenTimer;
+
 @end
 
 @implementation ScanViewController
@@ -47,6 +51,8 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
     [super viewDidLoad];
     
     self.title = @"用餐刷卡";
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -56,6 +62,34 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
     [super viewWillAppear:animated];
     
     [self beginScanQR];
+}
+
+- (void)setupUpdateAccessTokenTimer
+{
+    [self.accessTokenTimer invalidate];
+    self.accessTokenTimer = nil;
+    
+    self.accessTokenTimer = [NSTimer timerWithTimeInterval:60*60    // 一小时刷一次token
+                                                    target:self
+                                                  selector:@selector(fetchAccessToken)
+                                                  userInfo:nil
+                                                   repeats:YES];
+    [[NSRunLoop mainRunLoop]addTimer:self.accessTokenTimer forMode:NSDefaultRunLoopMode];
+    [self.accessTokenTimer fire];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setupUpdateAccessTokenTimer];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self.accessTokenTimer invalidate];
+    self.accessTokenTimer = nil;
 }
 
 #pragma mark - Method
@@ -100,11 +134,12 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
         NSLog(@"扫描二维码的结果：%@", object.stringValue);
         
         self.qrCodeString = object.stringValue;
-        if (![lastQRCode isEqualToString:object.stringValue]) {
+//        if (![lastQRCode isEqualToString:object.stringValue]) {
             [self stopScanQR];
-            [self payWithCode:object.stringValue];
+//            [self payWithCode:object.stringValue];
+            [self payWithCode3:object.stringValue];
             lastQRCode = [object.stringValue copy];
-        }
+//        }
 //        [self playSound];
 //        [self checkForTrade];
 //        PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:[NSBundle mainBundle]];
@@ -195,6 +230,71 @@ typedef NS_ENUM(NSInteger, EAlertViewType) {
         }
         else {
             [weakSelf delayBack];
+        }
+    }];
+}
+
+- (void)payWithCode2:(NSString*)qrCode
+{
+    WS(weakSelf);
+    
+    showLoadingAtWindow;
+    
+    [self.adapter fetchAccessTokenWithResultBlock:^(id data, NSError *error) {
+        if (error == nil && data != nil && [data isKindOfClass:[NSString class]]) {
+            NSString* accessToken = data;
+            [weakSelf.adapter consumeQRCode:qrCode andAccessToken:accessToken withResultBlock:^(id data, NSError *error) {
+                dismisLoadingFromWindow;
+                if (error == nil && data != nil && [data isKindOfClass:[NSString class]]) {
+                    [weakSelf playSound];
+                    [weakSelf beginScanQR];
+                }
+                else {
+                    [weakSelf.view makeToast:@"刷卡失败" duration:2 position:@"center"];
+                    [weakSelf beginScanQR];
+                }
+            }];
+        }
+        else {
+            dismisLoadingFromWindow;
+            [weakSelf.view makeToast:@"刷卡失败" duration:2 position:@"center"];
+            [weakSelf beginScanQR];
+        }
+    }];
+}
+
+- (void)fetchAccessToken
+{
+    WS(weakSelf);
+    
+    showLoadingAtWindow;
+    [self.adapter fetchAccessTokenWithResultBlock:^(id data, NSError *error) {
+        dismisLoadingFromWindow;
+        if (error == nil && data != nil && [data isKindOfClass:[NSString class]]) {
+            weakSelf.accessToken = data;
+        }
+        else {
+            [weakSelf.view makeToast:@"刷卡失败" duration:2 position:@"center"];
+            [weakSelf beginScanQR];
+        }
+    }];
+}
+
+- (void)payWithCode3:(NSString*)qrCode
+{
+    WS(weakSelf);
+    
+    showLoadingAtWindow;
+    
+    [weakSelf.adapter consumeQRCode:qrCode andAccessToken:self.accessToken withResultBlock:^(id data, NSError *error) {
+        dismisLoadingFromWindow;
+        if (error == nil && data != nil && [data isKindOfClass:[NSString class]]) {
+            [weakSelf playSound];
+            [weakSelf beginScanQR];
+        }
+        else {
+            [weakSelf.view makeToast:@"刷卡失败" duration:2 position:@"center"];
+            [weakSelf beginScanQR];
         }
     }];
 }

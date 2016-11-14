@@ -85,5 +85,20 @@
 //获取个人付款二维码
 - (void)getUserPayQRWithResultBlock:(DYInterfaceResultBlock)resultBlock;
 
+#pragma mark - weixin APIs
 
+/**
+ *	@brief	获取access_token
+ *
+ *	@param 	resultBlock 	返回access_token
+ */
+- (void)fetchAccessTokenWithGorpId:(NSString*)corpId andSecrect:(NSString*)secrect andResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+/**
+ *	@brief	消耗二维码
+ *
+ *	@param 	coddString 	二维码
+ *	@param 	resultBlock 	结果回调
+ */
+- (void)consumeQRCode:(NSString*)coddString andAccessToken:(NSString*)accessToken andResultBlock:(DYInterfaceResultBlock)resultBlock;
 @end

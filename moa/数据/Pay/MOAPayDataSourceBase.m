@@ -212,4 +212,33 @@ static MOAPayDataSourceBase* gMOAPayDataSourceBase = nil;
                    }];
 }
 
+#pragma mark - weixin APIs
+
+- (void)fetchAccessTokenWithGorpId:(NSString*)corpId andSecrect:(NSString*)secrect andResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    [self sendRequestWithMsgId:eGetWexinAccessToken
+                    parameters:@{@"corpid":corpId, @"corpsecret":secrect}
+                 canUsingCache:NO
+                   forceReload:NO
+                   resultBlock:^(id data, NSError *error) {
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           resultBlock(data,error);
+                       });
+                   }];
+}
+
+- (void)consumeQRCode:(NSString*)coddString andAccessToken:(NSString*)accessToken andResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    NSString* accessTokenParam = [NSString stringWithFormat:@"%@=%@", @"access_token", accessToken];
+    [self sendRequestWithMsgId:eConsumeQRCode
+                    parameters:@{kExtraAddedSubUrlKey2:accessTokenParam, @"code":coddString}
+                 canUsingCache:NO
+                   forceReload:NO
+                   resultBlock:^(id data, NSError *error) {
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           resultBlock(data,error);
+                       });
+                   }];
+}
+
 @end

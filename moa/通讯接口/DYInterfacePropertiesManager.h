@@ -184,6 +184,26 @@
 @property (nonatomic, strong)NSString *productCMSUrl;
 
 /**
+ *	@brief	微信API dev环境
+ */
+@property (nonatomic, strong)NSString *devWeixinAPIUrl;
+
+/**
+ *	@brief	微信API qa环境
+ */
+@property (nonatomic, strong)NSString *qaWeixinAPIUrl;
+
+/**
+ *	@brief	微信API stage环境
+ */
+@property (nonatomic, strong)NSString *stageWeixinAPIUrl;
+
+/**
+ *	@brief	微信API product环境
+ */
+@property (nonatomic, strong)NSString *productWeixinAPIUrl;
+
+/**
  *	@brief	接口参数列表
  */
 @property (nonatomic, strong)NSArray<DYAppModuleItem>* interfaceModules;

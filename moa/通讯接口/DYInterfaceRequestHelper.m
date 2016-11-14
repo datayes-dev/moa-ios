@@ -269,6 +269,33 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
     //#endif
 }
 
++ (NSString*)weixinUrl
+{
+    NSNumber *currentEvn = [DYAppConfigManager shareInstance].currentEnvironment;
+    ECurrentEnvType currentEnvType = [currentEvn integerValue];
+    
+    switch (currentEnvType) {
+        case eCurrentEnvTypeDev:
+            return [DYInterfacePropertiesManager shareInstance].devWeixinAPIUrl;
+            break;
+            
+        case eCurrentEnvTypeQA:
+            return [DYInterfacePropertiesManager shareInstance].qaWeixinAPIUrl;
+            break;
+            
+        case eCurrentEnvTypeStag:
+            return [DYInterfacePropertiesManager shareInstance].stageWeixinAPIUrl;
+            break;
+            
+        case eCurrentEnvTypeProduct:
+            return [DYInterfacePropertiesManager shareInstance].productWeixinAPIUrl;
+            break;
+            
+        default:
+            break;
+    }
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -286,6 +313,7 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
     NSString* notifyUrl = [DYInterfaceRequestHelper notifyUrl];
     NSString* appPushBaseUrl = [DYInterfaceRequestHelper appPushUrl];
     NSString* cmsUrl = [DYInterfaceRequestHelper cmsUrl];
+    NSString* weixinUrl = [DYInterfaceRequestHelper weixinUrl];
     
     self.dataInfoRequest = [[DYJsonRequestWithGBufResponseRequest alloc] initWithUrl:basicUrl];
     self.dataInfoWithAuthParamsRequest = [[DYJsonRequestWithGBufResponseRequest alloc] initWithUrl:basicUrl];
@@ -298,6 +326,7 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
     self.addMutipartFormDataRequest = [[DYMutipartFormDataRequest alloc] initWithUrl:basicAuthUrl];
     self.diningRequest = [[DYJsonRequestWithTextHtmlResponseRequest alloc] initWithUrl:basicAuthUrl];
     self.diningRequest2 = [[DYJsonRequestWithJsonResponseRequest alloc] initWithUrl:basicAuthUrl];
+    self.weixinRequest = [[DYJsonRequestWithJsonResponseRequest alloc] initWithUrl:weixinUrl];
 }
 
 - (void)sendRequestWithMsgId:(EInterfaceId)msgId
@@ -367,6 +396,9 @@ static DYInterfaceRequestHelper* gInterfaceRequestHelper;
                 break;
             case eDining2:
                 dealRequester = self.diningRequest2;
+                break;
+            case eWeixinApi:
+                dealRequester = self.weixinRequest;
                 break;
             default:
                 break;

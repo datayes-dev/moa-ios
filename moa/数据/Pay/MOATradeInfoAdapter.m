@@ -267,5 +267,55 @@ static MOATradeInfoAdapter *gMOATradeInfoAdapter = nil;
                                 }];
 }
 
+#pragma mark - weixin APIs
+
+- (void)fetchAccessTokenWithResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    [self.datasource fetchAccessTokenWithGorpId:@"wx035063b1d4ac336b"
+                                     andSecrect:@"oIQ5f1tLiG7xkZ6VSAT8b-h9ysK3avDqwWjGYxs5xEiGHWhKP0SZ3QzZ8TuFh_dm"
+                                 andResultBlock:^(id data, NSError *error) {
+        if (error != nil) {
+            resultBlock(nil, error);
+        }
+        else if (data != nil && [data isKindOfClass:[NSDictionary class]]) {
+            NSString* accessToken = data[@"access_token"];
+            if (accessToken != nil && [accessToken isKindOfClass:[NSString class]] && [accessToken length] > 0) {
+                resultBlock(accessToken, nil);
+            }
+            else {
+                NSNumber* errcode = data[@"errcode"];
+                NSString* errmsg = data[@"errmsg"];
+                resultBlock(nil, [NSError errorWithDomain:@"com.datayes.moa" code:[errcode integerValue] userInfo:@{@"msg":errmsg}]);
+            }
+        }
+        else {
+            resultBlock(nil, [NSError errorWithDomain:@"com.datayes.moa" code:-2 userInfo:@{@"msg":@"未知错误"}]);
+        }
+    }];
+}
+
+- (void)consumeQRCode:(NSString*)codeString andAccessToken:(NSString*)accessToken withResultBlock:(DYInterfaceResultBlock)resultBlock
+{
+    [self.datasource consumeQRCode:codeString andAccessToken:accessToken andResultBlock:^(id data, NSError *error) {
+        if (error != nil) {
+            resultBlock(nil, error);
+        }
+        else if (data != nil && [data isKindOfClass:[NSDictionary class]]) {
+            NSNumber* errcode = data[@"errcode"];
+            NSString* errmsg = data[@"errmsg"];
+            if (errcode != nil && [errcode isKindOfClass:[NSNumber class]] && [errcode integerValue] == 0) {
+                resultBlock(errmsg, nil);
+            }
+            else {
+                NSNumber* errcode = data[@"errcode"];
+                NSString* errmsg = data[@"errmsg"];
+                resultBlock(nil, [NSError errorWithDomain:@"com.datayes.moa" code:[errcode integerValue] userInfo:@{@"msg":errmsg}]);
+            }
+        }
+        else {
+            resultBlock(nil, [NSError errorWithDomain:@"com.datayes.moa" code:-2 userInfo:@{@"msg":@"未知错误"}]);
+        }
+    }];
+}
 
 @end

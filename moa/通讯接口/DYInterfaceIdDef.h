@@ -203,6 +203,9 @@ typedef NS_ENUM(NSInteger, EInterfaceId) {
     eGetUserPayQR,                                  // 获取用户付款二维码
     eGetTradeList,                                  // 查询交易流水
     eGetLatestTradeList,                            // 查询交易流水
+    
+    eGetWexinAccessToken = 1300,                    // 获取access_token
+    eConsumeQRCode,                                 // 消耗二维码
 };
 
 #endif /* DYInterfaceIdDef_h */

@@ -46,4 +46,24 @@
 - (void)getLatestTradeListInfoWithBeginDate:(NSString *)beginDate
                                     endDate:(NSString *)endDate
                                 ResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+
+#pragma mark - weixin APIs
+
+/**
+ *	@brief	获取access_token
+ *
+ *	@param 	resultBlock 	返回access_token
+ */
+- (void)fetchAccessTokenWithResultBlock:(DYInterfaceResultBlock)resultBlock;
+
+/**
+ *	@brief	消耗二维码
+ *
+ *	@param 	codeString 	二维码
+ *	@param 	accessToken 	access_token
+ *	@param 	resultBlock 	结果回调
+ */
+- (void)consumeQRCode:(NSString*)codeString andAccessToken:(NSString*)accessToken withResultBlock:(DYInterfaceResultBlock)resultBlock;
+
 @end
